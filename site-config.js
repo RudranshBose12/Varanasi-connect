@@ -14,5 +14,6 @@ window.VC_CONFIG = {
   // The button in the Photography Competition panel will use this URL.
   photographySubmissionUrl: "https://forms.google.com/",
   discordUrl: "https://discord.gg/bSjWdp8fzX",
+  instagramUrl: "https://www.instagram.com/varanasi.connect/",
   email: "community.varanasi@gmail.com"
 };
