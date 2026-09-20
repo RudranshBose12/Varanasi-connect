@@ -1,0 +1,70 @@
+{
+  "movieNights": {
+    "tag": "Community",
+    "title": "Movie Nights",
+    "short": "Watch something good, meet people, and spend an evening together.",
+    "description": "Movie Nights are relaxed community evenings built around films, conversation and good company. Add photos from each night to the movie-nights folder and they will appear here automatically.",
+    "meta": "Photos, memories & upcoming screenings",
+    "folder": "assets/community/movie-nights"
+  },
+  "photographyCompetition": {
+    "tag": "Photography Competition",
+    "title": "Photography Competition",
+    "short": "Capture Varanasi through your own lens.",
+    "description": "A community photography competition where everyone gets a chance to show Varanasi from their own perspective.",
+    "meta": "Topic: Varanasi",
+    "date": "01 October — 31 October",
+    "rules": [
+      "The photograph must be your own original work.",
+      "The theme is Varanasi. Interpret the city in your own way.",
+      "No AI-generated photographs.",
+      "Do not use AI tools to generate or materially alter the photograph.",
+      "Basic colour, exposure, crop and similar photographic adjustments are allowed.",
+      "Please submit the highest-quality version you have available."
+    ],
+    "submissionNote": "Use the submission button to send your entry through the community submission form.",
+    "folder": "assets/community/photography-competition"
+  },
+  "meetupsProjects": {
+    "tag": "Meetups & New Projects",
+    "title": "Meetups & New Projects",
+    "short": "From online conversations to things we can build together in Varanasi.",
+    "description": "This space is for upcoming meetups, community experiments, collaborations and new projects. Keep the plans here updated as the community grows.",
+    "plans": [
+      {
+        "title": "Community Meetup",
+        "status": "Planning",
+        "when": "Date to be announced",
+        "where": "Varanasi",
+        "description": "A relaxed offline meetup to meet members, talk about ideas and decide what we should build next."
+      },
+      {
+        "title": "Creative Walk",
+        "status": "Idea",
+        "when": "Coming soon",
+        "where": "Old Varanasi / Ghat area",
+        "description": "A community walk focused on photography, stories, architecture and the everyday details of the city."
+      },
+      {
+        "title": "Community Projects",
+        "status": "Open to ideas",
+        "when": "Ongoing",
+        "where": "Across Varanasi",
+        "description": "Small projects made by members — from visual stories and collaborations to things that make the local community more connected."
+      }
+    ],
+    "folder": "assets/community/meetups-projects"
+  },
+  "varanasi": {
+    "tag": "The City Through Us",
+    "title": "Varanasi, our way.",
+    "description": "A growing collection of photographs and stories from Varanasi and the Varanasi Connect community. Add images to an album folder and the site will discover them automatically.",
+    "albums": [
+      { "id": "ganga", "title": "Ganga · Ghats · River", "description": "The river, ghats and moments around the Ganga.", "folder": "assets/varanasi/ganga" },
+      { "id": "streets", "title": "Streets", "description": "Everyday Varanasi — lanes, colours, movement and quiet corners.", "folder": "assets/varanasi/streets" },
+      { "id": "people", "title": "People", "description": "People and stories that give the city its character.", "folder": "assets/varanasi/people" },
+      { "id": "culture", "title": "Culture", "description": "Traditions, art, food, festivals and cultural life.", "folder": "assets/varanasi/culture" },
+      { "id": "community", "title": "Community", "description": "Photos from Varanasi Connect events, meetups and community moments.", "folder": "assets/varanasi/community" }
+    ]
+  }
+}
