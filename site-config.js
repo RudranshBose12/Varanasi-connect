@@ -10,9 +10,8 @@ window.VC_CONFIG = {
     repo: "Varanasi-connect",
     branch: "main"
   },
-  // Put your Google Form / Microsoft Form / other submission form here.
-  // The button in the Photography Competition panel will use this URL.
-  photographySubmissionUrl: "https://forms.google.com/",
+  // Official Google Form for Photography Competition submissions.
+  photographySubmissionUrl: "https://docs.google.com/forms/d/e/1FAIpQLSei54LxQyZwHPRUNkk4a_4PdGNprNXmH6PRgc7ay6e6wLFY3A/viewform?usp=sharing&ouid=108346158281697759353",
   discordUrl: "https://discord.gg/bSjWdp8fzX",
   instagramUrl: "https://www.instagram.com/varanasi.connect/",
   email: "community.varanasi@gmail.com"
