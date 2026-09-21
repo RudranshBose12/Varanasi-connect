@@ -10,19 +10,36 @@
   "photographyCompetition": {
     "tag": "Photography Competition",
     "title": "Photography Competition",
-    "short": "Capture Varanasi through your own lens.",
-    "description": "A community photography competition where everyone gets a chance to show Varanasi from their own perspective.",
-    "meta": "Topic: Varanasi",
-    "date": "01 October — 31 October",
+    "short": "Capture Varanasi through your own eyes. Show us what Varanasi means to you. ❤️",
+    "description": "All photographs submitted must be taken between 1 October and 31 October. Photographs taken before or after this period are not eligible.",
+    "meta": "Theme: Varanasi",
+    "date": "1 October — 31 October",
+    "theme": "Every submitted photograph must be related to Varanasi. Photographs are judged on how well they represent Varanasi — its people, culture, streets, architecture, traditions, atmosphere, everyday life, or anything that captures the spirit of the city.",
     "rules": [
-      "The photograph must be your own original work.",
-      "The theme is Varanasi. Interpret the city in your own way.",
-      "No AI-generated photographs.",
-      "Do not use AI tools to generate or materially alter the photograph.",
-      "Basic colour, exposure, crop and similar photographic adjustments are allowed.",
-      "Please submit the highest-quality version you have available."
+      "Each participant can submit up to 3 photographs.",
+      "All photographs must be original photographs taken by the participant.",
+      "AI cannot be used to generate or significantly enhance photographs of Varanasi.",
+      "Each photograph is judged individually.",
+      "Your final score is the average score of all three submitted photographs.",
+      "The participant with the highest average score wins 1st Prize."
     ],
-    "submissionNote": "Use the submission button to send your entry through the community submission form.",
+    "submissionRequirements": [
+      "Date & time the photograph was taken.",
+      "Location where the photograph was taken.",
+      "Name or nickname of the photographer.",
+      "A short note about the photograph and its story.",
+      "You do not have to use your real name. A nickname or preferred name is completely fine."
+    ],
+    "judging": "Photographs are judged by a designated judge/judging panel, rather than through public voting. This ensures that the results are based on the quality and representation of the photograph, while preventing vote manipulation through multiple accounts. Every photograph receives an individual rating, and the participant's final score is calculated from the average of their submitted photographs.",
+    "prizes": [
+      "1st Prize",
+      "2nd Prize",
+      "3rd Prize"
+    ],
+    "prizesNote": "Prizes are currently being finalized and will be announced soon.",
+    "submissionNote": "All entries are submitted through the official Google Form. Use the submission button below to submit your photographs and required details.",
+    "results": "The winners are announced on the official Varanasi Connect Instagram page after the competition ends.",
+    "closingNote": "Show us your Varanasi. Whether it's the ghats at sunrise, a quiet street, a familiar face, a festival, a hidden corner, or an everyday moment — capture the side of Varanasi that you see.",
     "folder": "assets/community/photography-competition"
   },
   "meetupsProjects": {
