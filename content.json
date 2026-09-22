@@ -10,7 +10,7 @@
   "photographyCompetition": {
     "tag": "Photography Competition",
     "title": "Photography Competition",
-    "short": "Capture Varanasi through your own eyes. Show us what Varanasi means to you. ❤️",
+    "short": "Capture Varanasi through your own eyes. Show us what Varanasi means to you.",
     "description": "All photographs submitted must be taken between 1 October and 31 October. Photographs taken before or after this period are not eligible.",
     "meta": "Theme: Varanasi",
     "date": "1 October — 31 October",
@@ -32,11 +32,11 @@
     ],
     "judging": "Photographs are judged by a designated judge/judging panel, rather than through public voting. This ensures that the results are based on the quality and representation of the photograph, while preventing vote manipulation through multiple accounts. Every photograph receives an individual rating, and the participant's final score is calculated from the average of their submitted photographs.",
     "prizes": [
-      "1st Prize",
-      "2nd Prize",
-      "3rd Prize"
+      "1st Prize — ₹500",
+      "2nd Prize — ₹300",
+      "3rd Prize — ₹200"
     ],
-    "prizesNote": "Prizes are currently being finalized and will be announced soon.",
+    "prizesNote": "Total prize pool: ₹1,000.",
     "submissionNote": "All entries are submitted through the official Google Form. Use the submission button below to submit your photographs and required details.",
     "results": "The winners are announced on the official Varanasi Connect Instagram page after the competition ends.",
     "closingNote": "Show us your Varanasi. Whether it's the ghats at sunrise, a quiet street, a familiar face, a festival, a hidden corner, or an everyday moment — capture the side of Varanasi that you see.",
@@ -77,11 +77,36 @@
     "title": "Varanasi, our way.",
     "description": "A growing collection of photographs and stories from Varanasi and the Varanasi Connect community. Add images to an album folder and the site will discover them automatically.",
     "albums": [
-      { "id": "ganga", "title": "Ganga · Ghats · River", "description": "The river, ghats and moments around the Ganga.", "folder": "assets/varanasi/ganga" },
-      { "id": "streets", "title": "Streets", "description": "Everyday Varanasi — lanes, colours, movement and quiet corners.", "folder": "assets/varanasi/streets" },
-      { "id": "people", "title": "People", "description": "People and stories that give the city its character.", "folder": "assets/varanasi/people" },
-      { "id": "culture", "title": "Culture", "description": "Traditions, art, food, festivals and cultural life.", "folder": "assets/varanasi/culture" },
-      { "id": "community", "title": "Community", "description": "Photos from Varanasi Connect events, meetups and community moments.", "folder": "assets/varanasi/community" }
+      {
+        "id": "ganga",
+        "title": "Ganga · Ghats · River",
+        "description": "The river, ghats and moments around the Ganga.",
+        "folder": "assets/varanasi/ganga"
+      },
+      {
+        "id": "streets",
+        "title": "Streets",
+        "description": "Everyday Varanasi — lanes, colours, movement and quiet corners.",
+        "folder": "assets/varanasi/streets"
+      },
+      {
+        "id": "people",
+        "title": "People",
+        "description": "People and stories that give the city its character.",
+        "folder": "assets/varanasi/people"
+      },
+      {
+        "id": "culture",
+        "title": "Culture",
+        "description": "Traditions, art, food, festivals and cultural life.",
+        "folder": "assets/varanasi/culture"
+      },
+      {
+        "id": "community",
+        "title": "Community",
+        "description": "Photos from Varanasi Connect events, meetups and community moments.",
+        "folder": "assets/varanasi/community"
+      }
     ]
   }
 }
