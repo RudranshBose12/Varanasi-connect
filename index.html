@@ -116,9 +116,14 @@
     body.dark .detail-empty,body.dark .modal-empty{background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.16);color:#aaa5ae}
     body.dark .detail-empty strong,body.dark .modal-empty strong{color:#f3f0f2}
     body.dark .hero::before,body.dark .hero::after{border-color:rgba(255,255,255,.08)}
-    .theme-toggle{border:1px solid var(--line);background:rgba(255,255,255,.55);color:var(--ink);padding:9px 13px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;transition:.2s transform,.2s background,.2s color}
+    .theme-toggle{width:44px;height:44px;padding:0;border:1px solid var(--line);background:rgba(255,255,255,.55);color:var(--ink);border-radius:14px;display:grid;place-items:center;cursor:pointer;flex:0 0 auto;transition:.2s transform,.2s background,.2s color,.2s border-color}
     .theme-toggle:hover{transform:translateY(-1px)}
-    @media(max-width:850px){.theme-toggle{padding:8px 10px;font-size:11px}.nav-inner{gap:7px}.nav-cta{margin-left:auto}}
+    .theme-icon{display:grid;place-items:center}
+    .theme-icon svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .theme-moon{display:none}
+    body.dark .theme-toggle{background:#f3f0f2;color:#17151b;border-color:#f3f0f2}
+    body.dark .theme-sun{display:none}.dark .theme-moon{display:grid}
+    @media(max-width:850px){.theme-toggle{width:38px;height:38px;border-radius:12px}.theme-icon svg{width:19px;height:19px}.nav-inner{gap:7px}.nav-cta{margin-left:0}}
     @media(max-width:600px){
       .nav-inner{padding:6px 7px 6px 9px}
       .brand img{width:32px;height:32px}
@@ -143,16 +148,16 @@
 </head>
 <body>
   <nav class="nav"><div class="nav-inner">
-    <a class="brand" href="#top"><img src="assets/logo.png" alt="Varanasi Connect logo"><span>Varanasi Connect</span></a>
+    <a class="brand" href="#top"><img id="siteLogo" src="assets/logo.png" data-light-logo="assets/logo.png" data-dark-logo="assets/logos/7.png" alt="Varanasi Connect logo"><span>Varanasi Connect</span></a>
     <div class="navlinks"><a href="#about">About</a><a href="#what-we-do">What we do</a><a href="#events">Events</a><a href="#gallery">Varanasi</a><a id="navInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram ↗</a></div>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">Dark mode</button>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode"><span class="theme-icon theme-sun" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></span><span class="theme-icon theme-moon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z"></path></svg></span></button>
     <a class="nav-cta" id="navDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join Discord ↗</a>
   </div></nav>
 
   <main id="top">
     <section class="hero"><div class="container hero-grid">
       <div class="reveal"><div class="eyebrow"><span></span> A community from Varanasi</div><h1>The city,<br><span class="gradient-text">connected.</span></h1><p>Varanasi Connect is a community built around the people, creativity, culture and everyday experiences that make Varanasi feel like home.</p><div class="actions"><a class="btn btn-dark" id="heroDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join the community ↗</a><a class="btn btn-light" href="#about">Explore Varanasi Connect ↓</a></div></div>
-      <div class="hero-art reveal"><div class="logo-card"><img src="assets/logo.png" alt="Varanasi Connect"></div><div class="floating float-one">Fun community</div><div class="floating float-two">Cool meetups</div><div class="floating float-three">Shared experiences</div></div>
+      <div class="hero-art reveal"><div class="logo-card"><img id="heroLogo" src="assets/logo.png" data-light-logo="assets/logo.png" data-dark-logo="assets/logos/7.png" alt="Varanasi Connect"></div><div class="floating float-one">Fun community</div><div class="floating float-two">Cool meetups</div><div class="floating float-three">Shared experiences</div></div>
     </div></section>
 
     <section class="about" id="about"><div class="container about-grid"><div><div class="kicker">01 — Who we are</div><h2>More than a<br><span class="gradient-text">community.</span></h2></div><div><p class="about-copy"><strong>Varanasi Connect brings people together around Varanasi.</strong> We create a space where locals, students, creators and curious people can meet, share experiences, discover the city and build things together.</p><p class="about-copy">From online conversations to movie nights, photography contests and future offline events, the goal is simple: make it easier to find your people in the city.</p><div class="pill-row"><span class="pill">Community</span><span class="pill">Culture</span><span class="pill">Events</span><span class="pill">Photography</span><span class="pill">Creators</span><span class="pill">Varanasi</span></div></div></div></section>
@@ -291,7 +296,8 @@
       const themeToggle=$('#themeToggle');
       const applyTheme=(dark)=>{
         document.body.classList.toggle('dark',dark);
-        if(themeToggle){themeToggle.textContent=dark?'Light mode':'Dark mode';themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');}
+        if(themeToggle)themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');
+        document.querySelectorAll('[data-light-logo][data-dark-logo]').forEach(img=>{img.src=dark?img.dataset.darkLogo:img.dataset.lightLogo;});
         const meta=document.querySelector('meta[name="theme-color"]'); if(meta)meta.content=dark?'#111015':'#fbf8f1';
       };
       let savedTheme='';
