@@ -173,7 +173,11 @@
       .join-actions .btn{width:100%}
     }
 
-  </style>
+      .hero-grid{grid-template-columns:1fr}
+    .hero-grid>div:first-child{max-width:760px}
+    .hero-art{display:none!important}
+    @media(max-width:850px){.hero-grid{grid-template-columns:1fr}.hero-grid>div:first-child{max-width:none}}
+</style>
 </head>
 <body>
   <nav class="nav"><div class="nav-inner">
@@ -186,7 +190,7 @@
   <main id="top">
     <section class="hero"><div class="container hero-grid">
       <div class="reveal"><div class="eyebrow"><span></span> A community from Varanasi</div><h1>The city,<br><span class="gradient-text">connected.</span></h1><p>Varanasi Connect is a community built around the people, creativity, culture and everyday experiences that make Varanasi feel like home.</p><div class="actions"><a class="btn btn-dark" id="heroDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join the community ↗</a><a class="btn btn-light" href="#about">Explore Varanasi Connect ↓</a></div></div>
-      <div class="hero-art reveal"><div class="logo-card"><img id="heroLogo" src="assets/logo.png" data-light-logo="assets/logo.png" data-dark-logo="assets/logos/7.png" alt="Varanasi Connect"></div><div class="floating float-one">Fun community</div><div class="floating float-two">Cool meetups</div><div class="floating float-three">Shared experiences</div></div>
+
     </div></section>
 
     <section class="events" id="events"><div class="container"><div class="section-head"><div><div class="kicker">01 — Events</div><h2>Always something<br><span class="gradient-text">coming up.</span></h2></div><p class="section-intro">A look at the community activities we are hosting, from movie nights and meetups to creative events and competitions.</p></div>
