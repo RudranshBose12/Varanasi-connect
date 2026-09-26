@@ -261,7 +261,7 @@
       }
       async function listImages(folder){
         const items=await listFolder(folder);
-        return items.filter(x=>x.type==='file'&&/\\.(jpe?g|png|webp|gif|avif)$/i.test(x.name)).map(x=>({name:x.name,url:x.download_url||RAW+folder+'/'+encodeURIComponent(x.name)}));
+        return items.filter(x=>x.type==='file'&&/\.(jpe?g|png|webp|gif|avif)$/i.test(x.name)).map(x=>({name:x.name,url:x.download_url||RAW+folder+'/'+encodeURIComponent(x.name)}));
       }
       async function listSubfolders(folder){
         const items=await listFolder(folder);
