@@ -60,10 +60,6 @@
       .nav-inner{width:calc(100% - 12px);padding:7px 8px 7px 10px}
       .brand img{width:34px;height:34px}
       .nav-cta{font-size:11px;padding:8px 11px;white-space:nowrap}
-    .brand{gap:14px}
-    .brand-text{margin-right:20px;white-space:nowrap}
-    .nav-links{gap:28px}
-    @media(max-width:850px){.brand-text{margin-right:8px}.nav-links{gap:16px}}
       .hero{min-height:auto;padding:100px 0 55px}
       .hero-grid{width:100%;grid-template-columns:minmax(0,1fr);gap:28px}
       .hero-grid>div{min-width:0}
@@ -125,6 +121,9 @@
   
     /* Dark mode */
     body.dark{--paper:#111015;--ink:#f3f0f2;--muted:#aaa5ae;--line:rgba(255,255,255,.13);--soft:#1b1920;--white:#17151b;background:var(--paper);color:var(--ink)}
+    .brand{flex:0 0 auto;margin-right:42px}
+    .navlinks{flex:1;justify-content:flex-start;gap:28px}
+    @media(max-width:1000px) and (min-width:851px){.brand{margin-right:30px}.navlinks{gap:22px}}
     body.dark .nav-inner{background:rgba(17,16,21,.82);border-color:rgba(255,255,255,.12);box-shadow:0 12px 35px rgba(0,0,0,.28)}
     body.dark .navlinks{color:#c4bec8}.dark .navlinks a:hover{color:#fff}
     body.dark .theme-toggle{background:#f3f0f2;color:#17151b;border-color:#f3f0f2}
