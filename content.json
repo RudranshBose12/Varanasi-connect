@@ -81,13 +81,13 @@
         "id": "ganga",
         "title": "Venues",
         "description": "Places, venues and spots around Varanasi.",
-        "folder": "assets/varanasi/ganga"
+        "folder": "assets/varanasi/venues"
       },
       {
         "id": "streets",
         "title": "Activities",
         "description": "Things to do, experiences, events and activities around the city.",
-        "folder": "assets/varanasi/streets"
+        "folder": "assets/varanasi/activities"
       },
       {
         "id": "people",
@@ -99,7 +99,7 @@
         "id": "culture",
         "title": "Visited",
         "description": "Places and moments from the places we have visited.",
-        "folder": "assets/varanasi/culture"
+        "folder": "assets/varanasi/visited"
       },
       {
         "id": "community",
