@@ -79,14 +79,14 @@
     "albums": [
       {
         "id": "ganga",
-        "title": "Ghats",
-        "description": "The river, ghats and moments around the Ganga.",
+        "title": "Venues",
+        "description": "Places, venues and spots around Varanasi.",
         "folder": "assets/varanasi/ganga"
       },
       {
         "id": "streets",
-        "title": "Streets",
-        "description": "Everyday Varanasi — lanes, colours, movement and quiet corners.",
+        "title": "Activities",
+        "description": "Things to do, experiences, events and activities around the city.",
         "folder": "assets/varanasi/streets"
       },
       {
@@ -97,8 +97,8 @@
       },
       {
         "id": "culture",
-        "title": "Culture",
-        "description": "Traditions, art, food, festivals and cultural life.",
+        "title": "Visited",
+        "description": "Places and moments from the places we have visited.",
         "folder": "assets/varanasi/culture"
       },
       {
