@@ -14,5 +14,8 @@ window.VC_CONFIG = {
   photographySubmissionUrl: "https://forms.gle/rrEhqsBtwHpYp7C57",
   discordUrl: "https://discord.gg/bSjWdp8fzX",
   instagramUrl: "https://www.instagram.com/varanasi.connect/",
-  email: "community.varanasi@gmail.com"
+  email: "community.varanasi@gmail.com",
+  // Public Supabase client settings. Never put a service-role/secret key here.
+  supabaseUrl: "https://dtckvnyuwysulevilfse.supabase.co",
+  supabasePublishableKey: "sb_publishable_LiuULCT4WLxAdL3qq3zuZg_KNgfrnCa"
 };
