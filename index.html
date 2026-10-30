@@ -193,15 +193,54 @@
     .join-actions .discord-cta{padding:14px 20px;font-weight:800}
     @media(max-width:600px){.nav-cta.discord-cta{padding:8px 12px}.nav-cta.discord-cta .discord-logo{width:18px;height:18px}.join-actions .discord-cta{padding:12px 16px}}
 
+    .profile-wrap{position:relative;display:flex;align-items:center;flex:0 0 auto}
     .auth-cta{height:40px;min-width:40px;padding:0 12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:0 0 auto;border:1px solid rgba(88,101,242,.22);border-radius:999px;background:rgba(88,101,242,.09);color:#5865f2;font:700 12px 'DM Sans',sans-serif;cursor:pointer;transition:background .2s ease,transform .2s ease,box-shadow .2s ease;white-space:nowrap}
     .auth-cta:hover{background:rgba(88,101,242,.15);box-shadow:0 6px 16px rgba(88,101,242,.12);transform:translateY(-1px)}
     .auth-cta .discord-logo{width:19px;height:19px;color:#5865f2}
-    .auth-cta.is-signed-in{max-width:150px;background:#5865f2;color:#fff;border-color:#5865f2}
-    .auth-cta.is-signed-in .discord-logo{color:#fff}
+    .auth-cta.is-signed-in{width:40px;height:40px;min-width:40px;padding:2px;background:#fff;border:2px solid #5865f2;border-radius:50%;overflow:hidden}
+    .profile-avatar{width:100%;height:100%;object-fit:cover;border-radius:50%}
+    .profile-fallback{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .auth-cta.is-signed-in .discord-logo,#authButton.is-signed-in #authLabel{display:none}
     #authLabel{overflow:hidden;text-overflow:ellipsis;max-width:100px}
     body.dark .auth-cta:not(.is-signed-in){background:rgba(88,101,242,.16);border-color:rgba(139,148,255,.35);color:#aeb5ff}
     body.dark .auth-cta:not(.is-signed-in) .discord-logo{color:#aeb5ff}
-    @media(max-width:600px){.auth-cta{height:34px;width:34px;min-width:34px;padding:0;gap:0}.auth-cta .discord-logo{width:18px;height:18px}#authLabel{display:none}.auth-cta.is-signed-in{max-width:34px}}
+    .profile-menu{position:absolute;top:calc(100% + 12px);right:0;width:245px;padding:9px;background:var(--white);color:var(--ink);border:1px solid var(--line);border-radius:20px;box-shadow:0 18px 55px rgba(25,20,32,.2);z-index:50}
+    .profile-menu[hidden]{display:none}
+    .profile-menu-heading{padding:12px 12px 14px;display:grid;gap:3px;border-bottom:1px solid var(--line);margin-bottom:6px;min-width:0}
+    .profile-menu-heading strong{font-family:'Space Grotesk';font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .profile-menu-heading span{font-size:11px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .profile-menu button{width:100%;border:0;background:transparent;color:inherit;text-align:left;padding:11px 12px;border-radius:12px;font-size:13px;font-weight:600;cursor:pointer}
+    .profile-menu button:hover{background:var(--soft)}
+    .profile-menu-divider{height:1px;background:var(--line);margin:6px 4px}
+    .profile-menu .profile-logout{color:#c34b62}
+    body.dark .profile-menu{background:#201e25;color:#f4f0f5;border-color:rgba(255,255,255,.12)}
+    body.dark .profile-menu-heading span{color:#b6b0ba}
+    body.dark .profile-menu button:hover{background:#302c36}
+    .account-modal{position:fixed;inset:0;z-index:120;background:rgba(27,24,31,.55);backdrop-filter:blur(9px);display:none;align-items:center;justify-content:center;padding:18px}
+    .account-modal.open{display:flex}
+    .account-panel{width:min(480px,100%);background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:26px;box-shadow:0 28px 80px rgba(0,0,0,.25);overflow:hidden}
+    .account-panel-head{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:22px 24px;border-bottom:1px solid var(--line)}
+    .account-panel-head h3{font-size:25px}
+    .account-panel-close{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;background:rgba(255,255,255,.55);font-size:20px;cursor:pointer;color:inherit}
+    .account-panel-body{padding:24px}
+    .account-empty{padding:20px;border:1px dashed var(--line);border-radius:17px;color:var(--muted);font-size:14px}
+    .account-empty strong{display:block;color:var(--ink);font-family:'Space Grotesk';font-size:17px;margin-bottom:5px}
+    .notification-setting{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.35)}
+    .notification-setting strong{display:block;font-size:14px}
+    .notification-setting small{display:block;color:var(--muted);font-size:12px;margin-top:4px;line-height:1.45}
+    .switch{position:relative;width:48px;height:28px;flex:0 0 48px}
+    .switch input{position:absolute;opacity:0;width:1px;height:1px}
+    .switch-track{position:absolute;inset:0;border-radius:99px;background:#c9c4cb;cursor:pointer;transition:.2s}
+    .switch-track:before{content:"";position:absolute;width:22px;height:22px;left:3px;top:3px;border-radius:50%;background:white;box-shadow:0 1px 4px rgba(0,0,0,.18);transition:.2s}
+    .switch input:checked+.switch-track{background:#5865f2}
+    .switch input:checked+.switch-track:before{transform:translateX(20px)}
+    .switch input:focus-visible+.switch-track{outline:3px solid rgba(88,101,242,.3);outline-offset:3px}
+    .settings-save-note{font-size:12px;color:var(--muted);margin:13px 2px 0}
+    body.dark .account-modal{background:rgba(0,0,0,.65)}
+    body.dark .account-panel{background:#201e25;color:#f4f0f5}
+    body.dark .account-panel-close{background:#302c36;color:#f4f0f5}
+    body.dark .notification-setting{background:rgba(255,255,255,.035)}
+    @media(max-width:600px){.auth-cta{height:34px;width:34px;min-width:34px;padding:2px}.auth-cta .discord-logo{width:18px;height:18px}.auth-cta.is-signed-in{height:34px;width:34px;min-width:34px}.profile-menu{right:-42px;width:230px}.account-panel-head{padding:19px 20px}.account-panel-body{padding:20px}}
 
 </style>
 </head>
@@ -211,7 +250,21 @@
     <div class="navlinks"><a href="#about">About</a><a href="#what-we-do">What we do</a><a href="#events">Events</a><a href="#gallery">Varanasi</a><a id="navInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a></div>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode"><span class="theme-icon theme-sun" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></span><span class="theme-icon theme-moon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z"></path></svg></span></button>
 
-    <button class="auth-cta" id="authButton" type="button" aria-label="Log in with Discord" title="Log in with Discord"><svg class="discord-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19.54 5.32A16.36 16.36 0 0 0 15.52 4l-.49 1.02a15.2 15.2 0 0 0-6.06 0L8.48 4a16.36 16.36 0 0 0-4.02 1.32C1.91 9.34 1.22 13.25 1.56 17.1a16.5 16.5 0 0 0 4.96 2.52l1.2-1.64c-.66-.25-1.28-.56-1.87-.92l.46-.35c3.61 1.67 8.02 1.67 11.59 0l.47.35c-.59.36-1.22.67-1.88.92l1.2 1.64a16.5 16.5 0 0 0 4.96-2.52c.4-4.46-.68-8.33-3.11-11.78ZM8.36 15.09c-1.08 0-1.97-.99-1.97-2.2s.87-2.2 1.97-2.2 1.98.99 1.97 2.2c0 1.21-.87 2.2-1.97 2.2Zm7.28 0c-1.08 0-1.97-.99-1.97-2.2s.87-2.2 1.97-2.2 1.98.99 1.97 2.2c0 1.21-.87 2.2-1.97 2.2Z"/></svg><span id="authLabel">Log in</span></button>
+    <div class="profile-wrap" id="profileWrap">
+      <button class="auth-cta" id="authButton" type="button" aria-label="Log in with Discord" title="Log in with Discord" aria-haspopup="menu" aria-expanded="false">
+        <svg class="discord-logo" id="authDiscordIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19.54 5.32A16.36 16.36 0 0 0 15.52 4l-.49 1.02a15.2 15.2 0 0 0-6.06 0L8.48 4a16.36 16.36 0 0 0-4.02 1.32C1.91 9.34 1.22 13.25 1.56 17.1a16.5 16.5 0 0 0 4.96 2.52l1.2-1.64c-.66-.25-1.28-.56-1.87-.92l.46-.35c3.61 1.67 8.02 1.67 11.59 0l.47.35c-.59.36-1.22.67-1.88.92l1.2 1.64a16.5 16.5 0 0 0 4.96-2.52c.4-4.46-.68-8.33-3.11-11.78ZM8.36 15.09c-1.08 0-1.97-.99-1.97-2.2s.87-2.2 1.97-2.2 1.98.99 1.97 2.2c0 1.21-.87 2.2-1.97 2.2Zm7.28 0c-1.08 0-1.97-.99-1.97-2.2s.87-2.2 1.97-2.2 1.98.99 1.97 2.2c0 1.21-.87 2.2-1.97 2.2Z"/></svg>
+        <img class="profile-avatar" id="profileAvatar" alt="" hidden>
+        <svg class="profile-fallback" id="profileFallback" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M4.5 20c.7-4 3.2-6 7.5-6s6.8 2 7.5 6"></path></svg>
+        <span id="authLabel">Log in</span>
+      </button>
+      <div class="profile-menu" id="profileMenu" role="menu" aria-label="Account menu" hidden>
+        <div class="profile-menu-heading"><strong id="profileMenuName">Your account</strong><span id="profileMenuEmail"></span></div>
+        <button type="button" role="menuitem" data-account-action="events">Registered events</button>
+        <button type="button" role="menuitem" data-account-action="settings">Settings</button>
+        <div class="profile-menu-divider"></div>
+        <button type="button" role="menuitem" class="profile-logout" data-account-action="logout">Log out</button>
+      </div>
+    </div>
     <a class="nav-cta discord-cta" id="navDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener"><svg class="discord-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19.54 5.32A16.36 16.36 0 0 0 15.52 4l-.49 1.02a15.2 15.2 0 0 0-6.06 0L8.48 4a16.36 16.36 0 0 0-4.02 1.32C1.91 9.34 1.22 13.25 1.56 17.1a16.5 16.5 0 0 0 4.96 2.52l1.2-1.64c-.66-.25-1.28-.56-1.87-.92l.46-.35c3.61 1.67 8.02 1.67 11.59 0l.47.35c-.59.36-1.22.67-1.88.92l1.2 1.64a16.5 16.5 0 0 0 4.96-2.52c.4-4.46-.68-8.33-3.11-11.78ZM8.36 15.09c-1.08 0-1.97-.99-1.97-2.2s.87-2.2 1.97-2.2 1.98.99 1.97 2.2c0 1.21-.87 2.2-1.97 2.2Zm7.28 0c-1.08 0-1.97-.99-1.97-2.2s.87-2.2 1.97-2.2 1.98.99 1.97 2.2c0 1.21-.87 2.2-1.97 2.2Z"/></svg><span>Join Discord</span></a>
   </div></nav>
 
@@ -253,6 +306,7 @@
   <footer><div class="container footer-inner"><div class="footer-brand"><img src="assets/logo.png" alt="Varanasi Connect"><span>Varanasi Connect</span></div><div class="footer-links"><a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a><a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a id="footerEmail" href="mailto:community.varanasi@gmail.com">community.varanasi@gmail.com</a></div><div class="mail">© 2026 Varanasi Connect</div></div></footer>
 
   <div class="modal" id="modal" aria-hidden="true"><div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-top"><div><div class="modal-kicker" id="modalKicker"></div><h2 class="modal-title" id="modalTitle"></h2></div><button class="modal-close" id="modalClose" aria-label="Close">×</button></div><div class="modal-body" id="modalBody"></div></div></div>
+  <div class="account-modal" id="accountModal" aria-hidden="true"><section class="account-panel" role="dialog" aria-modal="true" aria-labelledby="accountPanelTitle"><div class="account-panel-head"><h3 id="accountPanelTitle">Your account</h3><button class="account-panel-close" id="accountPanelClose" type="button" aria-label="Close">×</button></div><div class="account-panel-body" id="accountPanelBody"></div></section></div>
 
   <script src="site-config.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -368,28 +422,111 @@
       themeToggle?.addEventListener('click',()=>{const dark=!document.body.classList.contains('dark');applyTheme(dark);try{localStorage.setItem('vc-theme',dark?'dark':'light');}catch(e){}});
 
 
-      // Supabase Discord authentication
+      // Supabase Discord authentication and account menu
       const authButton=$('#authButton');
       const authLabel=$('#authLabel');
+      const profileMenu=$('#profileMenu');
+      const profileWrap=$('#profileWrap');
+      const profileAvatar=$('#profileAvatar');
+      const profileFallback=$('#profileFallback');
+      const authDiscordIcon=$('#authDiscordIcon');
+      const accountModal=$('#accountModal');
+      const accountPanelTitle=$('#accountPanelTitle');
+      const accountPanelBody=$('#accountPanelBody');
       const supabaseConfig=cfg.supabaseUrl&&cfg.supabasePublishableKey&&window.supabase;
       let supabaseClient=null;
       let activeAuthUser=null;
+      let notificationPreference=false;
+
+      const discordAvatarUrl=(user)=>{
+        const meta=user?.user_metadata||{};
+        const direct=meta.avatar_url||meta.picture||meta.avatarUrl;
+        if(direct)return direct;
+        const discordId=meta.provider_id||meta.sub||user?.identities?.find(x=>x.provider==='discord')?.identity_data?.sub;
+        const avatar=meta.avatar||user?.identities?.find(x=>x.provider==='discord')?.identity_data?.avatar;
+        if(discordId&&avatar){
+          const ext=String(avatar).startsWith('a_')?'gif':'png';
+          return 'https://cdn.discordapp.com/avatars/'+encodeURIComponent(discordId)+'/'+encodeURIComponent(avatar)+'.'+ext+'?size=96';
+        }
+        return '';
+      };
+      const setProfileMenu=(open)=>{
+        if(!profileMenu||!authButton)return;
+        profileMenu.hidden=!open;
+        authButton.setAttribute('aria-expanded',String(open));
+      };
       const renderAuth=(user)=>{
         activeAuthUser=user||null;
         if(!authButton||!authLabel)return;
         if(user){
           const meta=user.user_metadata||{};
-          const name=meta.global_name||meta.full_name||meta.name||meta.preferred_username||user.email||'Account';
-          authLabel.textContent=name;
+          const name=meta.global_name||meta.full_name||meta.name||meta.preferred_username||user.email||'Your account';
+          const avatarUrl=discordAvatarUrl(user);
+          notificationPreference=meta.notifications_enabled===true;
+          authLabel.textContent='';
           authButton.classList.add('is-signed-in');
-          authButton.title='Signed in as '+name+'. Click to sign out.';
-          authButton.setAttribute('aria-label','Sign out of '+name);
+          authButton.title='Open account menu';
+          authButton.setAttribute('aria-label','Open account menu for '+name);
+          if(authDiscordIcon)authDiscordIcon.hidden=true;
+          if(profileAvatar){
+            if(avatarUrl){profileAvatar.src=avatarUrl;profileAvatar.hidden=false;profileAvatar.onerror=()=>{profileAvatar.hidden=true;if(profileFallback)profileFallback.hidden=false;};}
+            else profileAvatar.hidden=true;
+          }
+          if(profileFallback)profileFallback.hidden=!!avatarUrl;
+          const menuName=$('#profileMenuName'),menuEmail=$('#profileMenuEmail');
+          if(menuName)menuName.textContent=name;
+          if(menuEmail)menuEmail.textContent=user.email||'Signed in with Discord';
         }else{
+          notificationPreference=false;
           authLabel.textContent='Log in';
           authButton.classList.remove('is-signed-in');
           authButton.title='Log in with Discord';
           authButton.setAttribute('aria-label','Log in with Discord');
+          if(authDiscordIcon)authDiscordIcon.hidden=false;
+          if(profileAvatar){profileAvatar.hidden=true;profileAvatar.removeAttribute('src');}
+          if(profileFallback)profileFallback.hidden=true;
+          setProfileMenu(false);
         }
+      };
+      const openAccountPanel=(title,html)=>{
+        if(!accountModal)return;
+        accountPanelTitle.textContent=title;
+        accountPanelBody.innerHTML=html;
+        accountModal.classList.add('open');
+        accountModal.setAttribute('aria-hidden','false');
+        setProfileMenu(false);
+      };
+      const closeAccountPanel=()=>{
+        accountModal?.classList.remove('open');
+        accountModal?.setAttribute('aria-hidden','true');
+      };
+      const showRegisteredEvents=()=>{
+        openAccountPanel('Registered events', '<div class="account-empty"><strong>No registered events yet</strong>Your Varanasi Connect event registrations will appear here when event registration is connected to your account.</div>');
+      };
+      const showAccountSettings=()=>{
+        openAccountPanel('Settings', '<div class="notification-setting"><div><strong>Community notifications</strong><small>Receive updates about upcoming events and community announcements.</small></div><label class="switch" aria-label="Community notifications"><input id="notificationToggle" type="checkbox" '+(notificationPreference?'checked':'')+'><span class="switch-track"></span></label></div><p class="settings-save-note" id="settingsSaveNote">Your preference is saved to your account.</p>');
+        const toggle=$('#notificationToggle');
+        toggle?.addEventListener('change',async()=>{
+          toggle.disabled=true;
+          const note=$('#settingsSaveNote');
+          if(note)note.textContent='Saving your preference…';
+          try{
+            const {error}=await supabaseClient.auth.updateUser({data:{notifications_enabled:toggle.checked}});
+            if(error)throw error;
+            notificationPreference=toggle.checked;
+            if(note)note.textContent=toggle.checked?'Notifications are turned on for your account.':'Notifications are turned off for your account.';
+          }catch(error){
+            toggle.checked=notificationPreference;
+            if(note)note.textContent='Could not save this setting. Please try again.';
+            console.error('Could not save notification preference:',error);
+          }finally{toggle.disabled=false;}
+        });
+      };
+      const signOut=async()=>{
+        const {error}=await supabaseClient.auth.signOut();
+        if(error)throw error;
+        setProfileMenu(false);
+        renderAuth(null);
       };
       if(supabaseConfig){
         supabaseClient=window.supabase.createClient(cfg.supabaseUrl,cfg.supabasePublishableKey,{
@@ -401,27 +538,37 @@
         });
         supabaseClient.auth.onAuthStateChange((_event,session)=>renderAuth(session?.user||null));
         authButton?.addEventListener('click',async()=>{
+          if(activeAuthUser){setProfileMenu(profileMenu?.hidden!==false);return;}
           authButton.disabled=true;
           try{
-            if(activeAuthUser){
-              const {error}=await supabaseClient.auth.signOut();
-              if(error)throw error;
-              renderAuth(null);
-            }else{
-              const redirectTo=window.location.origin+window.location.pathname+window.location.search;
-              const {error}=await supabaseClient.auth.signInWithOAuth({
-                provider:'discord',
-                options:{redirectTo}
-              });
-              if(error)throw error;
-            }
+            const redirectTo=window.location.origin+window.location.pathname+window.location.search;
+            const {error}=await supabaseClient.auth.signInWithOAuth({provider:'discord',options:{redirectTo}});
+            if(error)throw error;
           }catch(error){
             console.error('Discord authentication error:',error);
             window.alert('Discord sign-in could not be completed. Please try again. '+(error?.message||''));
-          }finally{
-            authButton.disabled=false;
+          }finally{authButton.disabled=false;}
+        });
+        profileMenu?.addEventListener('click',async(event)=>{
+          const action=event.target.closest('[data-account-action]')?.dataset.accountAction;
+          if(!action)return;
+          if(action==='events')showRegisteredEvents();
+          if(action==='settings')showAccountSettings();
+          if(action==='logout'){
+            const logoutButton=event.target.closest('[data-account-action="logout"]');
+            if(logoutButton)logoutButton.disabled=true;
+            try{await signOut();}
+            catch(error){console.error('Sign out failed:',error);window.alert('Could not log out. Please try again.');if(logoutButton)logoutButton.disabled=false;}
           }
         });
+        document.addEventListener('click',(event)=>{
+          if(profileWrap&&!profileWrap.contains(event.target))setProfileMenu(false);
+        });
+        document.addEventListener('keydown',(event)=>{
+          if(event.key==='Escape'){setProfileMenu(false);closeAccountPanel();}
+        });
+        $('#accountPanelClose')?.addEventListener('click',closeAccountPanel);
+        accountModal?.addEventListener('click',(event)=>{if(event.target===accountModal)closeAccountPanel();});
       }else{
         renderAuth(null);
         if(authButton)authButton.disabled=true;
