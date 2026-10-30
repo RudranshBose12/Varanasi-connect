@@ -194,16 +194,17 @@
     @media(max-width:600px){.nav-cta.discord-cta{padding:8px 12px}.nav-cta.discord-cta .discord-logo{width:18px;height:18px}.join-actions .discord-cta{padding:12px 16px}}
 
     .profile-wrap{position:relative;display:flex;align-items:center;flex:0 0 auto}
-    .auth-cta{height:40px;min-width:40px;padding:0 12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:0 0 auto;border:1px solid rgba(88,101,242,.22);border-radius:999px;background:rgba(88,101,242,.09);color:#5865f2;font:700 12px 'DM Sans',sans-serif;cursor:pointer;transition:background .2s ease,transform .2s ease,box-shadow .2s ease;white-space:nowrap}
-    .auth-cta:hover{background:rgba(88,101,242,.15);box-shadow:0 6px 16px rgba(88,101,242,.12);transform:translateY(-1px)}
-    .auth-cta .discord-logo{width:19px;height:19px;color:#5865f2}
-    .auth-cta.is-signed-in{width:40px;height:40px;min-width:40px;padding:2px;background:#fff;border:2px solid #5865f2;border-radius:50%;overflow:hidden}
+    .auth-cta{height:40px;min-width:76px;padding:0 18px;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:0 0 auto;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);font:700 13px 'DM Sans',sans-serif;cursor:pointer;transition:background .2s ease,transform .2s ease,box-shadow .2s ease;white-space:nowrap}
+    .auth-cta:hover{background:var(--soft);box-shadow:0 6px 16px rgba(25,20,32,.09);transform:translateY(-1px)}
+    .auth-cta.is-signed-in{width:40px;height:40px;min-width:40px;padding:2px;background:var(--paper);border:2px solid #5865f2;border-radius:50%;overflow:hidden}
     .profile-avatar{width:100%;height:100%;object-fit:cover;border-radius:50%}
     .profile-fallback{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-    .auth-cta.is-signed-in .discord-logo,#authButton.is-signed-in #authLabel{display:none}
-    #authLabel{overflow:hidden;text-overflow:ellipsis;max-width:100px}
-    body.dark .auth-cta:not(.is-signed-in){background:rgba(88,101,242,.16);border-color:rgba(139,148,255,.35);color:#aeb5ff}
-    body.dark .auth-cta:not(.is-signed-in) .discord-logo{color:#aeb5ff}
+    #authButton[hidden],#profileAvatar[hidden],#profileFallback[hidden]{display:none!important}
+    #authButton.is-signed-in #authLabel{display:none}
+    body.dark .auth-cta{background:#24212a;border-color:rgba(255,255,255,.16);color:#f4f0f5}
+    body.dark .auth-cta:hover{background:#302c36}
+    body.dark .auth-cta.is-signed-in{background:#24212a;border-color:#8b94ff}
+    @media(max-width:600px){.auth-cta{height:34px;min-width:66px;padding:0 14px;font-size:12px}.auth-cta.is-signed-in{height:34px;width:34px;min-width:34px;padding:2px}.profile-menu{right:-42px;width:230px}}
     .profile-menu{position:absolute;top:calc(100% + 12px);right:0;width:245px;padding:9px;background:var(--white);color:var(--ink);border:1px solid var(--line);border-radius:20px;box-shadow:0 18px 55px rgba(25,20,32,.2);z-index:50}
     .profile-menu[hidden]{display:none}
     .profile-menu-heading{padding:12px 12px 14px;display:grid;gap:3px;border-bottom:1px solid var(--line);margin-bottom:6px;min-width:0}
@@ -251,11 +252,10 @@
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode"><span class="theme-icon theme-sun" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></span><span class="theme-icon theme-moon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z"></path></svg></span></button>
 
     <div class="profile-wrap" id="profileWrap">
-      <button class="auth-cta" id="authButton" type="button" aria-label="Log in with Discord" title="Log in with Discord" aria-haspopup="menu" aria-expanded="false">
-        <svg class="discord-logo" id="authDiscordIcon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19.54 5.32A16.36 16.36 0 0 0 15.52 4l-.49 1.02a15.2 15.2 0 0 0-6.06 0L8.48 4a16.36 16.36 0 0 0-4.02 1.32C1.91 9.34 1.22 13.25 1.56 17.1a16.5 16.5 0 0 0 4.96 2.52l1.2-1.64c-.66-.25-1.28-.56-1.87-.92l.46-.35c3.61 1.67 8.02 1.67 11.59 0l.47.35c-.59.36-1.22.67-1.88.92l1.2 1.64a16.5 16.5 0 0 0 4.96-2.52c.4-4.46-.68-8.33-3.11-11.78ZM8.36 15.09c-1.08 0-1.97-.99-1.97-2.2s.87-2.2 1.97-2.2 1.98.99 1.97 2.2c0 1.21-.87 2.2-1.97 2.2Zm7.28 0c-1.08 0-1.97-.99-1.97-2.2s.87-2.2 1.97-2.2 1.98.99 1.97 2.2c0 1.21-.87 2.2-1.97 2.2Z"/></svg>
-        <img class="profile-avatar" id="profileAvatar" alt="" hidden>
-        <svg class="profile-fallback" id="profileFallback" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M4.5 20c.7-4 3.2-6 7.5-6s6.8 2 7.5 6"></path></svg>
+      <button class="auth-cta" id="authButton" type="button" aria-label="Log in" title="Log in with Discord" aria-haspopup="menu" aria-expanded="false">
         <span id="authLabel">Log in</span>
+        <img class="profile-avatar" id="profileAvatar" alt="" hidden>
+        <svg class="profile-fallback" id="profileFallback" viewBox="0 0 24 24" aria-hidden="true" hidden><circle cx="12" cy="8" r="3.5"></circle><path d="M4.5 20c.7-4 3.2-6 7.5-6s6.8 2 7.5 6"></path></svg>
       </button>
       <div class="profile-menu" id="profileMenu" role="menu" aria-label="Account menu" hidden>
         <div class="profile-menu-heading"><strong id="profileMenuName">Your account</strong><span id="profileMenuEmail"></span></div>
@@ -265,7 +265,7 @@
         <button type="button" role="menuitem" class="profile-logout" data-account-action="logout">Log out</button>
       </div>
     </div>
-    <a class="nav-cta discord-cta" id="navDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener"><svg class="discord-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19.54 5.32A16.36 16.36 0 0 0 15.52 4l-.49 1.02a15.2 15.2 0 0 0-6.06 0L8.48 4a16.36 16.36 0 0 0-4.02 1.32C1.91 9.34 1.22 13.25 1.56 17.1a16.5 16.5 0 0 0 4.96 2.52l1.2-1.64c-.66-.25-1.28-.56-1.87-.92l.46-.35c3.61 1.67 8.02 1.67 11.59 0l.47.35c-.59.36-1.22.67-1.88.92l1.2 1.64a16.5 16.5 0 0 0 4.96-2.52c.4-4.46-.68-8.33-3.11-11.78ZM8.36 15.09c-1.08 0-1.97-.99-1.97-2.2s.87-2.2 1.97-2.2 1.98.99 1.97 2.2c0 1.21-.87 2.2-1.97 2.2Zm7.28 0c-1.08 0-1.97-.99-1.97-2.2s.87-2.2 1.97-2.2 1.98.99 1.97 2.2c0 1.21-.87 2.2-1.97 2.2Z"/></svg><span>Join Discord</span></a>
+    
   </div></nav>
 
   <main id="top">
@@ -467,12 +467,20 @@
           authButton.classList.add('is-signed-in');
           authButton.title='Open account menu';
           authButton.setAttribute('aria-label','Open account menu for '+name);
-          if(authDiscordIcon)authDiscordIcon.hidden=true;
           if(profileAvatar){
-            if(avatarUrl){profileAvatar.src=avatarUrl;profileAvatar.hidden=false;profileAvatar.onerror=()=>{profileAvatar.hidden=true;if(profileFallback)profileFallback.hidden=false;};}
-            else profileAvatar.hidden=true;
+            profileAvatar.onerror=()=>{
+              profileAvatar.hidden=true;
+              if(profileFallback)profileFallback.hidden=false;
+            };
+            if(avatarUrl){
+              profileAvatar.src=avatarUrl;
+              profileAvatar.hidden=false;
+              if(profileFallback)profileFallback.hidden=true;
+            }else{
+              profileAvatar.hidden=true;
+              if(profileFallback)profileFallback.hidden=false;
+            }
           }
-          if(profileFallback)profileFallback.hidden=!!avatarUrl;
           const menuName=$('#profileMenuName'),menuEmail=$('#profileMenuEmail');
           if(menuName)menuName.textContent=name;
           if(menuEmail)menuEmail.textContent=user.email||'Signed in with Discord';
@@ -481,8 +489,7 @@
           authLabel.textContent='Log in';
           authButton.classList.remove('is-signed-in');
           authButton.title='Log in with Discord';
-          authButton.setAttribute('aria-label','Log in with Discord');
-          if(authDiscordIcon)authDiscordIcon.hidden=false;
+          authButton.setAttribute('aria-label','Log in');
           if(profileAvatar){profileAvatar.hidden=true;profileAvatar.removeAttribute('src');}
           if(profileFallback)profileFallback.hidden=true;
           setProfileMenu(false);
@@ -540,14 +547,17 @@
         authButton?.addEventListener('click',async()=>{
           if(activeAuthUser){setProfileMenu(profileMenu?.hidden!==false);return;}
           authButton.disabled=true;
+          authLabel.textContent='Opening Discord…';
           try{
             const redirectTo=window.location.origin+window.location.pathname+window.location.search;
             const {error}=await supabaseClient.auth.signInWithOAuth({provider:'discord',options:{redirectTo}});
             if(error)throw error;
           }catch(error){
             console.error('Discord authentication error:',error);
+            authLabel.textContent='Log in';
+            authButton.disabled=false;
             window.alert('Discord sign-in could not be completed. Please try again. '+(error?.message||''));
-          }finally{authButton.disabled=false;}
+          }
         });
         profileMenu?.addEventListener('click',async(event)=>{
           const action=event.target.closest('[data-account-action]')?.dataset.accountAction;
