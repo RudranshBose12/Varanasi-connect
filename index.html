@@ -193,6 +193,15 @@
     .join-actions .discord-cta{padding:14px 20px;font-weight:800}
     @media(max-width:600px){.nav-cta.discord-cta{padding:8px 12px}.nav-cta.discord-cta .discord-logo{width:18px;height:18px}.join-actions .discord-cta{padding:12px 16px}}
 
+    .rules-section{border-top:1px solid var(--line);background:var(--soft)}
+    .rules-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .rule-card{display:flex;align-items:flex-start;gap:16px;padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--paper);box-shadow:0 8px 28px rgba(25,20,32,.035)}
+    .rule-number{display:flex;align-items:center;justify-content:center;flex:0 0 34px;width:34px;height:34px;border-radius:50%;background:var(--soft);color:var(--muted);font:700 11px 'DM Sans',sans-serif}
+    .rule-card h3{margin:2px 0 9px;font:700 17px 'Space Grotesk',sans-serif;letter-spacing:-.02em}
+    .rule-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.7}
+    .rule-card strong{color:var(--ink)}
+    .rules-note{margin:24px 0 0;padding:18px 22px;border-left:3px solid #a78bfa;background:var(--paper);border-radius:0 14px 14px 0;color:var(--muted);font-size:14px;line-height:1.6}
+    @media(max-width:760px){.rules-grid{grid-template-columns:1fr}.rule-card{padding:20px;gap:13px}.rule-card h3{font-size:16px}.rule-card p{font-size:13px}}
     .profile-wrap{position:relative;display:flex;align-items:center;flex:0 0 auto}
     .auth-cta{height:40px;min-width:76px;padding:0 18px;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:0 0 auto;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);font:700 13px 'DM Sans',sans-serif;cursor:pointer;transition:background .2s ease,transform .2s ease,box-shadow .2s ease;white-space:nowrap}
     .auth-cta:hover{background:var(--soft);box-shadow:0 6px 16px rgba(25,20,32,.09);transform:translateY(-1px)}
@@ -248,7 +257,7 @@
 <body>
   <nav class="nav"><div class="nav-inner">
     <a class="brand" href="#top"><img id="siteLogo" src="assets/logo.png" data-light-logo="assets/logo.png" data-dark-logo="assets/logos/7.png" alt="Varanasi Connect logo"><span>Varanasi Connect</span></a>
-    <div class="navlinks"><a href="#about">About</a><a href="#what-we-do">What we do</a><a href="#events">Events</a><a href="#gallery">Varanasi</a><a id="navInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a></div>
+    <div class="navlinks"><a href="#about">About</a><a href="#what-we-do">What we do</a><a href="#events">Events</a><a href="#gallery">Varanasi</a><a id="navRules" href="#rules">Rules</a></div>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode"><span class="theme-icon theme-sun" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></span><span class="theme-icon theme-moon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z"></path></svg></span></button>
 
     <div class="profile-wrap" id="profileWrap">
@@ -301,7 +310,31 @@
       </div>
     </section>
     <section class="join"><div class="container"><div class="join-box"><div><div class="kicker" style="color:rgba(255,255,255,.7)">05 — Join us</div><h2>There is a place<br>for you here.</h2><p>Join the Discord community, meet people from Varanasi and see what we're building next.</p></div><div class="join-actions"><a class="btn btn-white discord-cta" id="joinDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join Discord</a><a class="btn btn-outline" id="joinInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a class="btn btn-outline" id="joinEmail" href="mailto:community.varanasi@gmail.com">Email us</a></div></div></div></section>
-  </main>
+  
+    <section id="rules" class="rules-section">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">06 — Community guidelines</div><h2>Our server<br><span class="gradient-text">rules.</span></h2></div>
+          <p class="section-intro">A few ground rules to keep Varanasi Connect welcoming, safe and enjoyable for everyone. Being part of the community means agreeing to follow them.</p>
+        </div>
+        <div class="rules-grid">
+          <article class="rule-card"><span class="rule-number">01</span><div><h3>📜 Be respectful</h3><p>Treat everyone with dignity. Personal attacks, insults, trolling and harassment of any kind will not be tolerated. Three warnings result in a timeout; five warnings result in a kick. Continued violations after that will result in a permanent ban.</p></div></article>
+          <article class="rule-card"><span class="rule-number">02</span><div><h3>No spam or self-promotion</h3><p>Avoid repeating messages, posting large walls of text or emojis, or mass-pinging members. Keep promotional links, streams and other server invites strictly inside designated channels.</p></div></article>
+          <article class="rule-card"><span class="rule-number">03</span><div><h3>Keep it SFW</h3><p>Do not share adult content, gore or highly explicit material. This applies to text channels, media uploads, direct messages to members, profile pictures and nicknames.</p></div></article>
+          <article class="rule-card"><span class="rule-number">04</span><div><h3>Use the right channels</h3><p>Keep your conversations on-topic. Check the channel description if you are unsure where a topic belongs.</p></div></article>
+          <article class="rule-card"><span class="rule-number">05</span><div><h3>No malicious content or cheating</h3><p>Do not share hacks, exploits, cheats, pirated material or harmful links.</p></div></article>
+          <article class="rule-card"><span class="rule-number">06</span><div><h3>No hate speech or threats</h3><p>Discrimination, hate speech, death threats and profanity intended to hurt others are not acceptable. Three warnings result in a timeout; five warnings result in a kick. Rejoining and continuing this behaviour will result in a permanent ban.</p></div></article>
+          <article class="rule-card"><span class="rule-number">07</span><div><h3>No promotion of harmful products</h3><p>Promoting harmful products such as tobacco or restricted medicines is not allowed. Three warnings result in a one-week timeout; five warnings result in a kick. Further violations will result in a permanent ban.</p></div></article>
+          <article class="rule-card"><span class="rule-number">08</span><div><h3>Follow Discord's Terms of Service</h3><p>All members must follow Discord's Terms of Service and Community Guidelines.</p></div></article>
+          <article class="rule-card"><span class="rule-number">09</span><div><h3>Listen to the moderation team</h3><p>If a moderator asks you to change your behaviour, please cooperate. If you disagree with an action, take it up with them privately rather than arguing in public channels.</p></div></article>
+          <article class="rule-card"><span class="rule-number">10</span><div><h3>Be truthful about yourself</h3><p>Faking your age or other aspects of yourself in order to cause harm to others, especially minors, will lead to serious consequences, including an immediate ban and contacting the appropriate authorities.</p></div></article>
+          <article class="rule-card"><span class="rule-number">11</span><div><h3>Contact moderators through tickets</h3><p>Do not ping a moderator for support. Instead, use <strong>Text 📝┊tickets</strong> to contact the moderation team.</p></div></article>
+          <article class="rule-card"><span class="rule-number">12</span><div><h3>Respect members' DMs and boundaries</h3><p>Mass-DMing members without prior interaction, especially women and underage people, can lead to a permanent ban. Please report inappropriate DMs from members of our server in <strong>Text 📝┊tickets</strong>.</p></div></article>
+        </div>
+        <p class="rules-note">If you see something that breaks these rules, report it to the moderation team through the tickets channel.</p>
+      </div>
+    </section>
+</main>
 
   <footer><div class="container footer-inner"><div class="footer-brand"><img src="assets/logo.png" alt="Varanasi Connect"><span>Varanasi Connect</span></div><div class="footer-links"><a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a><a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a id="footerEmail" href="mailto:community.varanasi@gmail.com">community.varanasi@gmail.com</a></div><div class="mail">© 2026 Varanasi Connect</div></div></footer>
 
