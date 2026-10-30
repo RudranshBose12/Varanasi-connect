@@ -192,6 +192,17 @@
     .nav-cta.discord-cta{padding:10px 18px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:.01em}
     .join-actions .discord-cta{padding:14px 20px;font-weight:800}
     @media(max-width:600px){.nav-cta.discord-cta{padding:8px 12px}.nav-cta.discord-cta .discord-logo{width:18px;height:18px}.join-actions .discord-cta{padding:12px 16px}}
+
+    .auth-cta{height:40px;min-width:40px;padding:0 12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:0 0 auto;border:1px solid rgba(88,101,242,.22);border-radius:999px;background:rgba(88,101,242,.09);color:#5865f2;font:700 12px 'DM Sans',sans-serif;cursor:pointer;transition:background .2s ease,transform .2s ease,box-shadow .2s ease;white-space:nowrap}
+    .auth-cta:hover{background:rgba(88,101,242,.15);box-shadow:0 6px 16px rgba(88,101,242,.12);transform:translateY(-1px)}
+    .auth-cta .discord-logo{width:19px;height:19px;color:#5865f2}
+    .auth-cta.is-signed-in{max-width:150px;background:#5865f2;color:#fff;border-color:#5865f2}
+    .auth-cta.is-signed-in .discord-logo{color:#fff}
+    #authLabel{overflow:hidden;text-overflow:ellipsis;max-width:100px}
+    body.dark .auth-cta:not(.is-signed-in){background:rgba(88,101,242,.16);border-color:rgba(139,148,255,.35);color:#aeb5ff}
+    body.dark .auth-cta:not(.is-signed-in) .discord-logo{color:#aeb5ff}
+    @media(max-width:600px){.auth-cta{height:34px;min-width:34px;padding:0 8px;gap:5px;font-size:10px}.auth-cta .discord-logo{width:17px;height:17px}#authLabel{max-width:65px}.auth-cta.is-signed-in{max-width:95px}}
+
 </style>
 </head>
 <body>
@@ -199,6 +210,8 @@
     <a class="brand" href="#top"><img id="siteLogo" src="assets/logo.png" data-light-logo="assets/logo.png" data-dark-logo="assets/logos/7.png" alt="Varanasi Connect logo"><span>Varanasi Connect</span></a>
     <div class="navlinks"><a href="#about">About</a><a href="#what-we-do">What we do</a><a href="#events">Events</a><a href="#gallery">Varanasi</a><a id="navInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a></div>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode"><span class="theme-icon theme-sun" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></span><span class="theme-icon theme-moon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z"></path></svg></span></button>
+
+    <button class="auth-cta" id="authButton" type="button" aria-label="Log in with Discord" title="Log in with Discord"><svg class="discord-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19.54 5.32A16.36 16.36 0 0 0 15.52 4l-.49 1.02a15.2 15.2 0 0 0-6.06 0L8.48 4a16.36 16.36 0 0 0-4.02 1.32C1.91 9.34 1.22 13.25 1.56 17.1a16.5 16.5 0 0 0 4.96 2.52l1.2-1.64c-.66-.25-1.28-.56-1.87-.92l.46-.35c3.61 1.67 8.02 1.67 11.59 0l.47.35c-.59.36-1.22.67-1.88.92l1.2 1.64a16.5 16.5 0 0 0 4.96-2.52c.4-4.46-.68-8.33-3.11-11.78ZM8.36 15.09c-1.08 0-1.97-.99-1.97-2.2s.87-2.2 1.97-2.2 1.98.99 1.97 2.2c0 1.21-.87 2.2-1.97 2.2Zm7.28 0c-1.08 0-1.97-.99-1.97-2.2s.87-2.2 1.97-2.2 1.98.99 1.97 2.2c0 1.21-.87 2.2-1.97 2.2Z"/></svg><span id="authLabel">Log in</span></button>
     <a class="nav-cta discord-cta" id="navDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener"><svg class="discord-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19.54 5.32A16.36 16.36 0 0 0 15.52 4l-.49 1.02a15.2 15.2 0 0 0-6.06 0L8.48 4a16.36 16.36 0 0 0-4.02 1.32C1.91 9.34 1.22 13.25 1.56 17.1a16.5 16.5 0 0 0 4.96 2.52l1.2-1.64c-.66-.25-1.28-.56-1.87-.92l.46-.35c3.61 1.67 8.02 1.67 11.59 0l.47.35c-.59.36-1.22.67-1.88.92l1.2 1.64a16.5 16.5 0 0 0 4.96-2.52c.4-4.46-.68-8.33-3.11-11.78ZM8.36 15.09c-1.08 0-1.97-.99-1.97-2.2s.87-2.2 1.97-2.2 1.98.99 1.97 2.2c0 1.21-.87 2.2-1.97 2.2Zm7.28 0c-1.08 0-1.97-.99-1.97-2.2s.87-2.2 1.97-2.2 1.98.99 1.97 2.2c0 1.21-.87 2.2-1.97 2.2Z"/></svg><span>Join Discord</span></a>
   </div></nav>
 
@@ -242,6 +255,7 @@
   <div class="modal" id="modal" aria-hidden="true"><div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-top"><div><div class="modal-kicker" id="modalKicker"></div><h2 class="modal-title" id="modalTitle"></h2></div><button class="modal-close" id="modalClose" aria-label="Close">×</button></div><div class="modal-body" id="modalBody"></div></div></div>
 
   <script src="site-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
     (function(){
       const cfg=window.VC_CONFIG||{};
@@ -352,6 +366,67 @@
       try{savedTheme=localStorage.getItem('vc-theme')||'';}catch(e){}
       applyTheme(savedTheme==='dark');
       themeToggle?.addEventListener('click',()=>{const dark=!document.body.classList.contains('dark');applyTheme(dark);try{localStorage.setItem('vc-theme',dark?'dark':'light');}catch(e){}});
+
+
+      // Supabase Discord authentication
+      const authButton=$('#authButton');
+      const authLabel=$('#authLabel');
+      const supabaseConfig=cfg.supabaseUrl&&cfg.supabasePublishableKey&&window.supabase;
+      let supabaseClient=null;
+      let activeAuthUser=null;
+      const renderAuth=(user)=>{
+        activeAuthUser=user||null;
+        if(!authButton||!authLabel)return;
+        if(user){
+          const meta=user.user_metadata||{};
+          const name=meta.global_name||meta.full_name||meta.name||meta.preferred_username||user.email||'Account';
+          authLabel.textContent=name;
+          authButton.classList.add('is-signed-in');
+          authButton.title='Signed in as '+name+'. Click to sign out.';
+          authButton.setAttribute('aria-label','Sign out of '+name);
+        }else{
+          authLabel.textContent='Log in';
+          authButton.classList.remove('is-signed-in');
+          authButton.title='Log in with Discord';
+          authButton.setAttribute('aria-label','Log in with Discord');
+        }
+      };
+      if(supabaseConfig){
+        supabaseClient=window.supabase.createClient(cfg.supabaseUrl,cfg.supabasePublishableKey,{
+          auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}
+        });
+        supabaseClient.auth.getSession().then(({data,error})=>{
+          if(error)console.error('Supabase session check failed:',error);
+          renderAuth(data?.session?.user||null);
+        });
+        supabaseClient.auth.onAuthStateChange((_event,session)=>renderAuth(session?.user||null));
+        authButton?.addEventListener('click',async()=>{
+          authButton.disabled=true;
+          try{
+            if(activeAuthUser){
+              const {error}=await supabaseClient.auth.signOut();
+              if(error)throw error;
+              renderAuth(null);
+            }else{
+              const redirectTo=window.location.origin+window.location.pathname+window.location.search;
+              const {error}=await supabaseClient.auth.signInWithOAuth({
+                provider:'discord',
+                options:{redirectTo}
+              });
+              if(error)throw error;
+            }
+          }catch(error){
+            console.error('Discord authentication error:',error);
+            window.alert('Discord sign-in could not be completed. Please try again. '+(error?.message||''));
+          }finally{
+            authButton.disabled=false;
+          }
+        });
+      }else{
+        renderAuth(null);
+        if(authButton)authButton.disabled=true;
+        console.error('Supabase configuration or client library is missing.');
+      }
 
       document.addEventListener('click',e=>{
         const d=e.target.closest('[data-detail]'); if(d){e.preventDefault();showDetail(d.dataset.detail);return;}
