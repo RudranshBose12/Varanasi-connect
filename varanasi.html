@@ -253,19 +253,13 @@
     @media(max-width:600px){.auth-cta{height:34px;min-width:66px;padding:0 14px;font-size:12px}.auth-cta.is-signed-in{height:34px;width:34px;min-width:34px;padding:2px}.profile-menu{right:-42px;width:230px}.account-panel-head{padding:19px 20px}.account-panel-body{padding:20px}}
 
 
-/* Multi-page navigation: each route displays only its own main section. */
-body[data-page="home"] main > section:not(.hero),
-body[data-page="about"] main > section:not(#about),
-body[data-page="what"] main > section:not(#what-we-do),
-body[data-page="events"] main > section:not(#events),
-body[data-page="varanasi"] main > section:not(#gallery),
-body[data-page="rules"] main > section:not(#rules){display:none!important}
-body[data-page="home"] main > .hero{display:grid!important}
-body[data-page="about"] main > #about,
-body[data-page="what"] main > #what-we-do,
-body[data-page="events"] main > #events,
-body[data-page="varanasi"] main > #gallery,
-body[data-page="rules"] main > #rules{display:block!important}
+/* Multi-page navigation: keep shared overlays and the footer CTA available on every route. */
+body[data-page="home"] main > #events,body[data-page="home"] main > #about,body[data-page="home"] main > #what-we-do,body[data-page="home"] main > #gallery,body[data-page="home"] main > #rules{display:none!important}
+body[data-page="about"] main > .hero,body[data-page="about"] main > #events,body[data-page="about"] main > #what-we-do,body[data-page="about"] main > #gallery,body[data-page="about"] main > #rules{display:none!important}
+body[data-page="what"] main > .hero,body[data-page="what"] main > #events,body[data-page="what"] main > #about,body[data-page="what"] main > #gallery,body[data-page="what"] main > #rules{display:none!important}
+body[data-page="events"] main > .hero,body[data-page="events"] main > #about,body[data-page="events"] main > #what-we-do,body[data-page="events"] main > #gallery,body[data-page="events"] main > #rules{display:none!important}
+body[data-page="varanasi"] main > .hero,body[data-page="varanasi"] main > #events,body[data-page="varanasi"] main > #about,body[data-page="varanasi"] main > #what-we-do,body[data-page="varanasi"] main > #rules{display:none!important}
+body[data-page="rules"] main > .hero,body[data-page="rules"] main > #events,body[data-page="rules"] main > #about,body[data-page="rules"] main > #what-we-do,body[data-page="rules"] main > #gallery{display:none!important}
 </style>
 </head>
 <body data-page="varanasi">
