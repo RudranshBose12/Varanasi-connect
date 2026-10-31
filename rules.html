@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fbf8f1" />
+  <meta name="description" content="Varanasi Connect — Varanasi Connect community rules." />
+  <title>Varanasi Connect — Varanasi Connect community rules</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#fbf8f1;--ink:#414143;--muted:#777477;--line:rgba(65,65,67,.12);--pink:#ff78a5;--violet:#7437ff;--deep:#252329;--soft:#f3eee5;--white:#fffdf9;--grad:linear-gradient(110deg,#ff7da7 0%,#e86ab0 35%,#7437ff 100%);--shadow:0 24px 70px rgba(57,44,75,.11);--radius:28px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.6;overflow-x:hidden}body.modal-open{overflow:hidden}a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;display:block}.container{width:min(1160px,calc(100% - 40px));margin:auto}
+    .nav{position:fixed;top:16px;left:0;right:0;z-index:20}.nav-inner{width:min(1160px,calc(100% - 28px));margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px 12px 10px 18px;border:1px solid rgba(65,65,67,.1);background:rgba(251,248,241,.78);backdrop-filter:blur(18px);border-radius:999px;box-shadow:0 12px 35px rgba(45,38,52,.07)}.brand{display:flex;align-items:center;gap:11px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px}.brand img{width:38px;height:38px;object-fit:contain;border-radius:50%}.navlinks{display:flex;gap:26px;font-size:14px;font-weight:600;color:#5e5b60}.navlinks a:hover{color:#252329}.nav-cta{padding:10px 17px;border-radius:999px;background:var(--deep);color:white;font-weight:700;font-size:13px}
+    .hero{min-height:100vh;display:grid;place-items:center;padding:150px 0 80px;position:relative;isolation:isolate}.hero::before{content:"";position:absolute;width:780px;height:780px;left:-350px;top:-270px;border:1px solid rgba(92,86,97,.1);border-radius:48%;transform:rotate(25deg);box-shadow:70px 30px 0 rgba(92,86,97,.025),140px 60px 0 rgba(92,86,97,.025),210px 90px 0 rgba(92,86,97,.025),280px 120px 0 rgba(92,86,97,.025);z-index:-1}.hero::after{content:"";position:absolute;width:700px;height:700px;right:-300px;bottom:-360px;border:1px solid rgba(92,86,97,.08);border-radius:48%;transform:rotate(25deg);z-index:-1}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:65px}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.45);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#666269}.eyebrow span{width:7px;height:7px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 5px rgba(255,120,165,.12)}h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.02;letter-spacing:-.045em;margin:0}h1{font-size:clamp(58px,8.2vw,112px);margin:24px 0 26px;font-weight:700}.gradient-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{font-size:19px;max-width:590px;color:#68656a;margin:0 0 32px}.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 20px;border-radius:999px;font-weight:700;font-size:14px;transition:.2s transform,.2s box-shadow;border:0;cursor:pointer}.btn:hover{transform:translateY(-2px)}.btn-dark{background:var(--deep);color:white;box-shadow:0 12px 25px rgba(37,35,41,.15)}.btn-light{border:1px solid var(--line);background:rgba(255,255,255,.55)}.hero-art{position:relative;min-height:470px;display:grid;place-items:center}.logo-card{width:min(470px,100%);aspect-ratio:1;background:rgba(255,253,249,.72);border:1px solid rgba(65,65,67,.09);border-radius:44px;box-shadow:var(--shadow);display:grid;place-items:center;position:relative;overflow:hidden}.logo-card::before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 30% 30%,rgba(255,120,165,.15),transparent 35%),radial-gradient(circle at 75% 65%,rgba(116,55,255,.13),transparent 38%)}.logo-card img{width:80%;position:relative;z-index:1}.floating{position:absolute;padding:13px 15px;background:rgba(255,253,249,.88);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 40px rgba(57,44,75,.1);font-size:12px;font-weight:700}.float-one{top:5%;left:-4%;transform:rotate(-5deg)}.float-two{right:-3%;bottom:9%;transform:rotate(4deg)}.float-three{left:6%;bottom:1%;font-weight:500;color:#777}
+    section{padding:110px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:45px}.kicker{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#8a858b;margin-bottom:12px}h2{font-size:clamp(42px,5.5vw,72px)}.section-intro{max-width:490px;color:#77737a;margin:0;font-size:16px}.about{background:var(--deep);color:#fff;padding:120px 0;position:relative;overflow:hidden}.about::after{content:"";position:absolute;width:650px;height:650px;right:-260px;top:-250px;border:1px solid rgba(255,255,255,.09);border-radius:50%;box-shadow:-55px 30px 0 rgba(255,255,255,.025),-110px 60px 0 rgba(255,255,255,.025),-165px 90px 0 rgba(255,255,255,.025)}.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;position:relative;z-index:1}.about h2{font-size:clamp(45px,6vw,78px)}.about .kicker{color:#aaa5ae}.about-copy{font-size:20px;color:#cbc7cc;max-width:690px}.about-copy strong{color:#fff}.pill-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.pill{padding:9px 13px;border:1px solid rgba(255,255,255,.14);border-radius:999px;color:#ded9df;font-size:12px;background:rgba(255,255,255,.035)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:rgba(255,255,255,.55);border:1px solid var(--line);border-radius:var(--radius);padding:28px;min-height:270px;position:relative;overflow:hidden;transition:.25s transform,.25s box-shadow;cursor:pointer;text-align:left}.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.card:focus-visible,.event-feature:focus-visible,.event-small:focus-visible,.album-card:focus-visible{outline:3px solid rgba(116,55,255,.28);outline-offset:4px}.card-num{font-family:'Space Grotesk';font-size:13px;font-weight:700;color:#a19ca2}.card h3{font-size:29px;margin:42px 0 12px}.card p{color:#77737a;font-size:14px;margin:0}.card::after{content:"";position:absolute;width:130px;height:130px;right:-65px;bottom:-65px;border-radius:50%;background:var(--grad);opacity:.11}.card-action{position:absolute;right:24px;top:25px;font-size:13px;color:#77737a}
+    .events{background:#f3eee5}.event-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}.event-feature,.event-small{border-radius:30px;overflow:hidden;position:relative;min-height:400px;background:linear-gradient(135deg,#e9dce5,#b7a2df 55%,#5940a8);color:white}.event-feature{padding:38px;display:flex;flex-direction:column;justify-content:end;cursor:pointer}.event-feature::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(255,255,255,.22),transparent 28%),linear-gradient(145deg,transparent 40%,rgba(0,0,0,.38))}.event-content{position:relative;z-index:1;max-width:600px}.event-tag{display:inline-block;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.17);backdrop-filter:blur(10px);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:15px}.event-feature h3{font-size:50px;margin-bottom:10px}.event-feature p{margin:0;color:rgba(255,255,255,.82)}.side-events{display:grid;gap:18px}.event-small{min-height:191px;padding:26px;background:linear-gradient(135deg,#ff7da7,#7b35ff);cursor:pointer}.event-small:nth-child(2){background:linear-gradient(135deg,#7b35ff,#28252b)}.event-small h3{font-size:28px;margin-top:50px}
+    .gallery-head{margin-bottom:28px}.album-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.album-card{border:1px solid var(--line);background:rgba(255,255,255,.52);border-radius:24px;overflow:hidden;min-height:290px;cursor:pointer;position:relative;transition:.25s transform,.25s box-shadow;display:flex;flex-direction:column}.album-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.album-cover{height:190px;background:var(--grad);position:relative;overflow:hidden}.album-cover img{width:100%;height:100%;object-fit:cover}.album-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(25,22,30,.28))}.album-info{padding:18px}.album-info h3{font-size:21px;margin:0 0 6px}.album-info p{margin:0;color:#77737a;font-size:13px}.album-count{display:inline-flex;margin-top:12px;padding:5px 8px;border-radius:999px;background:#f0eae1;color:#77737a;font-size:11px;font-weight:700}
+    .join{padding:110px 0 120px}.join-box{border-radius:38px;background:var(--grad);padding:60px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px;color:white;position:relative;overflow:hidden}.join-box::after{content:"";position:absolute;width:480px;height:480px;right:-170px;top:-260px;border:1px solid rgba(255,255,255,.22);border-radius:50%;box-shadow:-45px 35px 0 rgba(255,255,255,.09),-90px 70px 0 rgba(255,255,255,.06)}.join-box h2{font-size:clamp(42px,5vw,65px);position:relative;z-index:1}.join-box p{color:rgba(255,255,255,.84);max-width:600px;margin:18px 0 0;position:relative;z-index:1}.join-actions{position:relative;z-index:2;display:flex;flex-direction:column;gap:10px;min-width:180px}.btn-white{background:white;color:#29262d}.btn-outline{border:1px solid rgba(255,255,255,.45);color:white;background:rgba(255,255,255,.08)}footer{border-top:1px solid var(--line);padding:35px 0 45px}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}.footer-brand{display:flex;align-items:center;gap:12px;font-family:'Space Grotesk';font-weight:700}.footer-brand img{width:42px;height:42px}.footer-links{display:flex;gap:22px;font-size:13px;color:#77737a}.mail{font-size:13px;color:#77737a}.reveal{animation:rise .8s both}@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+    .hero .reveal:first-child,.hero .hero-art{animation:none;opacity:1;transform:none}
+    .hero .reveal:first-child>*{opacity:0;transform:translateY(18px);animation:heroItemIn .65s cubic-bezier(.2,.75,.25,1) forwards}
+    .hero .reveal:first-child>.eyebrow{animation-delay:.05s}
+    .hero .reveal:first-child>h1{animation-delay:.14s}
+    .hero .reveal:first-child>p{animation-delay:.24s}
+    .hero .reveal:first-child>.actions{animation-delay:.34s}
+    .hero .hero-art .logo-card{opacity:0;transform:translateX(24px) scale(.96);animation:heroArtIn .85s cubic-bezier(.2,.75,.25,1) .18s forwards}
+    .hero .hero-art .floating{opacity:0;animation:heroFloatIn .6s cubic-bezier(.2,.75,.25,1) forwards}
+    .hero .hero-art .float-one{animation-delay:.4s}
+    .hero .hero-art .float-two{animation-delay:.52s}
+    .hero .hero-art .float-three{animation-delay:.64s}
+    @keyframes heroItemIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    @keyframes heroArtIn{from{opacity:0;transform:translateX(24px) scale(.96)}to{opacity:1;transform:none}}
+    @keyframes heroFloatIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+    .theme-toggle{position:relative}
+    .theme-toggle .theme-icon{position:absolute;inset:0;display:grid!important;place-items:center;opacity:0;transform:rotate(-30deg) scale(.65);transition:opacity .22s ease,transform .32s cubic-bezier(.2,.8,.2,1)}
+    body:not(.dark) .theme-toggle .theme-moon{opacity:1;transform:rotate(0) scale(1)}
+    body.dark .theme-toggle .theme-sun{opacity:1;transform:rotate(0) scale(1)}
+    .theme-toggle .theme-icon svg{transition:transform .32s ease}
+    .theme-toggle:active .theme-icon svg{transform:scale(.82) rotate(-15deg)}
+    @media(prefers-reduced-motion:reduce){
+      .hero .reveal:first-child>*,.hero .hero-art .logo-card,.hero .hero-art .floating{animation:none!important;opacity:1!important;transform:none!important}
+      .theme-toggle .theme-icon,.theme-toggle .theme-icon svg{animation:none!important;transition:none!important}
+    }
+
+    .detail-section{display:none;background:var(--paper);padding:95px 0 120px;border-top:1px solid var(--line)}.detail-section.show{display:block}.detail-back{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(255,255,255,.58);padding:10px 15px;border-radius:999px;font-size:13px;font-weight:700;cursor:pointer;margin-bottom:28px}.detail-hero{display:grid;grid-template-columns:1fr .8fr;gap:50px;align-items:start}.detail-copy h2{font-size:clamp(42px,6vw,76px);margin-bottom:20px}.detail-copy>p{font-size:18px;color:#706c73;max-width:720px}.detail-content{margin-top:35px}.detail-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.detail-panel{border:1px solid var(--line);background:rgba(255,255,255,.5);border-radius:24px;padding:25px}.detail-panel h3{font-size:24px;margin-bottom:14px}.detail-panel p{color:#77737a}.detail-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.detail-photo{aspect-ratio:1.2;border-radius:18px;overflow:hidden;background:#eee7df}.detail-photo img{width:100%;height:100%;object-fit:cover}.detail-empty{border:1px dashed rgba(65,65,67,.2);border-radius:22px;padding:28px;text-align:center;color:#77737a;background:rgba(255,255,255,.35)}.detail-empty strong{display:block;color:var(--ink);font-family:'Space Grotesk';font-size:20px;margin-bottom:6px}.detail-plans{display:grid;gap:12px}.detail-plan{border:1px solid var(--line);border-radius:20px;padding:20px;background:rgba(255,255,255,.42)}.detail-plan h4{font-family:'Space Grotesk';font-size:22px;margin:0}.detail-plan .status{float:right;margin-left:12px}.detail-plan p{margin:9px 0 0}.detail-meta-row{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.detail-meta-row span{padding:7px 10px;border-radius:999px;background:#f0eae1;color:#68656a;font-size:12px;font-weight:700}.detail-rules{padding-left:20px;color:#67636a}.detail-rules li{margin:8px 0}@media(max-width:850px){.detail-hero,.detail-grid{grid-template-columns:1fr}.detail-gallery{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.detail-gallery{grid-template-columns:1fr}.detail-section{padding:80px 0}.detail-copy h2{font-size:44px}}
+    .modal{position:fixed;inset:0;background:rgba(27,24,31,.54);backdrop-filter:blur(10px);z-index:100;display:none;align-items:center;justify-content:center;padding:24px}.modal.open{display:flex}.modal-panel{width:min(960px,100%);max-height:min(88vh,900px);overflow:auto;background:var(--paper);border:1px solid rgba(65,65,67,.12);border-radius:32px;box-shadow:0 35px 100px rgba(0,0,0,.25);position:relative}.modal-top{padding:34px 36px 22px;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;justify-content:space-between;gap:20px}.modal-kicker{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8a858b;margin-bottom:8px}.modal-title{font-size:clamp(34px,5vw,58px)}.modal-close{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.6);cursor:pointer;font-size:22px;line-height:1}.modal-body{padding:30px 36px 38px}.modal-lead{font-size:18px;color:#68656a;max-width:760px}.detail-meta{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0}.meta-pill{padding:7px 10px;border-radius:999px;background:#f0eae1;color:#68656a;font-size:12px;font-weight:700}.modal-columns{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;margin-top:28px}.detail-box{border:1px solid var(--line);border-radius:22px;padding:22px;background:rgba(255,255,255,.42)}.detail-box h4{font-family:'Space Grotesk';font-size:21px;margin:0 0 12px}.rules{padding-left:20px;margin:0}.rules li{margin:8px 0;color:#67636a}.modal-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.plans{display:grid;gap:12px;margin-top:24px}.plan{border:1px solid var(--line);background:rgba(255,255,255,.42);border-radius:20px;padding:20px}.plan-head{display:flex;justify-content:space-between;gap:15px;align-items:start}.plan h4{font-family:'Space Grotesk';font-size:23px;margin:0}.status{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 8px;border-radius:999px;background:#eee7df;color:#77737a;white-space:nowrap}.plan p{margin:9px 0 0;color:#77737a;font-size:14px}.plan-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px;font-size:11px;color:#77737a}
+    .movie-albums{display:grid;gap:18px;margin-top:18px}.movie-album{border:1px solid var(--line);background:rgba(255,255,255,.5);border-radius:26px;padding:22px;overflow:hidden}.movie-album-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:16px}.movie-album-head h3{font-size:30px;margin:0 0 5px}.movie-album-head p{margin:0;color:#8a858b;font-size:12px}.movie-carousel{position:relative}.carousel-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:20px}.carousel-track::-webkit-scrollbar{display:none}.carousel-slide{flex:0 0 100%;margin:0;scroll-snap-align:start;position:relative;aspect-ratio:16/10;background:#eee7df}.carousel-slide img{width:100%;height:100%;object-fit:cover}.carousel-slide figcaption{position:absolute;left:14px;bottom:14px;padding:7px 10px;border-radius:999px;background:rgba(37,35,41,.72);color:#fff;font-size:11px}.carousel-btn{position:absolute;z-index:2;top:50%;transform:translateY(-50%);width:42px;height:42px;border:0;border-radius:50%;background:rgba(255,253,249,.88);box-shadow:0 8px 24px rgba(37,35,41,.16);cursor:pointer;font-size:28px;line-height:1}.carousel-btn.prev{left:12px}.carousel-btn.next{right:12px}.carousel-dots{display:flex;justify-content:center;gap:6px;margin-top:12px}.carousel-dots button{width:7px;height:7px;border:0;border-radius:50%;padding:0;background:#c9c3c9;cursor:pointer}.carousel-dots button.active{width:22px;border-radius:999px;background:var(--violet)}
+    .modal-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.modal-photo{aspect-ratio:1.2;border-radius:18px;overflow:hidden;background:#e8e1d8;position:relative}.modal-photo img{width:100%;height:100%;object-fit:cover}.modal-empty{border:1px dashed rgba(65,65,67,.2);border-radius:22px;padding:35px;text-align:center;color:#77737a;background:rgba(255,255,255,.35)}.modal-empty strong{display:block;color:var(--ink);font-family:'Space Grotesk';font-size:20px;margin-bottom:7px}.loading{padding:40px;text-align:center;color:#77737a}.spinner{display:inline-block;width:22px;height:22px;border:2px solid rgba(65,65,67,.15);border-top-color:var(--violet);border-radius:50%;animation:spin .8s linear infinite;vertical-align:middle;margin-right:8px}@keyframes spin{to{transform:rotate(360deg)}}
+    @media(max-width:1000px){.album-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:850px){.navlinks{display:none}.hero-grid,.about-grid,.event-grid,.join-box,.modal-columns{grid-template-columns:1fr}.hero{padding-top:125px}.hero-art{min-height:400px}.about-grid{gap:40px}.cards{grid-template-columns:1fr}.album-grid{grid-template-columns:repeat(2,1fr)}.join-box{padding:38px}.join-actions{flex-direction:row;flex-wrap:wrap}.section-head{display:block}.section-intro{margin-top:20px}.footer-inner{flex-direction:column;align-items:flex-start}.modal-gallery{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.container{width:min(100% - 28px,1160px)}.nav-inner{width:calc(100% - 18px)}.nav-cta{padding:9px 13px}.brand span{display:none}h1{font-size:56px}.hero p{font-size:17px}.hero-art{min-height:320px}.logo-card{border-radius:30px}.floating{display:none}section{padding:80px 0}.about{padding:80px 0}.event-feature h3{font-size:39px}.album-grid{grid-template-columns:1fr}.join{padding:80px 0}.join-box{padding:30px;border-radius:28px}.footer-links{flex-wrap:wrap}.modal{padding:12px}.modal-top,.modal-body{padding-left:22px;padding-right:22px}.modal-gallery{grid-template-columns:1fr}.modal-panel{border-radius:24px}}
+  
+    /* Mobile refinement — keeps the existing Varanasi Connect visual language while giving phones a true full-width layout. */
+    @media(max-width:600px){
+      html,body{width:100%;max-width:100%;min-width:0;overflow-x:hidden}
+      main{width:100%;max-width:100%;overflow:hidden}
+      .container{width:calc(100% - 24px);max-width:none;margin-left:auto;margin-right:auto}
+      .nav{top:8px}
+      .nav-inner{width:calc(100% - 12px);padding:7px 8px 7px 10px}
+      .brand img{width:34px;height:34px}
+      .nav-cta{font-size:11px;padding:8px 11px;white-space:nowrap}
+      .hero{min-height:auto;padding:100px 0 55px}
+      .hero-grid{width:100%;grid-template-columns:minmax(0,1fr);gap:28px}
+      .hero-grid>div{min-width:0}
+      .eyebrow{font-size:9px;padding:6px 9px}
+      h1{font-size:clamp(46px,14vw,62px);line-height:.98;margin:18px 0 20px}
+      .hero p{font-size:15px;line-height:1.55;margin-bottom:22px}
+      .actions{display:grid;grid-template-columns:1fr;gap:9px}
+      .btn{width:100%;min-height:46px;padding:12px 16px}
+      .hero-art{width:100%;min-height:0}
+      .logo-card{width:min(100%,330px);border-radius:26px}
+      section{padding:64px 0}
+      .about{padding:68px 0}
+      .about-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+      .about-copy{font-size:16px;line-height:1.6}
+      .pill-row{gap:7px;margin-top:20px}
+      .pill{font-size:10px;padding:7px 10px}
+      .section-head{margin-bottom:28px}
+      .section-head h2,.about h2{font-size:clamp(38px,11vw,52px)}
+      .section-intro{font-size:14px;line-height:1.55;margin-top:14px}
+      .cards{grid-template-columns:minmax(0,1fr);gap:12px}
+      .card{min-height:0;padding:22px 20px 24px;border-radius:22px}
+      .card h3{font-size:25px;margin:30px 0 9px}
+      .card p{font-size:13px;line-height:1.5}
+      .card-action{right:18px;top:18px;font-size:11px}
+      .events{padding:68px 0}
+      .event-grid{grid-template-columns:minmax(0,1fr);gap:12px}
+      .event-feature{min-height:260px;padding:24px;border-radius:23px}
+      .event-feature h3{font-size:34px}
+      .event-small{min-height:120px;padding:20px;border-radius:20px}
+      .event-small h3{font-size:23px;margin-top:30px}
+      
+      .event-tag{font-size:9px;padding:6px 8px;margin-bottom:9px}
+      .album-grid{grid-template-columns:minmax(0,1fr);gap:12px}
+      .album-card{min-height:0;border-radius:21px}
+      .album-cover{height:175px}
+      .album-info{padding:16px}
+      .album-info h3{font-size:20px}
+      .album-info p{font-size:12px}
+      .join{padding:64px 0 72px}
+      .join-box{grid-template-columns:minmax(0,1fr);padding:28px 22px;border-radius:26px;gap:24px}
+      .join-box h2{font-size:clamp(38px,10vw,52px)}
+      .join-box p{font-size:14px;line-height:1.55}
+      .join-actions{display:grid;grid-template-columns:1fr;min-width:0;width:100%}
+      .footer-inner{gap:18px}
+      .footer-links{gap:12px;font-size:12px}
+      .mail{font-size:11px}
+      .detail-section{padding:76px 0 80px}
+      .detail-copy h2{font-size:42px}
+      .detail-copy>p{font-size:16px}
+      .detail-panel{padding:19px;border-radius:20px}
+      .detail-gallery{grid-template-columns:1fr;gap:10px}\n      .movie-album{padding:16px;border-radius:22px}.movie-album-head{display:block}.movie-album-head h3{font-size:25px}.carousel-slide{aspect-ratio:4/3}.carousel-btn{width:36px;height:36px;font-size:24px}
+      .detail-photo{border-radius:15px}
+      .modal{padding:8px}
+      .modal-panel{width:100%;max-height:92vh;border-radius:22px}
+      .modal-top,.modal-body{padding-left:18px;padding-right:18px}
+      .modal-title{font-size:35px}
+    }
+
+  
+    /* Dark mode */
+    body.dark{--paper:#111015;--ink:#f3f0f2;--muted:#aaa5ae;--line:rgba(255,255,255,.13);--soft:#1b1920;--white:#17151b;background:var(--paper);color:var(--ink)}
+    .brand{flex:0 0 auto;margin-right:42px}
+    .navlinks{flex:1;justify-content:flex-start;gap:28px}
+    @media(max-width:1000px) and (min-width:851px){.brand{margin-right:30px}.navlinks{gap:22px}}
+    body.dark .card h3,
+    body.dark .album-info h3,
+    body.dark .event-feature h3,
+    body.dark .event-small h3{color:#fff}
+    body.dark .nav-inner{background:rgba(17,16,21,.82);border-color:rgba(255,255,255,.12);box-shadow:0 12px 35px rgba(0,0,0,.28)}
+    body.dark .navlinks{color:#c4bec8}.dark .navlinks a:hover{color:#fff}
+    body.dark .theme-toggle{background:#f3f0f2;color:#17151b;border-color:#f3f0f2}
+    body.dark .eyebrow,body.dark .btn-light,body.dark .detail-back{background:rgba(255,255,255,.06);border-color:var(--line);color:#ddd8df}
+    body.dark .hero p,body.dark .section-intro,body.dark .card p,body.dark .detail-panel p,body.dark .detail-copy>p,body.dark .detail-rules,body.dark .mail{color:#aaa5ae}
+    body.dark .logo-card{background:rgba(23,21,27,.84);border-color:rgba(255,255,255,.1);box-shadow:0 24px 70px rgba(0,0,0,.3)}
+    body.dark .floating{background:rgba(24,22,29,.9);border-color:rgba(255,255,255,.13);box-shadow:0 18px 40px rgba(0,0,0,.3);color:#f3f0f2}
+    body.dark .card,body.dark .album-card,body.dark .detail-panel,body.dark .movie-album,body.dark .detail-plan,body.dark .detail-box,body.dark .plan{background:rgba(255,255,255,.045);border-color:var(--line)}
+    body.dark .events{background:#19171e}
+    body.dark .album-count,body.dark .detail-meta-row span,body.dark .meta-pill,body.dark .status{background:#242129;color:#c9c3cc}
+    body.dark .about{background:#09080c}
+    body.dark footer{border-color:var(--line)}
+    body.dark .detail-section{background:var(--paper)}
+    body.dark .modal{background:rgba(0,0,0,.68)}
+    body.dark .modal-panel{background:var(--paper);border-color:var(--line)}
+    body.dark .modal-close,body.dark .carousel-btn{background:rgba(27,25,32,.9);color:#fff;border-color:var(--line)}
+    body.dark .modal-lead,body.dark .plan p{color:#aaa5ae}
+    body.dark .detail-empty,body.dark .modal-empty{background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.16);color:#aaa5ae}
+    body.dark .detail-empty strong,body.dark .modal-empty strong{color:#f3f0f2}
+    body.dark .hero::before,body.dark .hero::after{border-color:rgba(255,255,255,.08)}
+
+    /* Strong theme contrast for readable text in every section. */
+    :root{--ink:#17151b}
+    body.dark{--ink:#fff;--muted:#c9c4cc}
+    body:not(.dark) .section-intro,body:not(.dark) .hero p,body:not(.dark) .card p,body:not(.dark) .album-info p,body:not(.dark) .detail-panel p,body:not(.dark) .detail-copy>p,body:not(.dark) .detail-rules,body:not(.dark) .footer-links,body:not(.dark) .mail{color:#3f3c42}
+    body.dark .kicker,body.dark .card-num,body.dark .card-action,body.dark .album-info p,body.dark .movie-album-head p,body.dark .footer-links,body.dark .mail,body.dark .loading,body.dark .detail-rules{color:#d0cbd3}
+    body.dark .section-intro,body.dark .hero p,body.dark .card p,body.dark .detail-panel p,body.dark .detail-copy>p,body.dark .plan p,body.dark .modal-lead,body.dark .modal-kicker,body.dark .plan-meta{color:#e2dde4}
+    body.dark .detail-meta-row span,body.dark .meta-pill,body.dark .status{color:#f3f0f2}
+    .theme-toggle{width:38px;height:38px;padding:4px;margin-left:auto;border:0;background:transparent;color:#17151b;border-radius:0;display:grid;place-items:center;cursor:pointer;flex:0 0 auto;box-shadow:none;transition:.2s transform,.2s color}
+    .theme-toggle:hover{transform:translateY(-1px)}
+    .theme-icon{display:grid;place-items:center}
+    .theme-icon svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .theme-sun{display:none}
+    .theme-moon{display:grid}
+    body.dark .theme-toggle{background:transparent;color:#fff;border:0;box-shadow:none}
+    body.dark .theme-moon{display:none}
+    body.dark .theme-sun{display:grid}
+    @media(max-width:850px){.theme-toggle{width:38px;height:38px}.theme-icon svg{width:21px;height:21px}.nav-inner{gap:7px}.nav-cta{margin-left:10px}}
+    @media(max-width:600px){
+      .nav-inner{padding:6px 7px 6px 9px}
+      .brand img{width:32px;height:32px}
+      .nav-cta{font-size:10px;padding:8px 10px}
+      .hero{padding-left:6px;padding-right:6px}
+      .hero-grid{padding:0 4px}
+      .actions{padding:0 8px}
+      .actions .btn{width:100%;min-height:44px}
+      .hero-art{display:none}
+      .join-box{margin:0 4px}
+      .join-actions{width:100%}
+      .join-actions .btn{width:100%}
+    }
+
+      .hero-grid{grid-template-columns:1fr}
+    .hero-grid>div:first-child{max-width:760px}
+    .hero-art{display:none!important}
+    @media(max-width:850px){.hero-grid{grid-template-columns:1fr}.hero-grid>div:first-child{max-width:none}}
+
+    /* Discord CTA — blue pill with Discord mark, matching the supplied reference. */
+    .discord-cta{background:#5865f2!important;color:#fff!important;border-color:#5865f2!important;display:inline-flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 10px 24px rgba(88,101,242,.22)}
+    .discord-cta:hover{background:#4f5bdc!important;border-color:#4f5bdc!important;box-shadow:0 13px 28px rgba(88,101,242,.28)}
+    .discord-logo{width:20px;height:20px;display:block;flex:0 0 auto;color:#fff}
+    .nav-cta.discord-cta{padding:10px 18px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:.01em}
+    .join-actions .discord-cta{padding:14px 20px;font-weight:800}
+    @media(max-width:600px){.nav-cta.discord-cta{padding:8px 12px}.nav-cta.discord-cta .discord-logo{width:18px;height:18px}.join-actions .discord-cta{padding:12px 16px}}
+
+    .rules-section{border-top:1px solid var(--line);background:var(--soft)}
+    .rules-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .rule-card{display:flex;align-items:flex-start;gap:16px;padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--paper);box-shadow:0 8px 28px rgba(25,20,32,.035)}
+    .rule-number{display:flex;align-items:center;justify-content:center;flex:0 0 34px;width:34px;height:34px;border-radius:50%;background:var(--soft);color:var(--muted);font:700 11px 'DM Sans',sans-serif}
+    .rule-card h3{margin:2px 0 9px;font:700 17px 'Space Grotesk',sans-serif;letter-spacing:-.02em}
+    .rule-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.7}
+    .rule-card strong{color:var(--ink)}
+    .rules-note{margin:24px 0 0;padding:18px 22px;border-left:3px solid #a78bfa;background:var(--paper);border-radius:0 14px 14px 0;color:var(--muted);font-size:14px;line-height:1.6}
+    @media(max-width:760px){.rules-grid{grid-template-columns:1fr}.rule-card{padding:20px;gap:13px}.rule-card h3{font-size:16px}.rule-card p{font-size:13px}}
+    .profile-wrap{position:relative;display:flex;align-items:center;flex:0 0 auto}
+    .auth-cta{height:40px;min-width:76px;padding:0 18px;display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:0 0 auto;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--ink);font:700 13px 'DM Sans',sans-serif;cursor:pointer;transition:background .2s ease,transform .2s ease,box-shadow .2s ease;white-space:nowrap}
+    .auth-cta:hover{background:var(--soft);box-shadow:0 6px 16px rgba(25,20,32,.09);transform:translateY(-1px)}
+    .auth-cta.is-signed-in{width:40px;height:40px;min-width:40px;padding:2px;background:var(--paper);border:2px solid #5865f2;border-radius:50%;overflow:hidden}
+    .profile-avatar{width:100%;height:100%;object-fit:cover;border-radius:50%}
+    .profile-fallback{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    #authButton[hidden],#profileAvatar[hidden],#profileFallback[hidden]{display:none!important}
+    #authButton.is-signed-in #authLabel{display:none}
+    body.dark .auth-cta{background:#24212a;border-color:rgba(255,255,255,.16);color:#f4f0f5}
+    body.dark .auth-cta:hover{background:#302c36}
+    body.dark .auth-cta.is-signed-in{background:#24212a;border-color:#8b94ff}
+    @media(max-width:600px){.auth-cta{height:34px;min-width:66px;padding:0 14px;font-size:12px}.auth-cta.is-signed-in{height:34px;width:34px;min-width:34px;padding:2px}.profile-menu{right:-42px;width:230px}}
+    .profile-menu{position:absolute;top:calc(100% + 12px);right:0;width:245px;padding:9px;background:var(--white);color:var(--ink);border:1px solid var(--line);border-radius:20px;box-shadow:0 18px 55px rgba(25,20,32,.2);z-index:50}
+    .profile-menu[hidden]{display:none}
+    .profile-menu-heading{padding:12px 12px 14px;display:grid;gap:3px;border-bottom:1px solid var(--line);margin-bottom:6px;min-width:0}
+    .profile-menu-heading strong{font-family:'Space Grotesk';font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .profile-menu-heading span{font-size:11px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .profile-menu button{width:100%;border:0;background:transparent;color:inherit;text-align:left;padding:11px 12px;border-radius:12px;font-size:13px;font-weight:600;cursor:pointer}
+    .profile-menu button:hover{background:var(--soft)}
+    .profile-menu-divider{height:1px;background:var(--line);margin:6px 4px}
+    .profile-menu .profile-logout{color:#c34b62}
+    body.dark .profile-menu{background:#201e25;color:#f4f0f5;border-color:rgba(255,255,255,.12)}
+    body.dark .profile-menu-heading span{color:#b6b0ba}
+    body.dark .profile-menu button:hover{background:#302c36}
+    .account-modal{position:fixed;inset:0;z-index:120;background:rgba(27,24,31,.55);backdrop-filter:blur(9px);display:none;align-items:center;justify-content:center;padding:18px}
+    .account-modal.open{display:flex}
+    .account-panel{width:min(480px,100%);max-height:85vh;padding:0;overflow:auto;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:26px;box-shadow:0 28px 80px rgba(0,0,0,.25)}
+    .account-panel-head{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:22px 24px;border-bottom:1px solid var(--line)}
+    .account-panel-head h3{font-size:25px}
+    .account-panel-close{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;background:rgba(255,255,255,.55);font-size:20px;cursor:pointer;color:inherit}
+    .account-panel-body{padding:24px}
+    .account-empty{padding:20px;border:1px dashed var(--line);border-radius:17px;color:var(--muted);font-size:14px}
+    .account-empty strong{display:block;color:var(--ink);font-family:'Space Grotesk';font-size:17px;margin-bottom:5px}
+    .notification-setting{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.35)}
+    .notification-setting strong{display:block;font-size:14px}
+    .notification-setting small{display:block;color:var(--muted);font-size:12px;margin-top:4px;line-height:1.45}
+    .switch{position:relative;width:48px;height:28px;flex:0 0 48px}
+    .switch input{position:absolute;opacity:0;width:1px;height:1px}
+    .switch-track{position:absolute;inset:0;border-radius:99px;background:#c9c4cb;cursor:pointer;transition:.2s}
+    .switch-track:before{content:"";position:absolute;width:22px;height:22px;left:3px;top:3px;border-radius:50%;background:white;box-shadow:0 1px 4px rgba(0,0,0,.18);transition:.2s}
+    .switch input:checked+.switch-track{background:#5865f2}
+    .switch input:checked+.switch-track:before{transform:translateX(20px)}
+    .switch input:focus-visible+.switch-track{outline:3px solid rgba(88,101,242,.3);outline-offset:3px}
+    .settings-save-note{font-size:12px;color:var(--muted);margin:13px 2px 0}
+    body.dark .account-modal{background:rgba(0,0,0,.65)}
+    body.dark .account-panel{background:#201e25;color:#f4f0f5}
+    body.dark .account-panel-close{background:#302c36;color:#f4f0f5}
+    body.dark .notification-setting{background:rgba(255,255,255,.035)}
+    @media(max-width:600px){.auth-cta{height:34px;min-width:66px;padding:0 14px;font-size:12px}.auth-cta.is-signed-in{height:34px;width:34px;min-width:34px;padding:2px}.profile-menu{right:-42px;width:230px}.account-panel-head{padding:19px 20px}.account-panel-body{padding:20px}}
+
+
+/* Multi-page navigation: each route displays only its own main section. */
+body[data-page="home"] main > section:not(.hero),
+body[data-page="about"] main > section:not(#about),
+body[data-page="what"] main > section:not(#what-we-do),
+body[data-page="events"] main > section:not(#events),
+body[data-page="varanasi"] main > section:not(#gallery),
+body[data-page="rules"] main > section:not(#rules){display:none!important}
+body[data-page="home"] main > .hero{display:grid!important}
+body[data-page="about"] main > #about,
+body[data-page="what"] main > #what-we-do,
+body[data-page="events"] main > #events,
+body[data-page="varanasi"] main > #gallery,
+body[data-page="rules"] main > #rules{display:block!important}
+</style>
+</head>
+<body data-page="rules">
+  <nav class="nav"><div class="nav-inner">
+    <a class="brand" href="index.html"><img id="siteLogo" src="assets/logo.png" data-light-logo="assets/logo.png" data-dark-logo="assets/logos/7.png" alt="Varanasi Connect logo"><span>Varanasi Connect</span></a>
+    <div class="navlinks"><a href="about.html">About</a><a href="what-we-do.html">What we do</a><a href="events.html">Events</a><a href="varanasi.html">Varanasi</a><a id="navRules" href="rules.html">Rules</a></div>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode"><span class="theme-icon theme-sun" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></span><span class="theme-icon theme-moon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z"></path></svg></span></button>
+
+    <div class="profile-wrap" id="profileWrap">
+      <button class="auth-cta" id="authButton" type="button" aria-label="Log in" title="Log in with Discord" aria-haspopup="menu" aria-expanded="false">
+        <span id="authLabel">Log in</span>
+        <img class="profile-avatar" id="profileAvatar" alt="" hidden>
+        <svg class="profile-fallback" id="profileFallback" viewBox="0 0 24 24" aria-hidden="true" hidden><circle cx="12" cy="8" r="3.5"></circle><path d="M4.5 20c.7-4 3.2-6 7.5-6s6.8 2 7.5 6"></path></svg>
+      </button>
+      <div class="profile-menu" id="profileMenu" role="menu" aria-label="Account menu" hidden>
+        <div class="profile-menu-heading"><strong id="profileMenuName">Your account</strong><span id="profileMenuEmail"></span></div>
+        <button type="button" role="menuitem" data-account-action="events">Registered events</button>
+        <button type="button" role="menuitem" data-account-action="settings">Settings</button>
+        <div class="profile-menu-divider"></div>
+        <button type="button" role="menuitem" class="profile-logout" data-account-action="logout">Log out</button>
+      </div>
+    </div>
+    
+  </div></nav>
+
+  <main id="top">
+    <section class="hero"><div class="container hero-grid">
+      <div class="reveal"><div class="eyebrow"><span></span> A community from Varanasi</div><h1>The city,<br><span class="gradient-text">connected.</span></h1><p>Varanasi Connect is a community built around the people, creativity, culture and everyday experiences that make Varanasi feel like home.</p><div class="actions"><a class="btn btn-dark" id="heroDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join the community</a><a class="btn btn-light" href="#about">Explore Varanasi Connect</a></div></div>
+
+    </div></section>
+
+    <section class="events" id="events"><div class="container"><div class="section-head"><div><div class="kicker">01 — Events</div><h2>Always something<br><span class="gradient-text">coming up.</span></h2></div><p class="section-intro">A look at the community activities we are hosting, from movie nights and meetups to creative events and competitions.</p></div>
+      <div class="event-grid">
+        <article class="event-feature" tabindex="0" role="button" data-detail="photo"><div class="event-content"><span class="event-tag">Featured event</span><h3>Photography Competition</h3><p>01 October — 31 October · Topic: Varanasi</p><p style="margin-top:10px">A month to capture the city through your own lens. No AI-generated or AI-enhanced photographs.</p></div></article>
+        <div class="side-events"><article class="event-small" tabindex="0" role="button" data-detail="movie"><span class="event-tag">Community</span><h3>Movie nights</h3></article><article class="event-small" tabindex="0" role="button" data-detail="meetups"><span class="event-tag">More soon</span><h3>Meetups & new projects</h3></article></div>
+      </div>
+    </div></section>
+
+    <section class="about" id="about"><div class="container about-grid"><div><div class="kicker">02 — Who we are</div><h2>More than a<br><span class="gradient-text">community.</span></h2></div><div><p class="about-copy"><strong>Varanasi Connect brings people together around Varanasi.</strong> We create a space where locals, students, creators and curious people can meet, share experiences, discover the city and build things together.</p><p class="about-copy">From online conversations to movie nights, photography contests and future offline events, the goal is simple: make it easier to find your people in the city.</p><div class="pill-row"><span class="pill">Community</span><span class="pill">Culture</span><span class="pill">Events</span><span class="pill">Photography</span><span class="pill">Creators</span><span class="pill">Varanasi</span></div></div></div></section>
+
+    <section id="what-we-do"><div class="container"><div class="section-head"><div><div class="kicker">03 — What we do</div><h2>Things happen<br>here.</h2></div><p class="section-intro">Explore the different sides of Varanasi Connect — meeting people, sharing experiences, joining activities and creating things together.</p></div>
+      <div class="cards">
+        <button class="card" data-detail="meetups"><span class="card-num">01 / COMMUNITY</span><span class="card-action">Open</span><h3>Meet people</h3><p>Find people from Varanasi, make friends, talk about shared interests and become part of a local community.</p></button>
+        <button class="card" data-detail="movie"><span class="card-num">02 / EVENTS</span><span class="card-action">Open</span><h3>Do things</h3><p>Movie nights, contests, discussions, meetups and other activities that turn an online community into real experiences.</p></button>
+        <button class="card" data-detail="photo"><span class="card-num">03 / CREATIVITY</span><span class="card-action">Open</span><h3>Create together</h3><p>Photography, visual storytelling, collaborations and community projects that showcase Varanasi through its people.</p></button>
+      </div>
+    </div></section>
+
+    <section id="gallery"><div class="container"><div class="section-head gallery-head"><div><div class="kicker">04 — The city through us</div><h2>Varanasi,<br><span class="gradient-text">our way.</span></h2></div><p class="section-intro">A growing collection of Varanasi through our community — the river, streets, people, culture and the moments we experience together.</p></div><div class="album-grid" id="albumGrid"></div></div></section>
+
+
+    <section class="detail-section" id="detailView" aria-live="polite">
+      <div class="container">
+        <button class="detail-back" id="detailBack" type="button">Back</button>
+        <div id="detailViewBody"></div>
+      </div>
+    </section>
+    <section class="join"><div class="container"><div class="join-box"><div><div class="kicker" style="color:rgba(255,255,255,.7)">05 — Join us</div><h2>There is a place<br>for you here.</h2><p>Join the Discord community, meet people from Varanasi and see what we're building next.</p></div><div class="join-actions"><a class="btn btn-white discord-cta" id="joinDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join Discord</a><a class="btn btn-outline" id="joinInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a class="btn btn-outline" id="joinEmail" href="mailto:community.varanasi@gmail.com">Email us</a></div></div></div></section>
+  
+    <section id="rules" class="rules-section">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="kicker">06 — Community guidelines</div><h2>Our server<br><span class="gradient-text">rules.</span></h2></div>
+          <p class="section-intro">A few ground rules to keep Varanasi Connect welcoming, safe and enjoyable for everyone. Being part of the community means agreeing to follow them.</p>
+        </div>
+        <div class="rules-grid">
+          <article class="rule-card"><span class="rule-number">01</span><div><h3>📜 Be respectful</h3><p>Treat everyone with dignity. Personal attacks, insults, trolling and harassment of any kind will not be tolerated. Three warnings result in a timeout; five warnings result in a kick. Continued violations after that will result in a permanent ban.</p></div></article>
+          <article class="rule-card"><span class="rule-number">02</span><div><h3>No spam or self-promotion</h3><p>Avoid repeating messages, posting large walls of text or emojis, or mass-pinging members. Keep promotional links, streams and other server invites strictly inside designated channels.</p></div></article>
+          <article class="rule-card"><span class="rule-number">03</span><div><h3>Keep it SFW</h3><p>Do not share adult content, gore or highly explicit material. This applies to text channels, media uploads, direct messages to members, profile pictures and nicknames.</p></div></article>
+          <article class="rule-card"><span class="rule-number">04</span><div><h3>Use the right channels</h3><p>Keep your conversations on-topic. Check the channel description if you are unsure where a topic belongs.</p></div></article>
+          <article class="rule-card"><span class="rule-number">05</span><div><h3>No malicious content or cheating</h3><p>Do not share hacks, exploits, cheats, pirated material or harmful links.</p></div></article>
+          <article class="rule-card"><span class="rule-number">06</span><div><h3>No hate speech or threats</h3><p>Discrimination, hate speech, death threats and profanity intended to hurt others are not acceptable. Three warnings result in a timeout; five warnings result in a kick. Rejoining and continuing this behaviour will result in a permanent ban.</p></div></article>
+          <article class="rule-card"><span class="rule-number">07</span><div><h3>No promotion of harmful products</h3><p>Promoting harmful products such as tobacco or restricted medicines is not allowed. Three warnings result in a one-week timeout; five warnings result in a kick. Further violations will result in a permanent ban.</p></div></article>
+          <article class="rule-card"><span class="rule-number">08</span><div><h3>Follow Discord's Terms of Service</h3><p>All members must follow Discord's Terms of Service and Community Guidelines.</p></div></article>
+          <article class="rule-card"><span class="rule-number">09</span><div><h3>Listen to the moderation team</h3><p>If a moderator asks you to change your behaviour, please cooperate. If you disagree with an action, take it up with them privately rather than arguing in public channels.</p></div></article>
+          <article class="rule-card"><span class="rule-number">10</span><div><h3>Be truthful about yourself</h3><p>Faking your age or other aspects of yourself in order to cause harm to others, especially minors, will lead to serious consequences, including an immediate ban and contacting the appropriate authorities.</p></div></article>
+          <article class="rule-card"><span class="rule-number">11</span><div><h3>Contact moderators through tickets</h3><p>Do not ping a moderator for support. Instead, use <strong>Text 📝┊tickets</strong> to contact the moderation team.</p></div></article>
+          <article class="rule-card"><span class="rule-number">12</span><div><h3>Respect members' DMs and boundaries</h3><p>Mass-DMing members without prior interaction, especially women and underage people, can lead to a permanent ban. Please report inappropriate DMs from members of our server in <strong>Text 📝┊tickets</strong>.</p></div></article>
+        </div>
+        <p class="rules-note">If you see something that breaks these rules, report it to the moderation team through the tickets channel.</p>
+      </div>
+    </section>
+</main>
+
+  <footer><div class="container footer-inner"><div class="footer-brand"><img src="assets/logo.png" alt="Varanasi Connect"><span>Varanasi Connect</span></div><div class="footer-links"><a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a><a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a id="footerEmail" href="mailto:community.varanasi@gmail.com">community.varanasi@gmail.com</a></div><div class="mail">© 2026 Varanasi Connect</div></div></footer>
+
+  <div class="modal" id="modal" aria-hidden="true"><div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-top"><div><div class="modal-kicker" id="modalKicker"></div><h2 class="modal-title" id="modalTitle"></h2></div><button class="modal-close" id="modalClose" aria-label="Close">×</button></div><div class="modal-body" id="modalBody"></div></div></div>
+  <div class="account-modal" id="accountModal" aria-hidden="true"><section class="account-panel" role="dialog" aria-modal="true" aria-labelledby="accountPanelTitle"><div class="account-panel-head"><h3 id="accountPanelTitle">Your account</h3><button class="account-panel-close" id="accountPanelClose" type="button" aria-label="Close">×</button></div><div class="account-panel-body" id="accountPanelBody"></div></section></div>
+
+  <script src="site-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    (function(){
+      const cfg=window.VC_CONFIG||{};
+      const REPO_OWNER='RudranshBose12', REPO_NAME='Varanasi-connect', BRANCH='main';
+      const API='https://api.github.com/repos/'+REPO_OWNER+'/'+REPO_NAME+'/contents/';
+      const RAW='https://raw.githubusercontent.com/'+REPO_OWNER+'/'+REPO_NAME+'/'+BRANCH+'/';
+      const $=s=>document.querySelector(s);
+      const detail=$('#detailView'), body=$('#detailViewBody');
+      let content={};
+
+      function esc(v){return String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+      function openDetail(){detail.classList.add('show');window.scrollTo({top:detail.offsetTop-70,behavior:'smooth'});}
+      function closeDetail(){detail.classList.remove('show');}
+      function photosMarkup(items,folder){
+        if(!items.length) return '<div class="detail-empty"><strong>No photos yet.</strong>Add JPG, PNG, WEBP or GIF files to <code>'+esc(folder)+'</code> in GitHub and they will appear here automatically.</div>';
+        return '<div class="detail-gallery">'+items.map(x=>'<a class="detail-photo" href="'+esc(x.url)+'" target="_blank" rel="noopener"><img loading="lazy" src="'+esc(x.url)+'" alt="'+esc(x.name)+'"></a>').join('')+'</div>';
+      }
+      async function listFolder(folder){
+        try{
+          const r=await fetch(API+folder.split('/').map(encodeURIComponent).join('/')+'?ref='+BRANCH,{headers:{Accept:'application/vnd.github+json'}});
+          if(!r.ok) throw new Error('GitHub folder unavailable');
+          const items=await r.json();
+          return Array.isArray(items)?items:[];
+        }catch(e){return []}
+      }
+      async function listImages(folder){
+        const items=await listFolder(folder);
+        return items.filter(x=>x.type==='file'&&/\.(jpe?g|png|webp|gif|avif)$/i.test(x.name)).map(x=>({name:x.name,url:x.download_url||RAW+folder+'/'+encodeURIComponent(x.name)}));
+      }
+      async function listSubfolders(folder){
+        const items=await listFolder(folder);
+        return items.filter(x=>x.type==='dir').map(x=>({name:x.name,path:x.path}));
+      }
+      function movieSlug(name){return String(name).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
+      function movieTitle(name){return String(name).replace(/[-_]+/g,' ').replace(/\\b\\w/g,m=>m.toUpperCase());}
+      function movieCarouselMarkup(items,folder,title){
+        if(!items.length) return '<div class="detail-empty"><strong>No photos yet.</strong>Add JPG, PNG, WEBP or GIF files to <code>'+esc(folder)+'</code> in GitHub and they will appear here automatically.</div>';
+        const id='movieCarousel-'+movieSlug(title);
+        return '<div class="movie-carousel" id="'+esc(id)+'"><button class="carousel-btn prev" type="button" aria-label="Previous photo">‹</button><div class="carousel-track">'+items.map((x,i)=>'<figure class="carousel-slide"><img loading="'+(i===0?'eager':'lazy')+'" src="'+esc(x.url)+'" alt="'+esc(title)+' photo '+(i+1)+'"><figcaption>'+esc(title)+' · '+(i+1)+' / '+items.length+'</figcaption></figure>').join('')+'</div><button class="carousel-btn next" type="button" aria-label="Next photo">›</button><div class="carousel-dots">'+items.map((x,i)=>'<button type="button" data-carousel-index="'+i+'" aria-label="View photo '+(i+1)+'"></button>').join('')+'</div></div>';
+      }
+      function wireCarousel(root){
+        if(!root)return;
+        const track=root.querySelector('.carousel-track'), slides=[...root.querySelectorAll('.carousel-slide')], dots=[...root.querySelectorAll('[data-carousel-index]')];
+        let index=0;
+        const go=n=>{index=(n+slides.length)%slides.length; track.scrollTo({left:index*track.clientWidth,behavior:'smooth'});dots.forEach((d,i)=>d.classList.toggle('active',i===index));};
+        root.querySelector('.prev')?.addEventListener('click',()=>go(index-1));
+        root.querySelector('.next')?.addEventListener('click',()=>go(index+1));
+        dots.forEach(d=>d.addEventListener('click',()=>go(Number(d.dataset.carouselIndex))));
+        track.addEventListener('scroll',()=>{const n=Math.round(track.scrollLeft/Math.max(track.clientWidth,1));if(n!==index){index=n;dots.forEach((d,i)=>d.classList.toggle('active',i===index));}});
+        dots[0]?.classList.add('active');
+      }
+      async function showDetail(type){
+        const d= type==='movie' ? (content.movieNights||{}) : type==='photo' ? (content.photographyCompetition||{}) : (content.meetupsProjects||{});
+        openDetail();
+        body.innerHTML='<div class="section-head"><div><div class="kicker">'+esc(d.tag||'Community')+'</div><h2>'+esc(d.title||type)+'</h2></div></div><p class="section-intro">Loading details…</p>';
+        const imgs=await listImages(d.folder||'');
+        let extra='';
+        if(type==='movie'){
+          const movieFolders=await listSubfolders(d.folder||'assets/community/movie-nights');
+          const rootPhotos=imgs;
+          let albums=movieFolders.map(f=>'<article class="movie-album"><div class="movie-album-head"><div><div class="kicker">Movie night</div><h3>'+esc(movieTitle(f.name))+'</h3><p>'+esc(f.path)+'</p></div><span class="album-count" data-movie-count="'+esc(f.path)+'">Loading…</span></div><div data-movie-carousel="'+esc(f.path)+'"><div class="loading">Loading photos…</div></div></article>').join('');
+          extra='<div class="detail-panel"><h3>About Movie Nights</h3><p>'+esc(d.description||d.short||'')+'</p><div class="detail-meta-row"><span>'+esc(d.meta||'Community')+'</span><span>'+movieFolders.length+' movie album'+(movieFolders.length===1?'':'s')+'</span></div></div><div class="movie-albums">'+albums+'</div>';
+          if(rootPhotos.length) extra+='<div class="detail-panel" style="margin-top:18px"><h3>Photos not inside an album</h3>'+photosMarkup(rootPhotos,d.folder||'assets/community/movie-nights')+'</div>';
+          body.innerHTML='<div class="detail-hero"><div class="detail-copy"><div class="kicker">'+esc(d.tag||'Community')+'</div><h2>'+esc(d.title||'')+'</h2><p>'+esc(d.description||d.short||'')+'</p></div><div></div></div><div class="detail-content">'+extra+'</div>';
+          for(const f of movieFolders){const pics=await listImages(f.path), slot=document.querySelector('[data-movie-carousel="'+CSS.escape(f.path)+'"]'), count=document.querySelector('[data-movie-count="'+CSS.escape(f.path)+'"]'); if(count)count.textContent=pics.length+' photo'+(pics.length===1?'':'s'); if(slot){slot.innerHTML=movieCarouselMarkup(pics,f.path,movieTitle(f.name));wireCarousel(slot.querySelector('.movie-carousel'));}}
+          history.replaceState(null,'','#detail/'+type); return;
+        } else if(type==='photo'){
+          const submit=cfg.photographySubmissionUrl&&cfg.photographySubmissionUrl!=='https://forms.google.com/'?cfg.photographySubmissionUrl:'mailto:'+(cfg.email||'community.varanasi@gmail.com')+'?subject=Varanasi%20Connect%20Photography%20Competition';
+          const list=(items)=>'<ul class="detail-rules">'+(items||[]).map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>';
+          const prizes=(d.prizes||[]).map(x=>'<span>'+esc(x)+'</span>').join('');
+          extra='<div class="detail-grid"><div class="detail-panel"><h3>About the competition</h3><p>'+esc(d.short||'')+'</p><div class="detail-meta-row"><span>'+esc(d.date||'Date to be announced')+'</span><span>'+esc(d.meta||'Theme: Varanasi')+'</span></div><p>'+esc(d.description||'')+'</p><h3>Theme — Varanasi</h3><p>'+esc(d.theme||'')+'</p></div><div class="detail-panel"><h3>How to submit</h3><p>'+esc(d.submissionNote||'Submit your entry through the official Google Form.')+'</p><a class="btn btn-dark" href="'+esc(submit)+'" target="_blank" rel="noopener">Submit your photographs</a></div></div><div class="detail-grid" style="margin-top:18px"><div class="detail-panel"><h3>Submission rules</h3>'+list(d.rules)+'</div><div class="detail-panel"><h3>Every submission must include</h3>'+list(d.submissionRequirements)+'</div></div><div class="detail-grid" style="margin-top:18px"><div class="detail-panel"><h3>Judging</h3><p>'+esc(d.judging||'')+'</p><div class="detail-meta-row">'+prizes+'</div><p>'+esc(d.prizesNote||'')+'</p></div><div class="detail-panel"><h3>Results</h3><p>'+esc(d.results||'')+'</p><p><strong>'+esc(d.closingNote||'')+'</strong></p></div></div><div class="detail-panel" style="margin-top:18px"><h3>Community submissions</h3>'+photosMarkup(imgs,d.folder||'assets/community/photography-competition')+'</div>';
+        } else {
+          extra='<div class="detail-panel"><h3>What is happening</h3><p>'+esc(d.description||d.short||'')+'</p><div class="detail-plans">'+(d.plans||[]).map(p=>'<article class="detail-plan"><span class="status">'+esc(p.status||'Planning')+'</span><h4>'+esc(p.title)+'</h4><div class="detail-meta-row"><span>When: '+esc(p.when)+'</span><span>Where: '+esc(p.where)+'</span></div><p>'+esc(p.description)+'</p></article>').join('')+'</div></div>';
+          if(imgs.length) extra+='<div class="detail-panel" style="margin-top:18px"><h3>Meetup & project photos</h3>'+photosMarkup(imgs,d.folder)+'</div>';
+        }
+        body.innerHTML='<div class="detail-hero"><div class="detail-copy"><div class="kicker">'+esc(d.tag||'Community')+'</div><h2>'+esc(d.title||'')+'</h2><p>'+esc(d.description||d.short||'')+'</p></div><div></div></div><div class="detail-content">'+extra+'</div>';
+        history.replaceState(null,'','#detail/'+type);
+      }
+      async function showAlbum(id){
+        const albums=content.varanasi?.albums||[], a=albums.find(x=>x.id===id); if(!a)return;
+        openDetail();
+        body.innerHTML='<div class="kicker">The City Through Us</div><h2>'+esc(a.title)+'</h2><p class="section-intro">'+esc(a.description||'')+'</p><div class="detail-panel" style="margin-top:28px"><div class="detail-meta-row"><span>Album</span><span id="albumCount">Loading photos…</span></div><div id="albumPhotos" class="detail-gallery"></div></div>';
+        const imgs=await listImages(a.folder);
+        $('#albumCount').textContent=imgs.length+' photo'+(imgs.length===1?'':'s');
+        $('#albumPhotos').outerHTML=photosMarkup(imgs,a.folder);
+        history.replaceState(null,'','#album/'+id);
+      }
+      async function renderAlbums(){
+        const grid=$('#albumGrid'), albums=content.varanasi?.albums||[];
+        if(!albums.length){grid.innerHTML='<div class="detail-empty"><strong>Albums are unavailable.</strong>Please check content.json.</div>';return;}
+        grid.innerHTML=albums.map(a=>'<button class="album-card" data-detail-album="'+esc(a.id)+'"><div class="album-cover" data-cover="'+esc(a.id)+'"></div><div class="album-info"><h3>'+esc(a.title)+'</h3><p>'+esc(a.description)+'</p><span class="album-count" data-count="'+esc(a.id)+'">Loading photos…</span></div></button>').join('');
+        for(const a of albums){
+          const imgs=await listImages(a.folder), cover=$('[data-cover="'+a.id+'"]'), count=$('[data-count="'+a.id+'"]');
+          if(count) count.textContent=imgs.length+' photo'+(imgs.length===1?'':'s');
+          if(cover&&imgs[0]) cover.innerHTML='<img loading="lazy" src="'+esc(imgs[0].url)+'" alt="'+esc(a.title)+'">';
+          else if(cover) cover.innerHTML='<span style="position:absolute;inset:0;display:grid;place-items:center;color:white;font-weight:700;font-size:13px">Open album</span>';
+        }
+      }
+
+      const themeToggle=$('#themeToggle');
+      const applyTheme=(dark)=>{
+        document.body.classList.toggle('dark',dark);
+        if(themeToggle)themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');
+        document.querySelectorAll('[data-light-logo][data-dark-logo]').forEach(img=>{img.src=dark?img.dataset.darkLogo:img.dataset.lightLogo;});
+        const meta=document.querySelector('meta[name="theme-color"]'); if(meta)meta.content=dark?'#111015':'#fbf8f1';
+      };
+      let savedTheme='';
+      try{savedTheme=localStorage.getItem('vc-theme')||'';}catch(e){}
+      applyTheme(savedTheme==='dark');
+      themeToggle?.addEventListener('click',()=>{const dark=!document.body.classList.contains('dark');applyTheme(dark);try{localStorage.setItem('vc-theme',dark?'dark':'light');}catch(e){}});
+
+
+      // Supabase Discord authentication and account menu
+      const authButton=$('#authButton');
+      const authLabel=$('#authLabel');
+      const profileMenu=$('#profileMenu');
+      const profileWrap=$('#profileWrap');
+      const profileAvatar=$('#profileAvatar');
+      const profileFallback=$('#profileFallback');
+      const authDiscordIcon=$('#authDiscordIcon');
+      const accountModal=$('#accountModal');
+      const accountPanelTitle=$('#accountPanelTitle');
+      const accountPanelBody=$('#accountPanelBody');
+      const supabaseConfig=cfg.supabaseUrl&&cfg.supabasePublishableKey&&window.supabase;
+      let supabaseClient=null;
+      let activeAuthUser=null;
+      let notificationPreference=false;
+
+      const discordAvatarUrl=(user)=>{
+        const meta=user?.user_metadata||{};
+        const direct=meta.avatar_url||meta.picture||meta.avatarUrl;
+        if(direct)return direct;
+        const discordId=meta.provider_id||meta.sub||user?.identities?.find(x=>x.provider==='discord')?.identity_data?.sub;
+        const avatar=meta.avatar||user?.identities?.find(x=>x.provider==='discord')?.identity_data?.avatar;
+        if(discordId&&avatar){
+          const ext=String(avatar).startsWith('a_')?'gif':'png';
+          return 'https://cdn.discordapp.com/avatars/'+encodeURIComponent(discordId)+'/'+encodeURIComponent(avatar)+'.'+ext+'?size=96';
+        }
+        return '';
+      };
+      const setProfileMenu=(open)=>{
+        if(!profileMenu||!authButton)return;
+        profileMenu.hidden=!open;
+        authButton.setAttribute('aria-expanded',String(open));
+      };
+      const renderAuth=(user)=>{
+        activeAuthUser=user||null;
+        if(!authButton||!authLabel)return;
+        if(user){
+          const meta=user.user_metadata||{};
+          const name=meta.global_name||meta.full_name||meta.name||meta.preferred_username||user.email||'Your account';
+          const avatarUrl=discordAvatarUrl(user);
+          notificationPreference=meta.notifications_enabled===true;
+          authLabel.textContent='';
+          authButton.classList.add('is-signed-in');
+          authButton.title='Open account menu';
+          authButton.setAttribute('aria-label','Open account menu for '+name);
+          if(profileAvatar){
+            profileAvatar.onerror=()=>{
+              profileAvatar.hidden=true;
+              if(profileFallback)profileFallback.hidden=false;
+            };
+            if(avatarUrl){
+              profileAvatar.src=avatarUrl;
+              profileAvatar.hidden=false;
+              if(profileFallback)profileFallback.hidden=true;
+            }else{
+              profileAvatar.hidden=true;
+              if(profileFallback)profileFallback.hidden=false;
+            }
+          }
+          const menuName=$('#profileMenuName'),menuEmail=$('#profileMenuEmail');
+          if(menuName)menuName.textContent=name;
+          if(menuEmail)menuEmail.textContent=user.email||'Signed in with Discord';
+        }else{
+          notificationPreference=false;
+          authLabel.textContent='Log in';
+          authButton.classList.remove('is-signed-in');
+          authButton.title='Log in with Discord';
+          authButton.setAttribute('aria-label','Log in');
+          if(profileAvatar){profileAvatar.hidden=true;profileAvatar.removeAttribute('src');}
+          if(profileFallback)profileFallback.hidden=true;
+          setProfileMenu(false);
+        }
+      };
+      const openAccountPanel=(title,html)=>{
+        if(!accountModal)return;
+        accountPanelTitle.textContent=title;
+        accountPanelBody.innerHTML=html;
+        accountModal.classList.add('open');
+        accountModal.setAttribute('aria-hidden','false');
+        setProfileMenu(false);
+      };
+      const closeAccountPanel=()=>{
+        accountModal?.classList.remove('open');
+        accountModal?.setAttribute('aria-hidden','true');
+      };
+      const showRegisteredEvents=()=>{
+        openAccountPanel('Registered events', '<div class="account-empty"><strong>No registered events yet</strong>Your Varanasi Connect event registrations will appear here when event registration is connected to your account.</div>');
+      };
+      const showAccountSettings=()=>{
+        openAccountPanel('Settings', '<div class="notification-setting"><div><strong>Community notifications</strong><small>Receive updates about upcoming events and community announcements.</small></div><label class="switch" aria-label="Community notifications"><input id="notificationToggle" type="checkbox" '+(notificationPreference?'checked':'')+'><span class="switch-track"></span></label></div><p class="settings-save-note" id="settingsSaveNote">Your preference is saved to your account.</p>');
+        const toggle=$('#notificationToggle');
+        toggle?.addEventListener('change',async()=>{
+          toggle.disabled=true;
+          const note=$('#settingsSaveNote');
+          if(note)note.textContent='Saving your preference…';
+          try{
+            const {error}=await supabaseClient.auth.updateUser({data:{notifications_enabled:toggle.checked}});
+            if(error)throw error;
+            notificationPreference=toggle.checked;
+            if(note)note.textContent=toggle.checked?'Notifications are turned on for your account.':'Notifications are turned off for your account.';
+          }catch(error){
+            toggle.checked=notificationPreference;
+            if(note)note.textContent='Could not save this setting. Please try again.';
+            console.error('Could not save notification preference:',error);
+          }finally{toggle.disabled=false;}
+        });
+      };
+      const signOut=async()=>{
+        const {error}=await supabaseClient.auth.signOut();
+        if(error)throw error;
+        setProfileMenu(false);
+        renderAuth(null);
+      };
+      if(supabaseConfig){
+        supabaseClient=window.supabase.createClient(cfg.supabaseUrl,cfg.supabasePublishableKey,{
+          auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}
+        });
+        supabaseClient.auth.getSession().then(({data,error})=>{
+          if(error)console.error('Supabase session check failed:',error);
+          renderAuth(data?.session?.user||null);
+        });
+        supabaseClient.auth.onAuthStateChange((_event,session)=>renderAuth(session?.user||null));
+        authButton?.addEventListener('click',async()=>{
+          if(activeAuthUser){setProfileMenu(profileMenu?.hidden!==false);return;}
+          authButton.disabled=true;
+          authLabel.textContent='Opening Discord…';
+          try{
+            const redirectTo=window.location.origin+window.location.pathname+window.location.search;
+            const {error}=await supabaseClient.auth.signInWithOAuth({provider:'discord',options:{redirectTo}});
+            if(error)throw error;
+          }catch(error){
+            console.error('Discord authentication error:',error);
+            authLabel.textContent='Log in';
+            authButton.disabled=false;
+            window.alert('Discord sign-in could not be completed. Please try again. '+(error?.message||''));
+          }
+        });
+        profileMenu?.addEventListener('click',async(event)=>{
+          const action=event.target.closest('[data-account-action]')?.dataset.accountAction;
+          if(!action)return;
+          if(action==='events')showRegisteredEvents();
+          if(action==='settings')showAccountSettings();
+          if(action==='logout'){
+            const logoutButton=event.target.closest('[data-account-action="logout"]');
+            if(logoutButton)logoutButton.disabled=true;
+            try{await signOut();}
+            catch(error){console.error('Sign out failed:',error);window.alert('Could not log out. Please try again.');if(logoutButton)logoutButton.disabled=false;}
+          }
+        });
+        document.addEventListener('click',(event)=>{
+          if(profileWrap&&!profileWrap.contains(event.target))setProfileMenu(false);
+        });
+        document.addEventListener('keydown',(event)=>{
+          if(event.key==='Escape'){setProfileMenu(false);closeAccountPanel();}
+        });
+        $('#accountPanelClose')?.addEventListener('click',closeAccountPanel);
+        accountModal?.addEventListener('click',(event)=>{if(event.target===accountModal)closeAccountPanel();});
+      }else{
+        renderAuth(null);
+        if(authButton)authButton.disabled=true;
+        console.error('Supabase configuration or client library is missing.');
+      }
+
+      document.addEventListener('click',e=>{
+        const d=e.target.closest('[data-detail]'); if(d){e.preventDefault();showDetail(d.dataset.detail);return;}
+        const a=e.target.closest('[data-detail-album]'); if(a){e.preventDefault();showAlbum(a.dataset.detailAlbum);}
+      });
+      $('#detailBack').addEventListener('click',()=>{closeDetail();history.replaceState(null,'','#gallery');$('#gallery').scrollIntoView({behavior:'smooth'});});
+      window.addEventListener('hashchange',()=>{
+        const h=location.hash;
+        if(h.startsWith('#detail/')) showDetail(h.split('/')[1]);
+        else if(h.startsWith('#album/')) showAlbum(h.split('/')[1]);
+        else closeDetail();
+      });
+      fetch('content.json').then(r=>r.ok?r.json():{}).then(c=>{content=c||{};renderAlbums();}).catch(()=>renderAlbums());
+      ['navDiscord','heroDiscord','joinDiscord','footerDiscord'].forEach(id=>{const el=$('#'+id);if(el)el.href=cfg.discordUrl||'https://discord.gg/bSjWdp8fzX'});
+      ['joinEmail','footerEmail'].forEach(id=>{const el=$('#'+id);if(el)el.href='mailto:'+(cfg.email||'community.varanasi@gmail.com')});
+      ['navInstagram','joinInstagram','footerInstagram'].forEach(id=>{const el=$('#'+id);if(el)el.href=cfg.instagramUrl||'https://www.instagram.com/varanasi.connect/'});
+      if(location.hash.startsWith('#detail/')) showDetail(location.hash.split('/')[1]);
+      if(location.hash.startsWith('#album/')) showAlbum(location.hash.split('/')[1]);
+    })();
+  </script>
+</body>
+</html>
