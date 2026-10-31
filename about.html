@@ -262,11 +262,39 @@ body[data-page="varanasi"] main > .hero,body[data-page="varanasi"] main > #event
 body[data-page="rules"] main > .hero,body[data-page="rules"] main > #events,body[data-page="rules"] main > #about,body[data-page="rules"] main > #what-we-do,body[data-page="rules"] main > #gallery{display:none!important}
 @media(max-width:850px){.navlinks{display:flex!important;flex:1;min-width:0;overflow-x:auto;white-space:nowrap;gap:14px;margin:0 10px;padding:4px 0;scrollbar-width:none}.navlinks::-webkit-scrollbar{display:none}.navlinks a{flex:0 0 auto;font-size:11px}.nav-inner{gap:6px}.theme-toggle{flex:0 0 34px}}@media(max-width:520px){.navlinks{gap:12px;margin:0 6px}.navlinks a{font-size:10px}.theme-toggle{display:none}}\n
 .about-photo-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:210px 210px;gap:16px;margin-top:28px}.about-photo{position:relative;margin:0;overflow:hidden;border-radius:24px;background:var(--soft);border:1px solid var(--line)}.about-photo-tall{grid-row:span 2}.about-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}.about-photo:hover img{transform:scale(1.04)}.about-photo:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(20,17,25,.7))}.about-photo figcaption{position:absolute;z-index:1;left:18px;right:18px;bottom:16px;color:white;font-size:13px;font-weight:700}@media(max-width:700px){.about-photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:230px 160px}.about-photo-tall{grid-row:span 2}.about-photo figcaption{font-size:11px;left:12px;right:12px;bottom:12px}}
+
+/* Shared navigation: centered links, text-only brand, consistent across pages. */
+.nav-inner{position:relative!important;display:flex!important;align-items:center!important;justify-content:space-between!important;min-height:64px;gap:14px!important;padding:9px 18px!important}
+.nav .brand{display:flex!important;align-items:center!important;flex:0 0 auto!important;margin:0!important;gap:0!important;min-width:0}
+.nav .brand img{display:none!important}
+.nav .brand span{display:inline!important;font-family:'Space Grotesk',sans-serif!important;font-size:19px!important;font-weight:800!important;letter-spacing:-.045em!important;background:linear-gradient(105deg,#ff78a5 0%,#bd5af1 48%,#7844ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent!important;white-space:nowrap}
+.nav .navlinks{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;display:flex!important;align-items:center!important;justify-content:center!important;flex:0 0 auto!important;gap:clamp(18px,2.5vw,34px)!important;min-width:max-content!important;overflow:visible!important;white-space:nowrap!important;margin:0!important;padding:0!important;font-size:14px!important}
+.nav .navlinks a{font-size:14px!important;font-weight:600!important;flex:0 0 auto!important}
+.nav .theme-toggle{flex:0 0 auto!important;margin-left:auto}
+.nav .profile-wrap,.nav .account,.nav .nav-actions{flex:0 0 auto!important;margin-left:auto}
+.nav .nav-actions{display:flex!important;align-items:center!important;gap:10px!important}
+@media(max-width:760px){
+ .nav-inner{min-height:58px;padding:8px 12px!important;gap:8px!important}
+ .nav .brand span{font-size:16px!important}
+ .nav .navlinks{position:static!important;transform:none!important;left:auto!important;top:auto!important;flex:1 1 auto!important;min-width:0!important;justify-content:center!important;gap:clamp(8px,2vw,16px)!important;overflow-x:auto!important;scrollbar-width:none!important}
+ .nav .navlinks::-webkit-scrollbar{display:none}
+ .nav .navlinks a{font-size:11px!important}
+ .nav .theme-toggle{display:none}
+ .nav .auth-cta,.nav .auth-btn{padding:9px 12px!important;font-size:11px!important;white-space:nowrap}
+}
+@media(max-width:480px){
+ .nav-inner{flex-wrap:wrap!important;justify-content:space-between!important;border-radius:24px!important}
+ .nav .brand span{font-size:15px!important}
+ .nav .navlinks{order:3;flex-basis:100%!important;justify-content:center!important;padding:4px 0 2px!important}
+ .nav .navlinks a{font-size:11px!important}
+ .nav .profile-wrap,.nav .account{margin-left:auto!important}
+}
+
 </style>
 <title>About Varanasi Connect</title><meta name="description" content="The story, purpose and people behind Varanasi Connect."></head>
 <body>
 <nav class="nav"><div class="nav-inner">
-    <a class="brand" href="index.html"><img id="siteLogo" src="assets/logo.png" data-light-logo="assets/logo.png" data-dark-logo="assets/logos/7.png" alt="Varanasi Connect logo"><span>Varanasi Connect</span></a>
+    <a class="brand" href="index.html"><span>Varanasi Connect</span></a>
     <div class="navlinks"><a href="about.html" aria-current="page">About</a><a href="what-we-do.html">What we do</a><a href="events.html">Events</a><a id="navRules" href="rules.html">Rules</a></div>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode"><span class="theme-icon theme-sun" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></span><span class="theme-icon theme-moon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z"></path></svg></span></button>
 
