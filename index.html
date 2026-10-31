@@ -264,6 +264,18 @@
     .ongoing-preview{display:block;position:relative;min-height:390px;border:1px solid var(--line);border-radius:32px;overflow:hidden;background:var(--deep);box-shadow:var(--shadow);isolation:isolate;transition:transform .25s,box-shadow .25s}.ongoing-preview:hover{transform:translateY(-5px);box-shadow:0 28px 75px rgba(57,44,75,.18)}.ongoing-preview>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}.ongoing-preview:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,17,25,.08),rgba(20,17,25,.88));z-index:-1}.ongoing-label{position:absolute;top:20px;left:20px;padding:8px 13px;border-radius:999px;background:var(--paper);color:var(--ink);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em}.ongoing-label i{display:inline-block;width:7px;height:7px;margin-right:7px;border-radius:50%;background:#25a66a;box-shadow:0 0 0 4px rgba(37,166,106,.13)}.ongoing-preview-copy{position:absolute;left:25px;right:25px;bottom:25px;color:#fff;display:grid;gap:10px}.ongoing-preview-copy small{font-size:10px;letter-spacing:.14em;font-weight:800;color:rgba(255,255,255,.7)}.ongoing-preview-copy strong{font:700 clamp(27px,3vw,39px)/1.08 'Space Grotesk',sans-serif;letter-spacing:-.04em}.ongoing-preview-copy>span{font-size:13px;color:rgba(255,255,255,.8)}.ongoing-preview-copy b{color:#fff;font-size:18px;margin-left:5px}@media(max-width:850px){.ongoing-preview{min-height:310px}.hero-grid{gap:30px}}
 
     .registered-event-list{display:grid;gap:10px}.registered-event-item{padding:15px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.35)}.registered-event-item strong,.registered-event-item span{display:block}.registered-event-item span{margin-top:5px;color:var(--muted);font-size:12px}
+
+    /* Keep the ongoing-event poster beside the hero copy on desktop. */
+    @media(min-width:851px){
+      .hero-grid{grid-template-columns:minmax(0,1.1fr) minmax(300px,.78fr)!important;align-items:center!important;gap:clamp(32px,5vw,76px)!important}
+      .hero-grid>div:first-child{max-width:760px;min-width:0}
+      .ongoing-preview{width:100%;max-width:440px;aspect-ratio:4/5;min-height:0;height:auto;justify-self:end}
+    }
+    @media(max-width:850px){
+      .hero-grid{grid-template-columns:minmax(0,1fr)!important;gap:28px!important}
+      .ongoing-preview{width:100%;max-width:420px;aspect-ratio:4/5;min-height:0;height:auto;justify-self:center}
+    }
+    @media(max-width:520px){.ongoing-preview{max-width:100%;border-radius:24px}}
 </style>
 </head>
 <body>
