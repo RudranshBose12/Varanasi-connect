@@ -316,6 +316,8 @@
 
     <section class="about" id="about"><div class="container about-grid"><div><div class="kicker">02 — Who we are</div><h2>More than a<br><span class="gradient-text">community.</span></h2></div><div><p class="about-copy"><strong>Varanasi Connect brings people together around Varanasi.</strong> We create a space where locals, students, creators and curious people can meet, share experiences, discover the city and build things together.</p><p class="about-copy">From online conversations to movie nights, photography contests and future offline events, the goal is simple: make it easier to find your people in the city.</p><div class="pill-row"><span class="pill">Community</span><span class="pill">Culture</span><span class="pill">Events</span><span class="pill">Photography</span><span class="pill">Creators</span><span class="pill">Varanasi</span></div></div></div></section>
 
+
+    <section id="gallery"><div class="container"><div class="section-head gallery-head"><div><div class="kicker">04 — The city through us</div><h2>Varanasi,<br><span class="gradient-text">our way.</span></h2></div><p class="section-intro">A growing collection of Varanasi through our community — the river, streets, people, culture and the moments we experience together.</p></div><div class="album-grid" id="albumGrid"><div class="detail-empty">Loading community albums…</div></div></div></section>
     <section class="join"><div class="container"><div class="join-box"><div><div class="kicker" style="color:rgba(255,255,255,.7)">04 — Join us</div><h2>There is a place<br>for you here.</h2><p>Join the Discord community, meet people from Varanasi and see what we're building next.</p></div><div class="join-actions"><a class="btn discord-cta" id="joinDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join Discord</a><a class="btn instagram-cta" id="joinInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Follow Instagram</a><a class="btn whatsapp-cta is-unavailable" id="joinWhatsApp" aria-disabled="true" title="WhatsApp invite link will be added soon">Join WhatsApp · link coming soon</a><a class="btn btn-outline" id="joinEmail" href="mailto:community.varanasi@gmail.com">Email us</a></div></div></div></section>
   
     <footer><div class="container footer-inner"><div class="footer-brand"><img src="assets/logo.png" alt="Varanasi Connect"><span>Varanasi Connect</span></div><div class="footer-links"><a href="about.html">About</a><a href="events.html">Events</a><a href="rules.html">Community rules</a><a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a><a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a id="footerEmail" href="mailto:community.varanasi@gmail.com">community.varanasi@gmail.com</a></div><div class="mail">© 2026 Varanasi Connect</div></div></footer>
@@ -423,6 +425,9 @@
           else if(cover) cover.innerHTML='<span style="position:absolute;inset:0;display:grid;place-items:center;color:white;font-weight:700;font-size:13px">Open album</span>';
         }
       }
+
+      document.addEventListener('click',e=>{const a=e.target.closest('[data-detail-album]');if(a){e.preventDefault();showAlbum(a.dataset.detailAlbum);}});
+      fetch('content.json').then(r=>r.ok?r.json():{}).then(c=>{content=c||{};renderAlbums();}).catch(()=>renderAlbums());
 
       const themeToggle=$('#themeToggle');
       const applyTheme=(dark)=>{
