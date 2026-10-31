@@ -295,6 +295,61 @@ body[data-page="rules"] main > .hero,body[data-page="rules"] main > #events,body
 .nav .theme-toggle{margin-left:auto!important}
 .nav .profile-wrap,.nav .account{margin-left:0!important}
 .nav .nav-actions .theme-toggle{margin-left:0!important}
+
+/* About page — editorial community story */
+.about-page .about-hero{min-height:auto;padding:155px 0 100px;overflow:hidden}
+.about-page .about-hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:70px}
+.about-page .about-hero-copy h1{font-size:clamp(54px,6.4vw,88px);line-height:.99;margin:25px 0}
+.about-page .about-hero-copy>p{font-size:18px;max-width:590px;color:var(--muted);margin:0 0 28px}
+.about-hero-note{display:flex;align-items:center;gap:10px;margin-top:27px;color:var(--muted);font-size:12px;font-weight:600}
+.note-dot{width:8px;height:8px;border-radius:50%;background:#28b981;box-shadow:0 0 0 5px rgba(40,185,129,.12)}
+.about-hero-visual{height:570px;position:relative}
+.about-hero-main{position:absolute;inset:25px 42px 25px 45px;margin:0;overflow:hidden;border-radius:34px;box-shadow:var(--shadow);transform:rotate(2deg);border:8px solid var(--white)}
+.about-hero-main img,.about-hero-small img,.activity-card>img,.values-image>img{width:100%;height:100%;object-fit:cover}
+.about-hero-main:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(17,14,22,.7))}
+.about-hero-main figcaption{position:absolute;z-index:1;left:25px;bottom:24px;color:white;display:grid;gap:4px}
+.about-hero-main figcaption b{font:700 24px 'Space Grotesk',sans-serif}.about-hero-main figcaption span{font-size:13px;color:rgba(255,255,255,.82)}
+.about-hero-small{position:absolute;width:175px;height:190px;margin:0;padding:7px;background:var(--white);border-radius:20px;box-shadow:var(--shadow);overflow:hidden}
+.about-hero-small img{border-radius:14px}.about-hero-small figcaption{position:absolute;bottom:14px;left:14px;color:white;font-size:12px;font-weight:800;text-shadow:0 2px 8px #000}
+.about-hero-small-top{top:0;right:0;transform:rotate(7deg)}.about-hero-small-bottom{bottom:0;left:0;transform:rotate(-7deg)}
+.about-sticker{position:absolute;right:0;bottom:55px;background:var(--grad);color:white;border-radius:50%;width:112px;height:112px;display:grid;place-content:center;text-align:center;font:700 14px/1.2 'Space Grotesk',sans-serif;transform:rotate(9deg);box-shadow:0 15px 35px rgba(116,55,255,.25)}.about-sticker span{font-size:18px}
+.about-page .about-story{background:var(--deep);color:white;padding:105px 0;position:relative;overflow:hidden}
+.about-page .about-story:after{content:"";position:absolute;width:520px;height:520px;right:-220px;top:-280px;border:1px solid rgba(255,255,255,.1);border-radius:50%;box-shadow:-45px 45px 0 rgba(255,255,255,.025),-90px 90px 0 rgba(255,255,255,.025)}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:85px;position:relative;z-index:1}
+.about-story .kicker{color:#aaa5ae}.about-story h2{font-size:clamp(42px,5vw,66px);max-width:540px}.story-copy{max-width:600px}.story-copy p{color:#c9c5cc;font-size:16px;margin:0 0 18px}.story-copy .story-lead{font:600 23px/1.35 'Space Grotesk',sans-serif;color:white}.story-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:27px}.story-tags span{padding:9px 15px;border:1px solid rgba(255,255,255,.18);border-radius:999px;font-size:12px;color:#f0eaf4}
+.about-page .what-we-do{padding:115px 0}
+.activity-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:310px;gap:17px}
+.activity-card{position:relative;overflow:hidden;border-radius:25px;background:#27232c;isolation:isolate}
+.activity-card>img{position:absolute;inset:0;z-index:-2;transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+.activity-card:hover>img{transform:scale(1.06)}
+.activity-card:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,12,19,.02) 15%,rgba(15,12,19,.88) 100%)}
+.activity-wide{grid-column:span 2}
+.activity-overlay{position:absolute;left:24px;right:24px;bottom:23px;color:white}
+.activity-number{font-size:10px;letter-spacing:.14em;font-weight:800;color:#ffc0d5}
+.activity-overlay h3{font-size:29px;margin:9px 0 8px;letter-spacing:-.03em}
+.activity-overlay p{font-size:13px;line-height:1.55;color:rgba(255,255,255,.82);max-width:440px;margin:0}
+.about-page .about-values{padding:115px 0;background:var(--soft)}
+.values-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:80px}
+.values-image{height:590px;position:relative;border-radius:32px;overflow:hidden;box-shadow:var(--shadow)}
+.values-image:after{content:"";position:absolute;inset:55% 0 0;background:linear-gradient(transparent,rgba(15,12,19,.7))}
+.values-image-caption{position:absolute;z-index:1;left:26px;bottom:25px;color:white;font:700 22px 'Space Grotesk',sans-serif}
+.values-copy h2{font-size:clamp(42px,5vw,66px);margin-bottom:36px}
+.value-row{display:grid;grid-template-columns:42px 1fr;gap:15px;padding:19px 0;border-top:1px solid var(--line)}
+.value-row>span{font:700 12px 'Space Grotesk',sans-serif;color:#b35ee4;padding-top:4px}
+.value-row h3{font-size:20px;margin:0 0 7px}.value-row p{font-size:14px;color:var(--muted);margin:0;max-width:470px}
+.about-page .about-final{padding:100px 0}
+.about-final-box{padding:58px 64px;border-radius:34px;background:var(--deep);color:white;display:flex;align-items:center;justify-content:space-between;gap:40px;position:relative;overflow:hidden}
+.about-final-box:after{content:"";position:absolute;width:430px;height:430px;border:1px solid rgba(255,255,255,.1);border-radius:50%;right:15%;top:-300px;box-shadow:45px 45px 0 rgba(255,255,255,.025),90px 90px 0 rgba(255,255,255,.025)}
+.about-final-box>div{position:relative;z-index:1}.about-final-box .kicker{color:#c2bac9}
+.about-final-box h2{font-size:clamp(42px,5vw,64px)}.about-final-box h2 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.about-final-box p{max-width:510px;color:#c9c5cc;margin:18px 0 0}
+.about-final-box .join-actions{display:grid;gap:10px;min-width:210px}
+.about-final-box .btn-outline{border:1px solid rgba(255,255,255,.3);color:white;background:transparent}
+body.dark .about-page .about-hero-copy>p,body.dark .about-page .section-intro,body.dark .about-page .value-row p{color:var(--muted)}
+body.dark .about-page .about-values{background:#19171d}
+body.dark .about-page .about-hero-main{border-color:#242129}
+@media(max-width:900px){.about-page .about-hero-grid,.story-grid,.values-grid{grid-template-columns:1fr;gap:45px}.about-hero-visual{height:520px;max-width:620px;width:100%;margin:auto}.activity-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:290px}.activity-wide{grid-column:span 2}.values-image{height:440px}.about-final-box{align-items:flex-start;flex-direction:column}.about-final-box .join-actions{display:flex;flex-wrap:wrap}}
+@media(max-width:560px){.about-page .about-hero{padding:130px 0 65px}.about-page .about-hero-copy h1{font-size:clamp(48px,13vw,68px)}.about-page .about-hero-copy>p{font-size:16px}.about-hero-visual{height:400px}.about-hero-main{inset:22px 24px 22px 30px;border-width:5px;border-radius:24px}.about-hero-small{width:125px;height:140px}.about-sticker{width:85px;height:85px;font-size:11px;bottom:35px}.about-sticker span{font-size:14px}.about-page .about-story,.about-page .what-we-do,.about-page .about-values{padding:75px 0}.story-grid{gap:28px}.activity-grid{grid-template-columns:1fr;grid-auto-rows:280px}.activity-wide{grid-column:auto}.activity-overlay{left:19px;right:19px;bottom:19px}.activity-overlay h3{font-size:25px}.values-image{height:350px}.about-page .about-final{padding:65px 0}.about-final-box{padding:35px 25px;border-radius:26px}.about-final-box .join-actions{display:grid;width:100%}.about-final-box .btn{width:100%}}
 </style>
 <title>About Varanasi Connect</title><meta name="description" content="The story, purpose and people behind Varanasi Connect."></head>
 <body>
@@ -319,15 +374,53 @@ body[data-page="rules"] main > .hero,body[data-page="rules"] main > #events,body
     </div>
     
   </div></nav>
-<main id="top"><section class="hero"><div class="container"><div class="eyebrow"><span></span> About the community</div><h1>More than a<br><span class="gradient-text">group chat.</span></h1><p>Varanasi Connect is a community built around the people, creativity, culture and everyday experiences that make Varanasi feel like home.</p></div></section><section class="about"><div class="container about-grid"><div><div class="kicker">Why we started</div><h2>Make it easier<br>to find your<br><span class="gradient-text">people.</span></h2></div><div><p class="about-copy"><strong>A city feels smaller when you know people in it.</strong> We wanted to create a place where locals, students, creators and newcomers can meet beyond their usual circles.</p><p class="about-copy">The community begins online, where people can talk, share interests and make plans. Those connections can grow into movie nights, gaming sessions, creative collaborations and real-life meetups.</p><p class="about-copy">We are not trying to be another information page about Varanasi. We want to create something with the people who live here and care about the city.</p><div class="pill-row"><span class="pill">People</span><span class="pill">Creativity</span><span class="pill">Culture</span><span class="pill">Shared experiences</span></div></div></div></section>
-<section class="about-gallery"><div class="container">
-  <div class="section-head"><div><div class="kicker">A little of what brings us together</div><h2>Made of moments,<br><span class="gradient-text">not just messages.</span></h2></div><p class="section-intro">From slow walks by the river to spontaneous plans, creative meetups and new friendships — this is the community we are building together.</p></div>
-  <div class="about-photo-grid">
-    <figure class="about-photo about-photo-tall"><img src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1000&q=85" alt="The ghats of Varanasi beside the Ganga"><figcaption>Our city, our shared home</figcaption></figure>
-    <figure class="about-photo"><img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=900&q=85" alt="A city alive with lights and activity"><figcaption>Exploring together</figcaption></figure>
-    <figure class="about-photo"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=85" alt="Friends spending time together outdoors"><figcaption>People make the community</figcaption></figure>
+<main id="top" class="about-page">
+<section class="about-hero">
+  <div class="container about-hero-grid">
+    <div class="about-hero-copy">
+      <div class="eyebrow"><span></span> A community from Varanasi</div>
+      <h1>Good people.<br><span class="gradient-text">Good plans.</span><br>One connected city.</h1>
+      <p>Varanasi Connect brings people together around the things that make a city feel alive — shared interests, creative ideas, spontaneous plans and the friendships that grow along the way.</p>
+      <div class="actions"><a class="btn btn-dark" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Find your people <span aria-hidden="true">↗</span></a><a class="btn btn-light" href="events.html">Explore events</a></div>
+      <div class="about-hero-note"><span class="note-dot"></span> Online community · Real-world experiences · Made together</div>
+    </div>
+    <div class="about-hero-visual">
+      <figure class="about-hero-main"><img src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1200&q=88" alt="The ghats and riverfront of Varanasi"><figcaption><b>Rooted in Varanasi</b><span>A city full of stories</span></figcaption></figure>
+      <figure class="about-hero-small about-hero-small-top"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=700&q=85" alt="Friends spending time together"><figcaption>People first</figcaption></figure>
+      <figure class="about-hero-small about-hero-small-bottom"><img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=700&q=85" alt="A creative gathering"><figcaption>Ideas welcome</figcaption></figure>
+      <div class="about-sticker">Made for<br><span>the curious.</span></div>
+    </div>
   </div>
-</div></section><section><div class="container"><div class="section-head"><div><div class="kicker">What matters to us</div><h2>A community<br>built around<br><span class="gradient-text">participation.</span></h2></div><p class="section-intro">You do not need to be a creator, an event organiser or an expert. You can simply show up, join a conversation and get involved at your own pace.</p></div><div class="cards"><article class="card"><span class="card-num">01</span><h3>Belonging</h3><p>A welcoming space to meet people, make friends and feel more connected to the city.</p></article><article class="card"><span class="card-num">02</span><h3>Curiosity</h3><p>Discover places, interests, perspectives and stories you may not come across otherwise.</p></article><article class="card"><span class="card-num">03</span><h3>Making things</h3><p>Turn shared interests into events, projects, collaborations and memories.</p></article></div></div></section><section class="join"><div class="container"><div class="join-box"><div><div class="kicker" style="color:rgba(255,255,255,.7)">Varanasi Connect</div><h2>There is a place<br>for you here.</h2><p>Meet people from Varanasi, join community activities and see what we can create together.</p></div><div class="join-actions"><a class="btn btn-white" id="joinDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join Discord</a><a class="btn btn-outline" id="joinInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a class="btn btn-outline" id="joinEmail" href="mailto:community.varanasi@gmail.com">Email us</a></div></div></div></section></main>
+</section>
+<section class="about-story">
+ <div class="container story-grid">
+  <div><div class="kicker">Why Varanasi Connect?</div><h2>Because a city feels smaller when <span class="gradient-text">you know your people.</span></h2></div>
+  <div class="story-copy"><p class="story-lead">We started with a simple thought: it should be easier to meet people in your own city.</p><p>Whether you have just moved here, are studying in Varanasi, have lived here all your life, or are simply looking for people who share your interests, there should be a place to start a conversation and turn it into something real.</p><p>So we are building a community that begins online and keeps finding ways to meet offline — one movie night, creative meetup, game, photo walk and shared idea at a time.</p><div class="story-tags"><span>Meet</span><span>Explore</span><span>Create</span><span>Belong</span></div></div>
+ </div>
+</section>
+<section class="what-we-do">
+ <div class="container">
+  <div class="section-head"><div><div class="kicker">What we get up to</div><h2>More than just<br><span class="gradient-text">a chat room.</span></h2></div><p class="section-intro">There is always something to join, try, learn or help make happen. Here are a few ways our community comes together.</p></div>
+  <div class="activity-grid">
+   <article class="activity-card activity-wide"><img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1300&q=85" alt="A cinema screen in a dark theatre"><div class="activity-overlay"><span class="activity-number">01 / WATCH</span><h3>Movie nights</h3><p>Pick a film, settle in, watch together and talk about the scenes that stay with you. Our community movie nights happen every Saturday.</p></div></article>
+   <article class="activity-card"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85" alt="A scenic outdoor walking route"><div class="activity-overlay"><span class="activity-number">02 / EXPLORE</span><h3>Walks & meetups</h3><p>Get away from the screen, explore the city and meet familiar usernames in real life.</p></div></article>
+   <article class="activity-card"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=85" alt="A camera ready for photography"><div class="activity-overlay"><span class="activity-number">03 / CAPTURE</span><h3>Photography</h3><p>Photo walks, creative challenges and competitions that celebrate how members see Varanasi.</p></div></article>
+   <article class="activity-card"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=85" alt="A gaming setup with colorful lights"><div class="activity-overlay"><span class="activity-number">04 / PLAY</span><h3>Gaming together</h3><p>Find teammates, host game sessions and enjoy a little friendly competition.</p></div></article>
+   <article class="activity-card"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85" alt="Art materials arranged for a creative project"><div class="activity-overlay"><span class="activity-number">05 / CREATE</span><h3>Creative meetups</h3><p>Make things, share skills, try something new and collaborate with other curious people.</p></div></article>
+   <article class="activity-card activity-wide"><img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1300&q=85" alt="Friends sharing a meal around a table"><div class="activity-overlay"><span class="activity-number">06 / CONNECT</span><h3>Community projects</h3><p>From small experiments to bigger ideas, members can suggest, organise and build things together. The next idea could be yours.</p></div></article>
+  </div>
+ </div>
+</section>
+<section class="about-values">
+ <div class="container values-grid">
+  <div class="values-image"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=1100&q=85" alt="Friends enjoying a community gathering"><div class="values-image-caption">A community is what we make of it.</div></div>
+  <div class="values-copy"><div class="kicker">The kind of community we want</div><h2>Come as you are.<br><span class="gradient-text">Join in your way.</span></h2><div class="value-row"><span>01</span><div><h3>Open to everyone</h3><p>You do not need a big friend group or a particular skill. Just be respectful and be yourself.</p></div></div><div class="value-row"><span>02</span><div><h3>Built by members</h3><p>Events, projects and new ideas come from the people who show up and take part.</p></div></div><div class="value-row"><span>03</span><div><h3>Online to offline</h3><p>Start with a conversation, then join a game, a movie night, a meetup or something entirely new.</p></div></div></div>
+ </div>
+</section>
+<section class="about-final">
+ <div class="container"><div class="about-final-box"><div><div class="kicker">Your city. Your community.</div><h2>There is a place<br>for you <span>here.</span></h2><p>Come meet people, find your next plan and help us make Varanasi Connect what it can be.</p></div><div class="join-actions"><a class="btn btn-white" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join Discord ↗</a><a class="btn btn-outline" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Follow on Instagram</a><a class="btn btn-outline" href="events.html">See upcoming events</a></div></div></div>
+</section>
+</main>
 <footer><div class="container footer-inner"><div class="footer-brand"><img src="assets/logo.png" alt="Varanasi Connect"><span>Varanasi Connect</span></div><div class="footer-links"><a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a><a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a id="footerEmail" href="mailto:community.varanasi@gmail.com">community.varanasi@gmail.com</a></div><div class="mail">© 2026 Varanasi Connect</div></div></footer>
 <div hidden><div id="detailView"><button id="detailBack" type="button"></button><div id="detailViewBody"></div></div><div id="albumGrid"></div><span id="accountModal"></span><span id="accountPanelTitle"></span><span id="accountPanelBody"></span><button id="accountPanelClose"></button></div>
 <script src="site-config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
