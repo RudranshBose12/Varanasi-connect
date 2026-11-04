@@ -316,11 +316,25 @@ html{color-scheme:light!important}
 body{background:#fbf8f1!important;color:#211e26!important}
 body.dark{background:#fbf8f1!important;color:#211e26!important}
 .nav .brand span{font-family:'Space Grotesk',sans-serif!important;font-weight:800!important;letter-spacing:-.045em!important;background:linear-gradient(105deg,#ff78a5 0%,#bd5af1 48%,#7844ff 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important}
+
+/* Varanasi Connect logo: use the uploaded transparent wordmark in navigation and footer. */
+.nav .brand{width:auto!important;max-width:150px!important;flex:0 0 auto!important}
+.nav .brand img{display:block!important;width:auto!important;height:42px!important;max-width:150px!important;max-height:42px!important;object-fit:contain!important;border-radius:0!important}
+.nav .brand span{display:none!important}
+.footer-brand{gap:0!important}
+.footer-brand img{width:auto!important;height:42px!important;max-width:150px!important;object-fit:contain!important}
+.footer-brand span{display:none!important}
+@media(max-width:760px){
+ .nav .brand{max-width:122px!important}
+ .nav .brand img{height:36px!important;max-height:36px!important;max-width:122px!important}
+ .footer-brand img{height:38px!important;max-width:140px!important}
+}
+
 </style>
 </head>
 <body>
   <nav class="nav"><div class="nav-inner">
-    <a class="brand" href="index.html" aria-label="Varanasi Connect home"><span>Varanasi Connect</span></a>
+    <a class="brand" href="index.html" aria-label="Varanasi Connect home"><img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect"></a>
     <div class="navlinks"><a href="about.html">About</a><a href="what-we-do.html">What we do</a><a href="events.html">Events</a><a id="navRules" href="rules.html">Rules</a></div>
 
     <div class="profile-wrap" id="profileWrap">
@@ -359,7 +373,7 @@ body.dark{background:#fbf8f1!important;color:#211e26!important}
     <section id="gallery"><div class="container"><div class="section-head gallery-head"><div><div class="kicker">04 — The city through us</div><h2>Varanasi,<br><span class="gradient-text">our way.</span></h2></div><p class="section-intro">A growing collection of Varanasi through our community — the river, streets, people, culture and the moments we experience together.</p></div><div class="album-grid" id="albumGrid"><div class="detail-empty">Loading community albums…</div></div></div></section>
     <section class="join"><div class="container"><div class="join-box"><div><div class="kicker" style="color:rgba(255,255,255,.7)">04 — Join us</div><h2>There is a place<br>for you here.</h2><p>Join the Discord community, meet people from Varanasi and see what we're building next.</p></div><div class="join-actions"><a class="btn discord-cta" id="joinDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join Discord</a><a class="btn instagram-cta" id="joinInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Follow Instagram</a><a class="btn whatsapp-cta is-unavailable" id="joinWhatsApp" aria-disabled="true" title="WhatsApp invite link will be added soon">Join WhatsApp · link coming soon</a><a class="btn btn-outline" id="joinEmail" href="mailto:community.varanasi@gmail.com">Email us</a></div></div></div></section>
   
-    <footer><div class="container footer-inner"><div class="footer-brand"><img src="assets/logo.png" alt="Varanasi Connect"><span>Varanasi Connect</span></div><div class="footer-links"><a href="about.html">About</a><a href="events.html">Events</a><a href="rules.html">Community rules</a><a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a><a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a id="footerEmail" href="mailto:community.varanasi@gmail.com">community.varanasi@gmail.com</a></div><div class="mail">© 2026 Varanasi Connect</div></div></footer>
+    <footer><div class="container footer-inner"><div class="footer-brand"><img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect"></div><div class="footer-links"><a href="about.html">About</a><a href="events.html">Events</a><a href="rules.html">Community rules</a><a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a><a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a id="footerEmail" href="mailto:community.varanasi@gmail.com">community.varanasi@gmail.com</a></div><div class="mail">© 2026 Varanasi Connect</div></div></footer>
 
   <div class="modal" id="modal" aria-hidden="true"><div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-top"><div><div class="modal-kicker" id="modalKicker"></div><h2 class="modal-title" id="modalTitle"></h2></div><button class="modal-close" id="modalClose" aria-label="Close">×</button></div><div class="modal-body" id="modalBody"></div></div></div>
   <div class="account-modal" id="accountModal" aria-hidden="true"><section class="account-panel" role="dialog" aria-modal="true" aria-labelledby="accountPanelTitle"><div class="account-panel-head"><h3 id="accountPanelTitle">Your account</h3><button class="account-panel-close" id="accountPanelClose" type="button" aria-label="Close">×</button></div><div class="account-panel-body" id="accountPanelBody"></div></section></div>
