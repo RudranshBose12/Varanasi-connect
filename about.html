@@ -350,11 +350,25 @@ body.dark .about-page .about-values{background:#19171d}
 body.dark .about-page .about-hero-main{border-color:#242129}
 @media(max-width:900px){.about-page .about-hero-grid,.story-grid,.values-grid{grid-template-columns:1fr;gap:45px}.about-hero-visual{height:520px;max-width:620px;width:100%;margin:auto}.activity-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:290px}.activity-wide{grid-column:span 2}.values-image{height:440px}.about-final-box{align-items:flex-start;flex-direction:column}.about-final-box .join-actions{display:flex;flex-wrap:wrap}}
 @media(max-width:560px){.about-page .about-hero{padding:130px 0 65px}.about-page .about-hero-copy h1{font-size:clamp(48px,13vw,68px)}.about-page .about-hero-copy>p{font-size:16px}.about-hero-visual{height:400px}.about-hero-main{inset:22px 24px 22px 30px;border-width:5px;border-radius:24px}.about-hero-small{width:125px;height:140px}.about-sticker{width:85px;height:85px;font-size:11px;bottom:35px}.about-sticker span{font-size:14px}.about-page .about-story,.about-page .what-we-do,.about-page .about-values{padding:75px 0}.story-grid{gap:28px}.activity-grid{grid-template-columns:1fr;grid-auto-rows:280px}.activity-wide{grid-column:auto}.activity-overlay{left:19px;right:19px;bottom:19px}.activity-overlay h3{font-size:25px}.values-image{height:350px}.about-page .about-final{padding:65px 0}.about-final-box{padding:35px 25px;border-radius:26px}.about-final-box .join-actions{display:grid;width:100%}.about-final-box .btn{width:100%}}
+
+/* Varanasi Connect logo: use the uploaded transparent wordmark in navigation and footer. */
+.nav .brand{width:auto!important;max-width:150px!important;flex:0 0 auto!important}
+.nav .brand img{display:block!important;width:auto!important;height:42px!important;max-width:150px!important;max-height:42px!important;object-fit:contain!important;border-radius:0!important}
+.nav .brand span{display:none!important}
+.footer-brand{gap:0!important}
+.footer-brand img{width:auto!important;height:42px!important;max-width:150px!important;object-fit:contain!important}
+.footer-brand span{display:none!important}
+@media(max-width:760px){
+ .nav .brand{max-width:122px!important}
+ .nav .brand img{height:36px!important;max-height:36px!important;max-width:122px!important}
+ .footer-brand img{height:38px!important;max-width:140px!important}
+}
+
 </style>
 <title>About Varanasi Connect</title><meta name="description" content="The story, purpose and people behind Varanasi Connect."></head>
 <body>
 <nav class="nav"><div class="nav-inner">
-    <a class="brand" href="index.html"><span>Varanasi Connect</span></a>
+    <a class="brand" href="index.html"><img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect"></a>
     <div class="navlinks"><a href="about.html" aria-current="page">About</a><a href="what-we-do.html">What we do</a><a href="events.html">Events</a><a id="navRules" href="rules.html">Rules</a></div>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode"><span class="theme-icon theme-sun" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></span><span class="theme-icon theme-moon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z"></path></svg></span></button>
 
@@ -421,7 +435,7 @@ body.dark .about-page .about-hero-main{border-color:#242129}
  <div class="container"><div class="about-final-box"><div><div class="kicker">Your city. Your community.</div><h2>There is a place<br>for you <span>here.</span></h2><p>Come meet people, find your next plan and help us make Varanasi Connect what it can be.</p></div><div class="join-actions"><a class="btn btn-white" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join Discord ↗</a><a class="btn btn-outline" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Follow on Instagram</a><a class="btn btn-outline" href="events.html">See upcoming events</a></div></div></div>
 </section>
 </main>
-<footer><div class="container footer-inner"><div class="footer-brand"><img src="assets/logo.png" alt="Varanasi Connect"><span>Varanasi Connect</span></div><div class="footer-links"><a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a><a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a id="footerEmail" href="mailto:community.varanasi@gmail.com">community.varanasi@gmail.com</a></div><div class="mail">© 2026 Varanasi Connect</div></div></footer>
+<footer><div class="container footer-inner"><div class="footer-brand"><img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect"></div><div class="footer-links"><a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a><a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a id="footerEmail" href="mailto:community.varanasi@gmail.com">community.varanasi@gmail.com</a></div><div class="mail">© 2026 Varanasi Connect</div></div></footer>
 <div hidden><div id="detailView"><button id="detailBack" type="button"></button><div id="detailViewBody"></div></div><div id="albumGrid"></div><span id="accountModal"></span><span id="accountPanelTitle"></span><span id="accountPanelBody"></span><button id="accountPanelClose"></button></div>
 <script src="site-config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>(function(){const b=document.getElementById('themeToggle');let d=false;try{d=localStorage.getItem('vc-theme')==='dark'}catch(e){};function apply(){document.body.classList.toggle('dark',d);b?.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode');document.querySelectorAll('[data-light-logo][data-dark-logo]').forEach(i=>i.src=d?i.dataset.darkLogo:i.dataset.lightLogo);const m=document.querySelector('meta[name="theme-color"]');if(m)m.content=d?'#111015':'#fbf8f1'}apply();b?.addEventListener('click',()=>{d=!d;apply();try{localStorage.setItem('vc-theme',d?'dark':'light')}catch(e){}});const cfg=window.VC_CONFIG||{};const auth=document.getElementById('authButton'),label=document.getElementById('authLabel');if(auth){auth.addEventListener('click',async()=>{if(!window.supabase||!cfg.supabaseUrl||!cfg.supabasePublishableKey){alert('Discord login is temporarily unavailable.');return}const client=window.supabase.createClient(cfg.supabaseUrl,cfg.supabasePublishableKey);const {error}=await client.auth.signInWithOAuth({provider:'discord',options:{redirectTo:location.href}});if(error)alert(error.message)})}})();</script>
