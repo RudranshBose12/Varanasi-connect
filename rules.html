@@ -375,27 +375,40 @@ footer{border-top:1px solid rgba(65,65,67,.12)!important;padding:35px 0 45px!imp
 @media(max-width:850px){.nav-inner{gap:8px!important}.nav .navlinks{justify-content:flex-start!important;gap:13px!important;overflow-x:auto!important;white-space:nowrap!important;scrollbar-width:none!important}.nav .navlinks::-webkit-scrollbar{display:none!important}.nav .navlinks a{font-size:11px!important}.nav .auth-cta{padding:0 12px!important;font-size:11px!important}.footer-inner{flex-wrap:wrap!important;justify-content:space-between!important;gap:18px!important}.footer-links{order:3;flex-basis:100%!important;justify-content:flex-start!important}}
 @media(max-width:600px){.nav-inner{padding:8px 10px 8px 14px!important;gap:5px!important}.nav .brand{max-width:122px!important}.nav .brand img{height:36px!important;max-width:122px!important}.nav .navlinks{gap:10px!important;margin:0 4px!important}.nav .navlinks a{font-size:10px!important}.nav .auth-cta{height:34px!important;min-width:66px!important;padding:0 10px!important;font-size:11px!important}.footer-inner{align-items:flex-start!important;flex-direction:column!important;gap:16px!important}.footer-links{order:0!important;flex-basis:auto!important;justify-content:flex-start!important;gap:12px 18px!important}.footer-brand img{height:38px!important;max-width:140px!important}.mail{white-space:normal!important}}
 
-/* Rules page visual redesign */
+/* Community standards page — editorial layout, shared across every part of the community */
 body{padding-top:82px!important}
-.rules-page-hero{padding:76px 0 56px!important}
-.rules-page-hero .container{max-width:1160px!important}
-.rules-page-hero .hero-copy{max-width:760px}
-.rules-page-hero h1{font-size:clamp(48px,7vw,82px)!important;line-height:.98!important;letter-spacing:-.06em!important;margin:20px 0!important}
-.rules-page-hero p{max-width:650px!important;font-size:17px!important;line-height:1.75!important;color:var(--muted)!important}
-.rules-section{padding:54px 0 100px!important;background:linear-gradient(180deg,#f3eee5 0%,#fbf8f1 100%)!important}
+.rules-page-hero{padding:86px 0 70px!important;background:#252329!important;color:#fff!important;position:relative!important;overflow:hidden!important}
+.rules-page-hero:after{content:"";position:absolute;width:580px;height:580px;right:-150px;top:-310px;border:1px solid rgba(255,255,255,.13);border-radius:50%;box-shadow:0 0 0 55px rgba(255,255,255,.025),0 0 0 110px rgba(255,255,255,.02),0 0 0 165px rgba(255,255,255,.015)!important;pointer-events:none}
+.rules-page-hero .container{max-width:1160px!important;position:relative!important;z-index:1!important}
+.rules-page-hero .hero-copy{max-width:850px!important}
+.rules-page-hero .eyebrow{color:#e5dfe8!important;border-color:rgba(255,255,255,.18)!important;background:rgba(255,255,255,.06)!important}
+.rules-page-hero .eyebrow span{background:#ff78a5!important}
+.rules-page-hero h1{font-size:clamp(48px,7vw,86px)!important;line-height:.98!important;letter-spacing:-.06em!important;margin:24px 0!important;color:#fff!important}
+.rules-page-hero .gradient-text{background:linear-gradient(110deg,#ff9cba,#c5a7ff)!important;-webkit-background-clip:text!important;background-clip:text!important}
+.rules-page-hero p{max-width:690px!important;font-size:17px!important;line-height:1.8!important;color:#d1cbd4!important}
+.rules-section{padding:112px 0 100px!important;background:linear-gradient(180deg,#fbf8f1 0%,#f3eee5 100%)!important}
 .rules-section .container{max-width:1160px!important}
-.rules-section .section-head{align-items:end!important;margin-bottom:34px!important}
-.rules-section .section-head h2{font-size:clamp(34px,4vw,50px)!important;line-height:1.05!important}
-.rules-section .section-intro{max-width:470px!important}
-.rules-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;counter-reset:rules!important}
-.rule-card{position:relative!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:18px!important;min-height:220px!important;padding:25px!important;border:1px solid rgba(65,65,67,.1)!important;border-radius:22px!important;background:rgba(255,255,255,.76)!important;box-shadow:0 8px 28px rgba(45,38,52,.035)!important;transition:transform .2s,box-shadow .2s!important}
-.rule-card:hover{transform:translateY(-4px)!important;box-shadow:0 16px 36px rgba(45,38,52,.08)!important}
-.rule-number{display:flex!important;align-items:center!important;justify-content:center!important;width:42px!important;height:42px!important;flex:0 0 auto!important;border-radius:14px!important;background:linear-gradient(135deg,#ff78a8,#8745ee)!important;color:#fff!important;font-size:13px!important;font-weight:800!important;letter-spacing:.05em!important}
-.rule-card h3{font-size:19px!important;line-height:1.25!important;margin:0 0 9px!important;color:#25212a!important}
-.rule-card p{font-size:13px!important;line-height:1.7!important;color:#6c6670!important;margin:0!important}
-.rules-note{margin:28px 0 0!important;padding:20px 24px!important;border:1px solid rgba(135,69,238,.18)!important;border-radius:18px!important;background:rgba(255,255,255,.7)!important;color:#514b56!important;font-size:14px!important;line-height:1.65!important}
-@media(max-width:900px){.rules-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-@media(max-width:600px){body{padding-top:72px!important}.rules-page-hero{padding:54px 0 36px!important}.rules-section{padding:36px 0 64px!important}.rules-section .section-head{display:block!important}.rules-section .section-intro{margin-top:14px!important}.rules-grid{grid-template-columns:1fr!important;gap:12px!important}.rule-card{min-height:0!important;padding:21px!important}.rule-card p{font-size:13px!important}}
+.rules-intro{position:relative!important;isolation:isolate;display:grid!important;grid-template-columns:.9fr 1.1fr!important;gap:42px!important;align-items:center!important;margin:0 0 52px!important;padding:48px 52px!important;min-height:300px!important;overflow:hidden!important;border-radius:30px!important;background:linear-gradient(118deg,#ff79a8 0%,#d84ebc 46%,#8040f5 100%)!important;box-shadow:0 22px 55px rgba(147,66,181,.18)!important}
+.rules-intro:before{content:"";position:absolute;z-index:-1;width:370px;height:370px;right:22%;top:-245px;border:1px solid rgba(255,255,255,.3);border-radius:50%;box-shadow:0 0 0 32px rgba(255,255,255,.07),0 0 0 66px rgba(255,255,255,.055),0 0 0 100px rgba(255,255,255,.04)!important}
+.rules-intro:after{content:"VC";position:absolute;z-index:-1;right:28px;bottom:-65px;color:rgba(255,255,255,.11);font-size:220px;font-weight:900;letter-spacing:-.12em;line-height:1}
+.rules-intro .kicker{display:inline-flex!important;align-items:center!important;gap:9px!important;margin-bottom:22px!important;padding:8px 13px!important;border:1px solid rgba(255,255,255,.32)!important;border-radius:999px!important;background:rgba(255,255,255,.13)!important;color:#fff!important;font-size:11px!important;font-weight:800!important;letter-spacing:.12em!important;text-transform:uppercase!important}
+.rules-intro .kicker:before{content:"";width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.18)}
+.rules-intro h2{font-size:clamp(38px,4.8vw,62px)!important;line-height:.98!important;letter-spacing:-.055em!important;color:#fff!important;margin:0!important}
+.rules-intro h2:after{content:"";display:block;width:74px;height:5px;margin-top:25px;border-radius:9px;background:#fff;opacity:.8}
+.rules-intro-copy{position:relative!important;max-width:610px!important;color:#fff!important;font-size:16px!important;line-height:1.8!important;margin:0!important}
+.rules-scope{display:flex!important;flex-wrap:wrap!important;gap:9px!important;margin-top:24px!important}
+.rules-scope span{padding:9px 13px!important;border:1px solid rgba(255,255,255,.3)!important;border-radius:999px!important;background:rgba(255,255,255,.14)!important;color:#fff!important;font-size:12px!important;font-weight:700!important;backdrop-filter:blur(8px)!important}
+.rules-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important}
+.rule-card{position:relative!important;display:block!important;min-height:236px!important;padding:26px!important;border:1px solid rgba(65,65,67,.1)!important;border-radius:22px!important;background:rgba(255,253,249,.88)!important;box-shadow:0 8px 28px rgba(45,38,52,.035)!important;transition:transform .22s,box-shadow .22s,border-color .22s!important;overflow:hidden!important}
+.rule-card:before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,#ff78a5,#8d6be8);opacity:.8}
+.rule-card:hover{transform:translateY(-4px)!important;box-shadow:0 18px 38px rgba(45,38,52,.09)!important;border-color:rgba(116,55,255,.2)!important}
+.rule-number{display:block!important;margin:0 0 28px!important;color:#9a7b9f!important;font-family:'Space Grotesk',sans-serif!important;font-size:12px!important;font-weight:700!important;letter-spacing:.12em!important}
+.rule-card h3{font-size:20px!important;line-height:1.25!important;margin:0 0 11px!important;color:#25212a!important}
+.rule-card p{font-size:14px!important;line-height:1.75!important;color:#6c6670!important;margin:0!important}
+.rules-note{margin:30px 0 0!important;padding:24px 26px!important;border:1px solid rgba(135,69,238,.18)!important;border-radius:20px!important;background:#252329!important;color:#e5dfe8!important;font-size:14px!important;line-height:1.75!important}
+.rules-note strong{color:#fff!important}
+@media(max-width:900px){.rules-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.rules-intro{grid-template-columns:1fr!important;gap:24px!important;padding:38px!important}}
+@media(max-width:600px){body{padding-top:72px!important}.rules-section{padding:88px 0 68px!important}.rules-intro{margin-bottom:30px!important;padding:30px 24px!important;min-height:0!important;border-radius:23px!important}.rules-intro h2{font-size:42px!important}.rules-intro-copy{font-size:14px!important}.rules-grid{grid-template-columns:1fr!important;gap:12px!important}.rule-card{min-height:0!important;padding:23px!important}.rule-number{margin-bottom:18px!important}.rule-card p{font-size:13px!important}.rules-note{padding:20px!important}}
 
 /* Shared navigation and footer alignment across every page */
 .nav{position:fixed!important;top:16px!important;left:0!important;right:0!important;z-index:100!important;padding:0!important}
@@ -419,8 +432,168 @@ footer{border-top:1px solid rgba(65,65,67,.12)!important;padding:35px 0 45px!imp
 @media(max-width:760px){.nav{top:8px!important}.nav-inner{min-height:58px!important;padding:8px 12px!important;gap:8px!important}.nav .brand img{width:112px!important;max-height:40px!important}.nav .navlinks{position:static!important;transform:none!important;left:auto!important;top:auto!important;flex:1 1 auto!important;min-width:0!important;justify-content:center!important;gap:clamp(8px,2vw,16px)!important;overflow-x:auto!important;scrollbar-width:none!important}.nav .navlinks::-webkit-scrollbar{display:none}.nav .navlinks a{font-size:11px!important}.nav .auth-cta{height:36px!important;min-width:66px!important;padding:0 12px!important;font-size:11px!important}.footer-inner{flex-direction:column!important;align-items:flex-start!important;gap:16px!important}.footer-inner .mail{margin-left:0!important}}
 @media(max-width:480px){.nav-inner{flex-wrap:wrap!important;justify-content:space-between!important;border-radius:24px!important}.nav .navlinks{order:3;flex-basis:100%!important;justify-content:center!important;padding:4px 0 2px!important}}
 
+
+/* FIXING UI AND DESIGN: one shared footer layout on every page */
+footer{
+  width:100%!important;
+  border-top:1px solid rgba(65,65,67,.12)!important;
+  padding:35px 0 42px!important;
+  background:transparent!important;
+  color:inherit!important;
+}
+footer .footer-inner{
+  width:min(1160px,calc(100% - 48px))!important;
+  max-width:1160px!important;
+  margin:0 auto!important;
+  padding:0!important;
+  display:grid!important;
+  grid-template-columns:150px minmax(0,1fr) auto!important;
+  align-items:center!important;
+  justify-content:initial!important;
+  gap:24px!important;
+  flex-direction:initial!important;
+  flex-wrap:initial!important;
+}
+footer .footer-brand{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:0!important;
+  background:transparent!important;
+  gap:0!important;
+}
+footer .footer-brand img{
+  display:block!important;
+  width:138px!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:48px!important;
+  object-fit:contain!important;
+}
+footer .footer-links{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex-wrap:wrap!important;
+  min-width:0!important;
+  gap:10px 22px!important;
+  margin:0!important;
+  padding:0!important;
+  font-size:13px!important;
+  line-height:1.6!important;
+  color:#77737a!important;
+}
+footer .footer-links a{
+  display:inline-block!important;
+  margin:0!important;
+  padding:0!important;
+  color:inherit!important;
+  text-decoration:none!important;
+  white-space:nowrap!important;
+}
+footer .footer-links a:hover{color:#211e26!important}
+footer .mail{
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+  font-size:13px!important;
+  line-height:1.5!important;
+  color:#77737a!important;
+  text-align:right!important;
+  white-space:nowrap!important;
+}
+@media(max-width:1000px){
+  footer .footer-inner{
+    grid-template-columns:140px minmax(0,1fr)!important;
+    gap:18px 24px!important;
+  }
+  footer .footer-links{
+    grid-column:1 / -1!important;
+    justify-content:flex-start!important;
+  }
+  footer .mail{
+    grid-column:2!important;
+    grid-row:1!important;
+    text-align:right!important;
+  }
+}
+@media(max-width:600px){
+  footer{padding:28px 0 32px!important}
+  footer .footer-inner{
+    width:calc(100% - 40px)!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:16px!important;
+  }
+  footer .footer-brand{grid-column:1!important;grid-row:auto!important}
+  footer .footer-brand img{width:128px!important;max-height:44px!important}
+  footer .footer-links{
+    grid-column:1!important;
+    grid-row:auto!important;
+    justify-content:flex-start!important;
+    gap:9px 16px!important;
+  }
+  footer .footer-links a{white-space:normal!important}
+  footer .mail{
+    grid-column:1!important;
+    grid-row:auto!important;
+    text-align:left!important;
+    white-space:normal!important;
+  }
+}
+
 </style>
-<title>Community Rules — Varanasi Connect</title><meta name="description" content="Read the Varanasi Connect community guidelines and moderation expectations."></head>
+<title>Community Rules — Varanasi Connect</title><meta name="description" content="Read the Varanasi Connect community guidelines and moderation expectations."><style id="site-footer-consistency">
+.site-footer{display:block!important;width:100%!important;box-sizing:border-box!important;margin:0!important;border-top:1px solid rgba(65,65,67,.12)!important;padding:34px 0 42px!important;background:transparent!important;color:#77737a!important;font-size:13px!important}
+.site-footer .footer-inner{width:min(1160px,calc(100% - 48px))!important;max-width:1160px!important;margin:0 auto!important;padding:0!important;display:grid!important;grid-template-columns:150px minmax(0,1fr) auto!important;align-items:center!important;justify-content:initial!important;gap:24px!important}
+.site-footer .footer-brand{display:flex!important;align-items:center!important;justify-content:flex-start!important;min-width:0!important;margin:0!important;padding:0!important;background:none!important;text-decoration:none!important}
+.site-footer .footer-brand img{display:block!important;width:138px!important;height:auto!important;max-width:100%!important;max-height:48px!important;object-fit:contain!important;margin:0!important}
+.site-footer .footer-links{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:center!important;flex-wrap:wrap!important;min-width:0!important;gap:10px 20px!important;margin:0!important;padding:0!important;line-height:1.6!important;font-size:13px!important;color:#77737a!important}
+.site-footer .footer-links a{display:inline-block!important;float:none!important;margin:0!important;padding:0!important;color:inherit!important;text-decoration:none!important;white-space:nowrap!important;line-height:1.6!important}
+.site-footer .footer-links a:hover{color:#252329!important}
+.site-footer .mail{display:block!important;min-width:max-content!important;margin:0!important;padding:0!important;font-size:13px!important;line-height:1.5!important;color:#77737a!important;text-align:right!important;white-space:nowrap!important}
+@media(max-width:1000px){.site-footer .footer-inner{grid-template-columns:140px minmax(0,1fr)!important;gap:18px 22px!important}.site-footer .footer-links{grid-column:1/-1!important;grid-row:2!important;justify-content:flex-start!important}.site-footer .mail{grid-column:2!important;grid-row:1!important;text-align:right!important}}
+@media(max-width:600px){.site-footer{padding:28px 0 32px!important}.site-footer .footer-inner{width:calc(100% - 40px)!important;grid-template-columns:minmax(0,1fr)!important;gap:15px!important}.site-footer .footer-brand,.site-footer .footer-links,.site-footer .mail{grid-column:1!important;grid-row:auto!important}.site-footer .footer-brand img{width:128px!important;max-height:44px!important}.site-footer .footer-links{justify-content:flex-start!important;gap:8px 16px!important}.site-footer .footer-links a{white-space:normal!important;overflow-wrap:anywhere!important}.site-footer .mail{text-align:left!important;white-space:normal!important;min-width:0!important}}
+
+/* Refined community rules — fewer, clearer and more visual */
+.rules-section{padding:92px 0 104px!important;background:linear-gradient(180deg,#fbf8f1 0%,#f5eff4 100%)!important}
+.rules-intro{position:relative!important;display:grid!important;grid-template-columns:1.05fr .95fr!important;align-items:center!important;gap:40px!important;min-height:430px!important;margin:0 0 54px!important;padding:54px!important;border-radius:32px!important;overflow:hidden!important;background:linear-gradient(118deg,#ff78a5 0%,#df61b7 48%,#7437ff 100%)!important;box-shadow:0 26px 70px rgba(116,55,255,.16)!important}
+.rules-intro:before{content:"";position:absolute!important;width:420px;height:420px;left:-250px;bottom:-300px;border:1px solid rgba(255,255,255,.32);border-radius:50%;box-shadow:0 0 0 36px rgba(255,255,255,.08),0 0 0 74px rgba(255,255,255,.055),0 0 0 112px rgba(255,255,255,.035)!important;pointer-events:none}
+.rules-intro-copy{position:relative!important;z-index:2!important;max-width:540px!important}
+.rules-intro .kicker{display:inline-flex!important;margin:0 0 22px!important;padding:9px 14px!important;border:1px solid rgba(255,255,255,.38)!important;border-radius:999px!important;background:rgba(255,255,255,.14)!important;color:#fff!important;font-size:11px!important;font-weight:800!important;letter-spacing:.1em!important;text-transform:uppercase!important}
+.rules-intro h2{font-size:clamp(42px,5vw,68px)!important;line-height:.98!important;letter-spacing:-.06em!important;color:#fff!important;margin:0 0 22px!important}
+.rules-intro h2 span{color:#ffe5ef!important}
+.rules-intro-copy>p{max-width:510px!important;color:#fff!important;font-size:16px!important;line-height:1.8!important;margin:0!important}
+.rules-scope{display:flex!important;flex-wrap:wrap!important;gap:8px!important;margin-top:25px!important}
+.rules-scope span{padding:8px 12px!important;border:1px solid rgba(255,255,255,.3)!important;border-radius:999px!important;background:rgba(255,255,255,.13)!important;color:#fff!important;font-size:11px!important;font-weight:700!important}
+.rules-visual{position:relative!important;min-height:320px!important}
+.rules-photo{position:absolute!important;overflow:hidden!important;border:7px solid #fffdf9!important;box-shadow:0 18px 45px rgba(37,35,41,.22)!important}
+.rules-photo img{width:100%!important;height:100%!important;object-fit:cover!important}
+.rules-photo-main{width:72%!important;height:270px!important;right:7%!important;top:8px!important;transform:rotate(5deg)!important;border-radius:18px!important}
+.rules-photo-small{width:45%!important;height:150px!important;left:0!important;bottom:0!important;transform:rotate(-8deg)!important;border-radius:15px!important}
+.rules-sticker{position:absolute!important;z-index:3!important;right:0!important;bottom:12px!important;width:105px!important;height:105px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;border-radius:50%!important;background:#fffdf9!important;color:#7437ff!important;transform:rotate(9deg)!important;box-shadow:0 12px 30px rgba(37,35,41,.15)!important}
+.rules-sticker span{font-family:'Space Grotesk',sans-serif!important;font-size:30px!important;font-weight:700!important;line-height:1!important}
+.rules-sticker small{font-size:9px!important;font-weight:800!important;letter-spacing:.08em!important;text-transform:uppercase!important}
+.rules-orbit{position:absolute!important;z-index:0!important;width:95px;height:95px;left:12%;top:0;border:1px solid rgba(255,255,255,.5);border-radius:50%!important}
+.rules-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px!important}
+.rule-card{position:relative!important;min-height:280px!important;padding:28px!important;border:1px solid rgba(65,65,67,.1)!important;border-radius:24px!important;background:rgba(255,253,249,.92)!important;box-shadow:0 10px 32px rgba(45,38,52,.045)!important;transition:transform .22s,box-shadow .22s!important}
+.rule-card:hover{transform:translateY(-5px)!important;box-shadow:0 20px 42px rgba(45,38,52,.1)!important}
+.rule-card:before{content:"";position:absolute!important;left:28px;right:28px;top:0;height:3px;border-radius:0 0 4px 4px;background:var(--grad)!important}
+.rule-icon{width:48px!important;height:48px!important;display:grid!important;place-items:center!important;border-radius:16px!important;margin-bottom:23px!important}
+.rule-icon.pink{background:#ffe7ef!important;color:#df5793!important}
+.rule-icon.violet{background:#eee6ff!important;color:#7437ff!important}
+.rule-icon svg{width:23px!important;height:23px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.7!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.rule-number{position:absolute!important;top:37px!important;right:28px!important;color:#b4aeb7!important;font-family:'Space Grotesk',sans-serif!important;font-size:12px!important;font-weight:700!important;letter-spacing:.12em!important}
+.rule-card h3{margin:0 0 11px!important;color:#252329!important;font-size:20px!important;letter-spacing:-.025em!important}
+.rule-card p{margin:0!important;color:#6c6670!important;font-size:14px!important;line-height:1.75!important}
+.rules-note{margin:30px 0 0!important;padding:24px 28px!important;border:1px solid rgba(116,55,255,.14)!important;border-radius:20px!important;background:#252329!important;color:#e9e3ed!important;font-size:14px!important;line-height:1.75!important}
+.rules-note strong{color:#fff!important}
+@media(max-width:900px){.rules-intro{grid-template-columns:1fr!important;padding:42px!important}.rules-visual{min-height:310px!important;max-width:560px!important;width:100%!important;margin:0 auto!important}.rules-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:600px){.rules-section{padding:82px 0 68px!important}.rules-intro{padding:30px 24px!important;gap:24px!important;border-radius:24px!important;margin-bottom:32px!important}.rules-intro h2{font-size:46px!important}.rules-intro-copy>p{font-size:14px!important}.rules-visual{min-height:255px!important}.rules-photo-main{height:210px!important;width:75%!important}.rules-photo-small{height:112px!important;width:44%!important}.rules-sticker{width:78px!important;height:78px!important;bottom:2px!important}.rules-sticker span{font-size:23px!important}.rules-grid{grid-template-columns:1fr!important;gap:13px!important}.rule-card{min-height:0!important;padding:24px!important}.rule-icon{margin-bottom:18px!important}.rule-number{top:32px!important;right:24px!important}.rules-note{padding:20px!important}}
+</style>
+<link rel="stylesheet" href="assets/shared-nav.css?v=1">
+</head>
 <body>
 <nav class="nav"><div class="nav-inner">
     <a class="brand" href="index.html" aria-label="Varanasi Connect home"><img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect"></a>
@@ -443,8 +616,31 @@ footer{border-top:1px solid rgba(65,65,67,.12)!important;padding:35px 0 45px!imp
     </div>
     
   </div></nav>
-<main id="top"><section class="hero rules-page-hero"><div class="container"><div class="hero-copy"><div class="eyebrow"><span></span> Community guidelines</div><h1>A good space<br>starts with<br><span class="gradient-text">respect.</span></h1><p>These guidelines help keep Varanasi Connect welcoming, safe and enjoyable. By joining the community, you agree to follow them.</p></div></div></section><section class="rules-section"><div class="container"><div class="section-head"><div><div class="kicker">12 guidelines</div><h2>Our server<br><span class="gradient-text">rules.</span></h2></div><p class="section-intro">Moderators may take action when behaviour harms the community or makes members feel unsafe. If something is wrong, report it through the ticket channel.</p></div><div class="rules-grid"><article class="rule-card"><span class="rule-number">01</span><div><h3>Be respectful</h3><p>Treat everyone with dignity. Personal attacks, insults, trolling and harassment of any kind will not be tolerated. Three warnings result in a timeout; five warnings result in a kick. Continued violations after that will result in a permanent ban.</p></div></article><article class="rule-card"><span class="rule-number">02</span><div><h3>No spam or self-promotion</h3><p>Avoid repeating messages, posting large walls of text or emojis, or mass-pinging members. Keep promotional links, streams and other server invites strictly inside designated channels.</p></div></article><article class="rule-card"><span class="rule-number">03</span><div><h3>Keep it SFW</h3><p>Do not share adult content, gore or highly explicit material. This applies to text channels, media uploads, direct messages to members, profile pictures and nicknames.</p></div></article><article class="rule-card"><span class="rule-number">04</span><div><h3>Use the right channels</h3><p>Keep conversations on-topic. Check the channel description if you are unsure where a topic belongs.</p></div></article><article class="rule-card"><span class="rule-number">05</span><div><h3>No malicious content or cheating</h3><p>Do not share hacks, exploits, cheats, pirated material or harmful links.</p></div></article><article class="rule-card"><span class="rule-number">06</span><div><h3>No hate speech or threats</h3><p>Discrimination, hate speech, death threats and profanity intended to hurt others are not acceptable. Repeated violations can lead to timeouts, removal or a permanent ban.</p></div></article><article class="rule-card"><span class="rule-number">07</span><div><h3>No promotion of harmful products</h3><p>Promoting harmful products such as tobacco or restricted medicines is not allowed.</p></div></article><article class="rule-card"><span class="rule-number">08</span><div><h3>Follow Discord's Terms of Service</h3><p>All members must follow Discord's Terms of Service and Community Guidelines.</p></div></article><article class="rule-card"><span class="rule-number">09</span><div><h3>Listen to the moderation team</h3><p>If a moderator asks you to change your behaviour, please cooperate. If you disagree with an action, take it up privately rather than arguing in public channels.</p></div></article><article class="rule-card"><span class="rule-number">10</span><div><h3>Be truthful about yourself</h3><p>Faking your age or other aspects of yourself in order to cause harm to others, especially minors, will lead to serious consequences.</p></div></article><article class="rule-card"><span class="rule-number">11</span><div><h3>Contact moderators through tickets</h3><p>Do not ping a moderator for support. Use the Text tickets channel to contact the moderation team.</p></div></article><article class="rule-card"><span class="rule-number">12</span><div><h3>Respect members' DMs and boundaries</h3><p>Do not mass-DM members without prior interaction. Report inappropriate DMs from members of our server through the tickets channel.</p></div></article></div><p class="rules-note">If you see something that breaks these rules, report it to the moderation team through the tickets channel.</p></div></section><section class="join"><div class="container"><div class="join-box"><div><div class="kicker" style="color:rgba(255,255,255,.7)">04 — Join us</div><h2>There is a place<br>for you here.</h2><p>Join the Discord community, meet people from Varanasi and see what we're building next.</p></div><div class="join-actions"><a class="btn discord-cta" id="joinDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join Discord</a><a class="btn instagram-cta" id="joinInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Follow Instagram</a><a class="btn whatsapp-cta is-unavailable" id="joinWhatsApp" aria-disabled="true" title="WhatsApp invite link will be added soon">Join WhatsApp · link coming soon</a><a class="btn btn-outline" id="joinEmail" href="mailto:community.varanasi@gmail.com">Email us</a></div></div></div></section></main>
-<footer><div class="container footer-inner"><div class="footer-brand"><img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect"></div><div class="footer-links"><a href="about.html">About</a><a href="events.html">Events</a><a href="rules.html">Community rules</a><a class="footer-support" href="mailto:community.varanasi@gmail.com?subject=Varanasi%20Connect%20Support">Support</a><a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a><a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a id="footerEmail" href="mailto:community.varanasi@gmail.com">community.varanasi@gmail.com</a></div><div class="mail">© 2026 Varanasi Connect</div></div></footer>
+<main id="top"><section class="rules-section"><div class="container"><div class="rules-intro"><div class="rules-intro-copy"><div class="kicker">A little respect goes a long way</div><h2>Make space<br><span>for everyone.</span></h2><p>We're here to meet people, do things and create together. A few simple expectations help make Varanasi Connect a place where everyone feels welcome — online and offline.</p><div class="rules-scope"><span>Online</span><span>At events</span><span>In every community space</span></div></div><div class="rules-visual"><div class="rules-photo rules-photo-main"><img src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1000&q=85" alt="Varanasi riverside ghats and community life"></div><div class="rules-photo rules-photo-small"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=85" alt="Friends spending time together outdoors"></div><div class="rules-sticker"><span>VC</span><small>Better together</small></div><div class="rules-orbit"></div></div></div><div class="rules-grid">
+<article class="rule-card"><div class="rule-icon pink"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg></div><span class="rule-number">01</span><h3>Respect everyone</h3><p>Be kind, welcoming and considerate. Harassment, bullying, discrimination, hate speech and personal attacks have no place here. Respect different people and opinions.</p></article>
+<article class="rule-card"><div class="rule-icon violet"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v3"/></svg></div><span class="rule-number">02</span><h3>Respect privacy</h3><p>Never share someone's personal details, private messages, photos or contact information without permission. Ask before photographing, recording or posting someone at an event.</p></article>
+<article class="rule-card"><div class="rule-icon pink"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="m9 12 2 2 4-4"/></svg></div><span class="rule-number">03</span><h3>Respect boundaries</h3><p>Consent matters. Respect when someone says no, wants space or doesn't want to participate. Never pressure, threaten, stalk or make another member uncomfortable.</p></article>
+<article class="rule-card"><div class="rule-icon violet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"/></svg></div><span class="rule-number">04</span><h3>Keep it appropriate</h3><p>Keep shared spaces welcoming. No explicit, hateful, threatening or harmful content, spam, repeated promotions, unsolicited advertising or disruptive behaviour.</p></article>
+<article class="rule-card"><div class="rule-icon pink"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2m7-10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm7-5.5a4 4 0 0 1 0 7.8m4 8.7v-2a4 4 0 0 0-3-3.9"/></svg></div><span class="rule-number">05</span><h3>Be responsible</h3><p>Play fairly, respect others' work and belongings, follow event instructions, respect venues and treat people responsibly in games, collaborations and offline meetups.</p></article>
+<article class="rule-card"><div class="rule-icon violet"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="M9 12h6m-3-3v6"/></svg></div><span class="rule-number">06</span><h3>Help keep us safe</h3><p>Follow moderator and organiser instructions. Report concerns instead of retaliating. Scams, impersonation, doxxing and serious harmful behaviour can lead to removal.</p></article>
+</div><p class="rules-note"><strong>How these standards are enforced</strong><br>Moderators and organisers will consider the context, severity and pattern of behaviour. Actions may include a reminder, content removal, restriction from an activity, temporary suspension or removal from the community. Serious safety concerns may result in immediate removal. These standards apply to conduct connected to Varanasi Connect, including interactions that happen off-platform between members.</p></div></section>><section class="join"><div class="container"><div class="join-box"><div><div class="kicker" style="color:rgba(255,255,255,.7)">04 — Join us</div><h2>There is a place<br>for you here.</h2><p>Join the Discord community, meet people from Varanasi and see what we're building next.</p></div><div class="join-actions"><a class="btn discord-cta" id="joinDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join Discord</a><a class="btn instagram-cta" id="joinInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Follow Instagram</a><a class="btn whatsapp-cta is-unavailable" id="joinWhatsApp" aria-disabled="true" title="WhatsApp invite link will be added soon">Join WhatsApp · link coming soon</a><a class="btn btn-outline" id="joinEmail" href="mailto:community.varanasi@gmail.com">Email us</a></div></div></div></section></main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a class="footer-brand" href="index.html" aria-label="Varanasi Connect home">
+      <img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect">
+    </a>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="rules.html">Community rules</a>
+      <a class="footer-support" href="mailto:community.varanasi@gmail.com?subject=Varanasi%20Connect%20Support">Support</a>
+      <a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a>
+      <a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a>
+      <a id="footerEmail" href="mailto:community.varanasi@gmail.com">community.varanasi@gmail.com</a>
+    </nav>
+    <div class="mail">© 2026 Varanasi Connect</div>
+  </div>
+</footer>
 <div hidden><div id="detailView"><button id="detailBack" type="button"></button><div id="detailViewBody"></div></div><div id="albumGrid"></div><span id="accountModal"></span><span id="accountPanelTitle"></span><span id="accountPanelBody"></span><button id="accountPanelClose"></button></div>
 <script src="site-config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>(function(){const cfg=window.VC_CONFIG||{};const auth=document.getElementById('authButton'),label=document.getElementById('authLabel');if(auth){auth.addEventListener('click',async()=>{if(!window.supabase||!cfg.supabaseUrl||!cfg.supabasePublishableKey){alert('Discord login is temporarily unavailable.');return}const client=window.supabase.createClient(cfg.supabaseUrl,cfg.supabasePublishableKey);const {error}=await client.auth.signInWithOAuth({provider:'discord',options:{redirectTo:location.href}});if(error)alert(error.message)})}})();</script>

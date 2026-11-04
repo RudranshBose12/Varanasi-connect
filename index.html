@@ -376,7 +376,131 @@ footer{border-top:1px solid rgba(65,65,67,.12)!important;padding:35px 0 45px!imp
 @media(max-width:760px){.nav{top:8px!important}.nav-inner{min-height:58px!important;padding:8px 12px!important;gap:8px!important}.nav .brand img{width:112px!important;max-height:40px!important}.nav .navlinks{position:static!important;transform:none!important;left:auto!important;top:auto!important;flex:1 1 auto!important;min-width:0!important;justify-content:center!important;gap:clamp(8px,2vw,16px)!important;overflow-x:auto!important;scrollbar-width:none!important}.nav .navlinks::-webkit-scrollbar{display:none}.nav .navlinks a{font-size:11px!important}.nav .auth-cta{height:36px!important;min-width:66px!important;padding:0 12px!important;font-size:11px!important}.footer-inner{flex-direction:column!important;align-items:flex-start!important;gap:16px!important}.footer-inner .mail{margin-left:0!important}}
 @media(max-width:480px){.nav-inner{flex-wrap:wrap!important;justify-content:space-between!important;border-radius:24px!important}.nav .navlinks{order:3;flex-basis:100%!important;justify-content:center!important;padding:4px 0 2px!important}}
 
+
+/* FIXING UI AND DESIGN: one shared footer layout on every page */
+footer{
+  width:100%!important;
+  border-top:1px solid rgba(65,65,67,.12)!important;
+  padding:35px 0 42px!important;
+  background:transparent!important;
+  color:inherit!important;
+}
+footer .footer-inner{
+  width:min(1160px,calc(100% - 48px))!important;
+  max-width:1160px!important;
+  margin:0 auto!important;
+  padding:0!important;
+  display:grid!important;
+  grid-template-columns:150px minmax(0,1fr) auto!important;
+  align-items:center!important;
+  justify-content:initial!important;
+  gap:24px!important;
+  flex-direction:initial!important;
+  flex-wrap:initial!important;
+}
+footer .footer-brand{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:0!important;
+  background:transparent!important;
+  gap:0!important;
+}
+footer .footer-brand img{
+  display:block!important;
+  width:138px!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:48px!important;
+  object-fit:contain!important;
+}
+footer .footer-links{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex-wrap:wrap!important;
+  min-width:0!important;
+  gap:10px 22px!important;
+  margin:0!important;
+  padding:0!important;
+  font-size:13px!important;
+  line-height:1.6!important;
+  color:#77737a!important;
+}
+footer .footer-links a{
+  display:inline-block!important;
+  margin:0!important;
+  padding:0!important;
+  color:inherit!important;
+  text-decoration:none!important;
+  white-space:nowrap!important;
+}
+footer .footer-links a:hover{color:#211e26!important}
+footer .mail{
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+  font-size:13px!important;
+  line-height:1.5!important;
+  color:#77737a!important;
+  text-align:right!important;
+  white-space:nowrap!important;
+}
+@media(max-width:1000px){
+  footer .footer-inner{
+    grid-template-columns:140px minmax(0,1fr)!important;
+    gap:18px 24px!important;
+  }
+  footer .footer-links{
+    grid-column:1 / -1!important;
+    justify-content:flex-start!important;
+  }
+  footer .mail{
+    grid-column:2!important;
+    grid-row:1!important;
+    text-align:right!important;
+  }
+}
+@media(max-width:600px){
+  footer{padding:28px 0 32px!important}
+  footer .footer-inner{
+    width:calc(100% - 40px)!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:16px!important;
+  }
+  footer .footer-brand{grid-column:1!important;grid-row:auto!important}
+  footer .footer-brand img{width:128px!important;max-height:44px!important}
+  footer .footer-links{
+    grid-column:1!important;
+    grid-row:auto!important;
+    justify-content:flex-start!important;
+    gap:9px 16px!important;
+  }
+  footer .footer-links a{white-space:normal!important}
+  footer .mail{
+    grid-column:1!important;
+    grid-row:auto!important;
+    text-align:left!important;
+    white-space:normal!important;
+  }
+}
+
 </style>
+<style id="site-footer-consistency">
+.site-footer{display:block!important;width:100%!important;box-sizing:border-box!important;margin:0!important;border-top:1px solid rgba(65,65,67,.12)!important;padding:34px 0 42px!important;background:transparent!important;color:#77737a!important;font-size:13px!important}
+.site-footer .footer-inner{width:min(1160px,calc(100% - 48px))!important;max-width:1160px!important;margin:0 auto!important;padding:0!important;display:grid!important;grid-template-columns:150px minmax(0,1fr) auto!important;align-items:center!important;justify-content:initial!important;gap:24px!important}
+.site-footer .footer-brand{display:flex!important;align-items:center!important;justify-content:flex-start!important;min-width:0!important;margin:0!important;padding:0!important;background:none!important;text-decoration:none!important}
+.site-footer .footer-brand img{display:block!important;width:138px!important;height:auto!important;max-width:100%!important;max-height:48px!important;object-fit:contain!important;margin:0!important}
+.site-footer .footer-links{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:center!important;flex-wrap:wrap!important;min-width:0!important;gap:10px 20px!important;margin:0!important;padding:0!important;line-height:1.6!important;font-size:13px!important;color:#77737a!important}
+.site-footer .footer-links a{display:inline-block!important;float:none!important;margin:0!important;padding:0!important;color:inherit!important;text-decoration:none!important;white-space:nowrap!important;line-height:1.6!important}
+.site-footer .footer-links a:hover{color:#252329!important}
+.site-footer .mail{display:block!important;min-width:max-content!important;margin:0!important;padding:0!important;font-size:13px!important;line-height:1.5!important;color:#77737a!important;text-align:right!important;white-space:nowrap!important}
+@media(max-width:1000px){.site-footer .footer-inner{grid-template-columns:140px minmax(0,1fr)!important;gap:18px 22px!important}.site-footer .footer-links{grid-column:1/-1!important;grid-row:2!important;justify-content:flex-start!important}.site-footer .mail{grid-column:2!important;grid-row:1!important;text-align:right!important}}
+@media(max-width:600px){.site-footer{padding:28px 0 32px!important}.site-footer .footer-inner{width:calc(100% - 40px)!important;grid-template-columns:minmax(0,1fr)!important;gap:15px!important}.site-footer .footer-brand,.site-footer .footer-links,.site-footer .mail{grid-column:1!important;grid-row:auto!important}.site-footer .footer-brand img{width:128px!important;max-height:44px!important}.site-footer .footer-links{justify-content:flex-start!important;gap:8px 16px!important}.site-footer .footer-links a{white-space:normal!important;overflow-wrap:anywhere!important}.site-footer .mail{text-align:left!important;white-space:normal!important;min-width:0!important}}
+</style>
+<link rel="stylesheet" href="assets/shared-nav.css?v=1">
 </head>
 <body>
   <nav class="nav"><div class="nav-inner">
@@ -420,7 +544,23 @@ footer{border-top:1px solid rgba(65,65,67,.12)!important;padding:35px 0 45px!imp
     <section id="gallery"><div class="container"><div class="section-head gallery-head"><div><div class="kicker">04 — The city through us</div><h2>Varanasi,<br><span class="gradient-text">our way.</span></h2></div><p class="section-intro">A growing collection of Varanasi through our community — the river, streets, people, culture and the moments we experience together.</p></div><div class="album-grid" id="albumGrid"><div class="detail-empty">Loading community albums…</div></div></div></section>
     <section class="join"><div class="container"><div class="join-box"><div><div class="kicker" style="color:rgba(255,255,255,.7)">04 — Join us</div><h2>There is a place<br>for you here.</h2><p>Join the Discord community, meet people from Varanasi and see what we're building next.</p></div><div class="join-actions"><a class="btn discord-cta" id="joinDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join Discord</a><a class="btn instagram-cta" id="joinInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Follow Instagram</a><a class="btn whatsapp-cta is-unavailable" id="joinWhatsApp" aria-disabled="true" title="WhatsApp invite link will be added soon">Join WhatsApp · link coming soon</a><a class="btn btn-outline" id="joinEmail" href="mailto:community.varanasi@gmail.com">Email us</a></div></div></div></section>
   
-    <footer><div class="container footer-inner"><div class="footer-brand"><img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect"></div><div class="footer-links"><a href="about.html">About</a><a href="events.html">Events</a><a href="rules.html">Community rules</a><a class="footer-support" href="mailto:community.varanasi@gmail.com?subject=Varanasi%20Connect%20Support">Support</a><a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a><a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a id="footerEmail" href="mailto:community.varanasi@gmail.com">community.varanasi@gmail.com</a></div><div class="mail">© 2026 Varanasi Connect</div></div></footer>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <a class="footer-brand" href="index.html" aria-label="Varanasi Connect home">
+      <img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect">
+    </a>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="rules.html">Community rules</a>
+      <a class="footer-support" href="mailto:community.varanasi@gmail.com?subject=Varanasi%20Connect%20Support">Support</a>
+      <a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a>
+      <a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a>
+      <a id="footerEmail" href="mailto:community.varanasi@gmail.com">community.varanasi@gmail.com</a>
+    </nav>
+    <div class="mail">© 2026 Varanasi Connect</div>
+  </div>
+</footer>
 
   <div class="modal" id="modal" aria-hidden="true"><div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-top"><div><div class="modal-kicker" id="modalKicker"></div><h2 class="modal-title" id="modalTitle"></h2></div><button class="modal-close" id="modalClose" aria-label="Close">×</button></div><div class="modal-body" id="modalBody"></div></div></div>
   <div class="account-modal" id="accountModal" aria-hidden="true"><section class="account-panel" role="dialog" aria-modal="true" aria-labelledby="accountPanelTitle"><div class="account-panel-head"><h3 id="accountPanelTitle">Your account</h3><button class="account-panel-close" id="accountPanelClose" type="button" aria-label="Close">×</button></div><div class="account-panel-body" id="accountPanelBody"></div></section></div>
