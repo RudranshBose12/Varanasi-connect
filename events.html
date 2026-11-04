@@ -341,14 +341,26 @@ footer .mail{
 @media(max-width:800px){.events-intro{padding:65px 0 45px}.events-intro-inner{grid-template-columns:1fr}.intro-side{display:none}.listing-heading{display:block}.listing-heading>p{margin-top:13px}.event-toolbar{align-items:flex-start;flex-direction:column}.event-grid{grid-template-columns:1fr!important}.poster{height:240px!important}}
 @media(max-width:560px){.events-intro{padding:50px 0 40px}.events-intro h1{font-size:clamp(45px,12vw,62px)}.intro-copy{font-size:15px}.events-listing{padding-bottom:54px}.event-content{padding:20px}.poster{height:220px!important}.event-detail-hero{height:210px}.event-detail-body{padding:24px 20px 28px}.event-detail-close{right:14px;top:14px}.event-detail-meta{grid-template-columns:1fr 1fr}.event-detail-gallery{grid-template-columns:repeat(2,1fr)}.event-detail-gallery img{height:100px}.event-detail-actions{margin:0 -20px;padding:14px 20px!important}.event-detail-actions .btn,.event-detail-actions .action-link{flex:1 1 100%}}
 </style><style id="events-interaction-fix">
-/* Keep the details overlay independently scrollable without freezing the document */
-.event-detail-modal{overflow-y:auto!important;overflow-x:hidden!important;align-items:flex-start!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important}
-.event-detail-panel{margin:auto!important;max-height:calc(100dvh - 44px)!important;overflow-x:hidden!important;overflow-y:auto!important;overscroll-behavior:contain!important;touch-action:pan-y!important;-webkit-overflow-scrolling:touch!important}
-.event-detail-backdrop{touch-action:pan-y!important}
+/* Full-screen event details experience */
+.event-detail-modal{position:fixed!important;inset:0!important;z-index:9999!important;display:none;align-items:stretch!important;justify-content:stretch!important;padding:0!important;overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain!important;-webkit-overflow-scrolling:touch!important}
+.event-detail-modal.open{display:block!important}
+.event-detail-backdrop{position:fixed!important;inset:0!important;background:rgba(25,21,30,.78)!important;backdrop-filter:blur(12px)!important;touch-action:pan-y!important}
+.event-detail-panel{position:relative!important;z-index:1!important;width:100%!important;min-height:100vh!important;min-height:100dvh!important;max-height:none!important;height:auto!important;margin:0!important;overflow:visible!important;border-radius:0!important;padding:0!important;background:#fbf8f1!important;box-shadow:none!important;touch-action:pan-y!important}
+.event-detail-hero{height:clamp(240px,42vh,520px)!important}
+.event-detail-body{max-width:1040px!important;margin:0 auto!important;padding:clamp(24px,5vw,64px)!important}
+.event-detail-close{position:fixed!important;float:none!important;top:22px!important;right:24px!important;margin:0!important;width:48px!important;height:48px!important;border:1px solid rgba(65,65,67,.2)!important;border-radius:50%!important;background:rgba(251,248,241,.94)!important;color:#211e26!important;font-size:30px!important;box-shadow:0 8px 30px rgba(0,0,0,.18)!important;z-index:10002!important}
+.event-detail-actions{margin:30px 0 0!important;padding:18px 0!important}
 .event-detail-panel img{max-width:100%}
-.event-detail-close{position:sticky!important;top:0!important}
-body.vc-detail-open{overflow:auto!important}
-@media(max-width:760px){.event-detail-modal{padding:10px!important}.event-detail-panel{max-height:calc(100dvh - 20px)!important;margin:auto!important}}
+body.vc-detail-open{overflow:hidden!important}
+@media(max-width:760px){
+ .event-detail-hero{height:32vh!important;min-height:210px!important}
+ .event-detail-body{padding:26px 20px 40px!important}
+ .event-detail-close{top:14px!important;right:14px!important;width:44px!important;height:44px!important}
+ .event-detail-meta{grid-template-columns:1fr!important}
+ .event-detail-gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .event-detail-gallery img{height:120px!important}
+ .event-detail-actions{position:sticky!important;bottom:0!important;margin:24px -20px 0!important;padding:16px 20px!important}
+}
 </style></head>
 <body>
 <nav class="nav"><div class="nav-inner">
