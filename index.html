@@ -252,13 +252,76 @@
     body.dark .notification-setting{background:rgba(255,255,255,.035)}
     @media(max-width:600px){.auth-cta{height:34px;min-width:66px;padding:0 14px;font-size:12px}.auth-cta.is-signed-in{height:34px;width:34px;min-width:34px;padding:2px}.profile-menu{right:-42px;width:230px}.account-panel-head{padding:19px 20px}.account-panel-body{padding:20px}}
 
+
+    .join-actions .instagram-cta{background:#e1306c!important;border-color:#e1306c!important;color:#fff!important;box-shadow:0 10px 24px rgba(225,48,108,.2)}
+    .join-actions .instagram-cta:hover{background:#c9275d!important;border-color:#c9275d!important}
+    .join-actions .whatsapp-cta{background:#25d366!important;border-color:#25d366!important;color:#103d24!important;box-shadow:0 10px 24px rgba(37,211,102,.2)}
+    .join-actions .whatsapp-cta:hover{background:#1fbd59!important;border-color:#1fbd59!important}
+    .join-actions .whatsapp-cta.is-unavailable{opacity:.72;cursor:not-allowed;box-shadow:none}
+    @media(max-width:850px){.navlinks{display:flex!important;flex:1;min-width:0;overflow-x:auto;white-space:nowrap;gap:13px;margin:0 8px;padding:4px 0;scrollbar-width:none}.navlinks::-webkit-scrollbar{display:none}.navlinks a{flex:0 0 auto;font-size:11px}.nav-inner{gap:5px}}
+    @media(max-width:600px){.navlinks{gap:10px;margin:0 4px}.navlinks a{font-size:10px}.theme-toggle{display:none}.nav-cta{display:none}}
+
+    .ongoing-preview{display:block;position:relative;min-height:390px;border:1px solid var(--line);border-radius:32px;overflow:hidden;background:var(--deep);box-shadow:var(--shadow);isolation:isolate;transition:transform .25s,box-shadow .25s}.ongoing-preview:hover{transform:translateY(-5px);box-shadow:0 28px 75px rgba(57,44,75,.18)}.ongoing-preview>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}.ongoing-preview:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,17,25,.08),rgba(20,17,25,.88));z-index:-1}.ongoing-label{position:absolute;top:20px;left:20px;padding:8px 13px;border-radius:999px;background:var(--paper);color:var(--ink);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em}.ongoing-label i{display:inline-block;width:7px;height:7px;margin-right:7px;border-radius:50%;background:#25a66a;box-shadow:0 0 0 4px rgba(37,166,106,.13)}.ongoing-preview-copy{position:absolute;left:25px;right:25px;bottom:25px;color:#fff;display:grid;gap:10px}.ongoing-preview-copy small{font-size:10px;letter-spacing:.14em;font-weight:800;color:rgba(255,255,255,.7)}.ongoing-preview-copy strong{font:700 clamp(27px,3vw,39px)/1.08 'Space Grotesk',sans-serif;letter-spacing:-.04em}.ongoing-preview-copy>span{font-size:13px;color:rgba(255,255,255,.8)}.ongoing-preview-copy b{color:#fff;font-size:18px;margin-left:5px}@media(max-width:850px){.ongoing-preview{min-height:310px}.hero-grid{gap:30px}}
+
+    .registered-event-list{display:grid;gap:10px}.registered-event-item{padding:15px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.35)}.registered-event-item strong,.registered-event-item span{display:block}.registered-event-item span{margin-top:5px;color:var(--muted);font-size:12px}
+
+    /* Keep the ongoing-event poster beside the hero copy on desktop. */
+    @media(min-width:851px){
+      .hero-grid{grid-template-columns:minmax(0,1.1fr) minmax(300px,.78fr)!important;align-items:center!important;gap:clamp(32px,5vw,76px)!important}
+      .hero-grid>div:first-child{max-width:760px;min-width:0}
+      .ongoing-preview{width:100%;max-width:440px;aspect-ratio:4/5;min-height:0;height:auto;justify-self:end}
+    }
+    @media(max-width:850px){
+      .hero-grid{grid-template-columns:minmax(0,1fr)!important;gap:28px!important}
+      .ongoing-preview{width:100%;max-width:420px;aspect-ratio:4/5;min-height:0;height:auto;justify-self:center}
+    }
+    @media(max-width:520px){.ongoing-preview{max-width:100%;border-radius:24px}}
+
+/* Shared navigation: centered links, text-only brand, consistent across pages. */
+.nav-inner{position:relative!important;display:flex!important;align-items:center!important;justify-content:space-between!important;min-height:64px;gap:14px!important;padding:9px 18px!important}
+.nav .brand{display:flex!important;align-items:center!important;flex:0 0 auto!important;margin:0!important;gap:0!important;min-width:0}
+.nav .brand img{display:none!important}
+.nav .brand span{display:inline!important;font-family:'Space Grotesk',sans-serif!important;font-size:19px!important;font-weight:800!important;letter-spacing:-.045em!important;background:linear-gradient(105deg,#ff78a5 0%,#bd5af1 48%,#7844ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent!important;white-space:nowrap}
+.nav .navlinks{position:absolute!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;display:flex!important;align-items:center!important;justify-content:center!important;flex:0 0 auto!important;gap:clamp(18px,2.5vw,34px)!important;min-width:max-content!important;overflow:visible!important;white-space:nowrap!important;margin:0!important;padding:0!important;font-size:14px!important}
+.nav .navlinks a{font-size:14px!important;font-weight:600!important;flex:0 0 auto!important}
+.nav .theme-toggle{flex:0 0 auto!important;margin-left:auto}
+.nav .profile-wrap,.nav .account,.nav .nav-actions{flex:0 0 auto!important;margin-left:auto}
+.nav .nav-actions{display:flex!important;align-items:center!important;gap:10px!important}
+@media(max-width:760px){
+ .nav-inner{min-height:58px;padding:8px 12px!important;gap:8px!important}
+ .nav .brand span{font-size:16px!important}
+ .nav .navlinks{position:static!important;transform:none!important;left:auto!important;top:auto!important;flex:1 1 auto!important;min-width:0!important;justify-content:center!important;gap:clamp(8px,2vw,16px)!important;overflow-x:auto!important;scrollbar-width:none!important}
+ .nav .navlinks::-webkit-scrollbar{display:none}
+ .nav .navlinks a{font-size:11px!important}
+ .nav .theme-toggle{display:none}
+ .nav .auth-cta,.nav .auth-btn{padding:9px 12px!important;font-size:11px!important;white-space:nowrap}
+}
+@media(max-width:480px){
+ .nav-inner{flex-wrap:wrap!important;justify-content:space-between!important;border-radius:24px!important}
+ .nav .brand span{font-size:15px!important}
+ .nav .navlinks{order:3;flex-basis:100%!important;justify-content:center!important;padding:4px 0 2px!important}
+ .nav .navlinks a{font-size:11px!important}
+ .nav .profile-wrap,.nav .account{margin-left:auto!important}
+}
+
+
+/* Keep the day/night toggle immediately beside the login control on the right. */
+.nav .theme-toggle{margin-left:auto!important}
+.nav .profile-wrap,.nav .account{margin-left:0!important}
+.nav .nav-actions .theme-toggle{margin-left:0!important}
+
+/* Permanent light appearance and shared Varanasi Connect wordmark */
+:root{color-scheme:light!important}
+html{color-scheme:light!important}
+body{background:#fbf8f1!important;color:#211e26!important}
+body.dark{background:#fbf8f1!important;color:#211e26!important}
+.nav .brand span{font-family:'Space Grotesk',sans-serif!important;font-weight:800!important;letter-spacing:-.045em!important;background:linear-gradient(105deg,#ff78a5 0%,#bd5af1 48%,#7844ff 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important}
 </style>
 </head>
 <body>
   <nav class="nav"><div class="nav-inner">
-    <a class="brand" href="#top"><img id="siteLogo" src="assets/logo.png" data-light-logo="assets/logo.png" data-dark-logo="assets/logos/7.png" alt="Varanasi Connect logo"><span>Varanasi Connect</span></a>
-    <div class="navlinks"><a href="#about">About</a><a href="#what-we-do">What we do</a><a href="#events">Events</a><a href="#gallery">Varanasi</a><a id="navRules" href="#rules">Rules</a></div>
-    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode"><span class="theme-icon theme-sun" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg></span><span class="theme-icon theme-moon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M20 15.2A8.5 8.5 0 0 1 8.8 4a8.5 8.5 0 1 0 11.2 11.2Z"></path></svg></span></button>
+    <a class="brand" href="index.html" aria-label="Varanasi Connect home"><span>Varanasi Connect</span></a>
+    <div class="navlinks"><a href="about.html">About</a><a href="what-we-do.html">What we do</a><a href="events.html">Events</a><a id="navRules" href="rules.html">Rules</a></div>
 
     <div class="profile-wrap" id="profileWrap">
       <button class="auth-cta" id="authButton" type="button" aria-label="Log in" title="Log in with Discord" aria-haspopup="menu" aria-expanded="false">
@@ -280,63 +343,23 @@
   <main id="top">
     <section class="hero"><div class="container hero-grid">
       <div class="reveal"><div class="eyebrow"><span></span> A community from Varanasi</div><h1>The city,<br><span class="gradient-text">connected.</span></h1><p>Varanasi Connect is a community built around the people, creativity, culture and everyday experiences that make Varanasi feel like home.</p><div class="actions"><a class="btn btn-dark" id="heroDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join the community</a><a class="btn btn-light" href="#about">Explore Varanasi Connect</a></div></div>
-
+      <a class="ongoing-preview" href="events.html"><span class="ongoing-label"><i></i> Ongoing events</span><img src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=900&q=85" alt="Varanasi ghats along the Ganga"><span class="ongoing-preview-copy"><small>HAPPENING IN VARANASI</small><strong>See what's going on<br>right now.</strong><span>Explore events and register <b>→</b></span></span></a>
     </div></section>
 
     <section class="events" id="events"><div class="container"><div class="section-head"><div><div class="kicker">01 — Events</div><h2>Always something<br><span class="gradient-text">coming up.</span></h2></div><p class="section-intro">A look at the community activities we are hosting, from movie nights and meetups to creative events and competitions.</p></div>
       <div class="event-grid">
-        <article class="event-feature" tabindex="0" role="button" data-detail="photo"><div class="event-content"><span class="event-tag">Featured event</span><h3>Photography Competition</h3><p>01 October — 31 October · Topic: Varanasi</p><p style="margin-top:10px">A month to capture the city through your own lens. No AI-generated or AI-enhanced photographs.</p></div></article>
-        <div class="side-events"><article class="event-small" tabindex="0" role="button" data-detail="movie"><span class="event-tag">Community</span><h3>Movie nights</h3></article><article class="event-small" tabindex="0" role="button" data-detail="meetups"><span class="event-tag">More soon</span><h3>Meetups & new projects</h3></article></div>
+        <a class="event-feature" href="events.html#photography"><div class="event-content"><span class="event-tag">Featured event</span><h3>Photography Competition</h3><p>01 October — 31 October · Topic: Varanasi</p><p style="margin-top:10px">A month to capture the city through your own lens. No AI-generated or AI-enhanced photographs.</p></div></a>
+        <div class="side-events"><a class="event-small" href="events.html#movie"><span class="event-tag">Community</span><h3>Movie nights</h3></a><a class="event-small" href="events.html#meetups"><span class="event-tag">More soon</span><h3>Meetups & new projects</h3></a></div>
       </div>
     </div></section>
 
     <section class="about" id="about"><div class="container about-grid"><div><div class="kicker">02 — Who we are</div><h2>More than a<br><span class="gradient-text">community.</span></h2></div><div><p class="about-copy"><strong>Varanasi Connect brings people together around Varanasi.</strong> We create a space where locals, students, creators and curious people can meet, share experiences, discover the city and build things together.</p><p class="about-copy">From online conversations to movie nights, photography contests and future offline events, the goal is simple: make it easier to find your people in the city.</p><div class="pill-row"><span class="pill">Community</span><span class="pill">Culture</span><span class="pill">Events</span><span class="pill">Photography</span><span class="pill">Creators</span><span class="pill">Varanasi</span></div></div></div></section>
 
-    <section id="what-we-do"><div class="container"><div class="section-head"><div><div class="kicker">03 — What we do</div><h2>Things happen<br>here.</h2></div><p class="section-intro">Explore the different sides of Varanasi Connect — meeting people, sharing experiences, joining activities and creating things together.</p></div>
-      <div class="cards">
-        <button class="card" data-detail="meetups"><span class="card-num">01 / COMMUNITY</span><span class="card-action">Open</span><h3>Meet people</h3><p>Find people from Varanasi, make friends, talk about shared interests and become part of a local community.</p></button>
-        <button class="card" data-detail="movie"><span class="card-num">02 / EVENTS</span><span class="card-action">Open</span><h3>Do things</h3><p>Movie nights, contests, discussions, meetups and other activities that turn an online community into real experiences.</p></button>
-        <button class="card" data-detail="photo"><span class="card-num">03 / CREATIVITY</span><span class="card-action">Open</span><h3>Create together</h3><p>Photography, visual storytelling, collaborations and community projects that showcase Varanasi through its people.</p></button>
-      </div>
-    </div></section>
 
-    <section id="gallery"><div class="container"><div class="section-head gallery-head"><div><div class="kicker">04 — The city through us</div><h2>Varanasi,<br><span class="gradient-text">our way.</span></h2></div><p class="section-intro">A growing collection of Varanasi through our community — the river, streets, people, culture and the moments we experience together.</p></div><div class="album-grid" id="albumGrid"></div></div></section>
-
-
-    <section class="detail-section" id="detailView" aria-live="polite">
-      <div class="container">
-        <button class="detail-back" id="detailBack" type="button">Back</button>
-        <div id="detailViewBody"></div>
-      </div>
-    </section>
-    <section class="join"><div class="container"><div class="join-box"><div><div class="kicker" style="color:rgba(255,255,255,.7)">05 — Join us</div><h2>There is a place<br>for you here.</h2><p>Join the Discord community, meet people from Varanasi and see what we're building next.</p></div><div class="join-actions"><a class="btn btn-white discord-cta" id="joinDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join Discord</a><a class="btn btn-outline" id="joinInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a class="btn btn-outline" id="joinEmail" href="mailto:community.varanasi@gmail.com">Email us</a></div></div></div></section>
+    <section id="gallery"><div class="container"><div class="section-head gallery-head"><div><div class="kicker">04 — The city through us</div><h2>Varanasi,<br><span class="gradient-text">our way.</span></h2></div><p class="section-intro">A growing collection of Varanasi through our community — the river, streets, people, culture and the moments we experience together.</p></div><div class="album-grid" id="albumGrid"><div class="detail-empty">Loading community albums…</div></div></div></section>
+    <section class="join"><div class="container"><div class="join-box"><div><div class="kicker" style="color:rgba(255,255,255,.7)">04 — Join us</div><h2>There is a place<br>for you here.</h2><p>Join the Discord community, meet people from Varanasi and see what we're building next.</p></div><div class="join-actions"><a class="btn discord-cta" id="joinDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join Discord</a><a class="btn instagram-cta" id="joinInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Follow Instagram</a><a class="btn whatsapp-cta is-unavailable" id="joinWhatsApp" aria-disabled="true" title="WhatsApp invite link will be added soon">Join WhatsApp · link coming soon</a><a class="btn btn-outline" id="joinEmail" href="mailto:community.varanasi@gmail.com">Email us</a></div></div></div></section>
   
-    <section id="rules" class="rules-section">
-      <div class="container">
-        <div class="section-head">
-          <div><div class="kicker">06 — Community guidelines</div><h2>Our server<br><span class="gradient-text">rules.</span></h2></div>
-          <p class="section-intro">A few ground rules to keep Varanasi Connect welcoming, safe and enjoyable for everyone. Being part of the community means agreeing to follow them.</p>
-        </div>
-        <div class="rules-grid">
-          <article class="rule-card"><span class="rule-number">01</span><div><h3>📜 Be respectful</h3><p>Treat everyone with dignity. Personal attacks, insults, trolling and harassment of any kind will not be tolerated. Three warnings result in a timeout; five warnings result in a kick. Continued violations after that will result in a permanent ban.</p></div></article>
-          <article class="rule-card"><span class="rule-number">02</span><div><h3>No spam or self-promotion</h3><p>Avoid repeating messages, posting large walls of text or emojis, or mass-pinging members. Keep promotional links, streams and other server invites strictly inside designated channels.</p></div></article>
-          <article class="rule-card"><span class="rule-number">03</span><div><h3>Keep it SFW</h3><p>Do not share adult content, gore or highly explicit material. This applies to text channels, media uploads, direct messages to members, profile pictures and nicknames.</p></div></article>
-          <article class="rule-card"><span class="rule-number">04</span><div><h3>Use the right channels</h3><p>Keep your conversations on-topic. Check the channel description if you are unsure where a topic belongs.</p></div></article>
-          <article class="rule-card"><span class="rule-number">05</span><div><h3>No malicious content or cheating</h3><p>Do not share hacks, exploits, cheats, pirated material or harmful links.</p></div></article>
-          <article class="rule-card"><span class="rule-number">06</span><div><h3>No hate speech or threats</h3><p>Discrimination, hate speech, death threats and profanity intended to hurt others are not acceptable. Three warnings result in a timeout; five warnings result in a kick. Rejoining and continuing this behaviour will result in a permanent ban.</p></div></article>
-          <article class="rule-card"><span class="rule-number">07</span><div><h3>No promotion of harmful products</h3><p>Promoting harmful products such as tobacco or restricted medicines is not allowed. Three warnings result in a one-week timeout; five warnings result in a kick. Further violations will result in a permanent ban.</p></div></article>
-          <article class="rule-card"><span class="rule-number">08</span><div><h3>Follow Discord's Terms of Service</h3><p>All members must follow Discord's Terms of Service and Community Guidelines.</p></div></article>
-          <article class="rule-card"><span class="rule-number">09</span><div><h3>Listen to the moderation team</h3><p>If a moderator asks you to change your behaviour, please cooperate. If you disagree with an action, take it up with them privately rather than arguing in public channels.</p></div></article>
-          <article class="rule-card"><span class="rule-number">10</span><div><h3>Be truthful about yourself</h3><p>Faking your age or other aspects of yourself in order to cause harm to others, especially minors, will lead to serious consequences, including an immediate ban and contacting the appropriate authorities.</p></div></article>
-          <article class="rule-card"><span class="rule-number">11</span><div><h3>Contact moderators through tickets</h3><p>Do not ping a moderator for support. Instead, use <strong>Text 📝┊tickets</strong> to contact the moderation team.</p></div></article>
-          <article class="rule-card"><span class="rule-number">12</span><div><h3>Respect members' DMs and boundaries</h3><p>Mass-DMing members without prior interaction, especially women and underage people, can lead to a permanent ban. Please report inappropriate DMs from members of our server in <strong>Text 📝┊tickets</strong>.</p></div></article>
-        </div>
-        <p class="rules-note">If you see something that breaks these rules, report it to the moderation team through the tickets channel.</p>
-      </div>
-    </section>
-</main>
-
-  <footer><div class="container footer-inner"><div class="footer-brand"><img src="assets/logo.png" alt="Varanasi Connect"><span>Varanasi Connect</span></div><div class="footer-links"><a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a><a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a id="footerEmail" href="mailto:community.varanasi@gmail.com">community.varanasi@gmail.com</a></div><div class="mail">© 2026 Varanasi Connect</div></div></footer>
+    <footer><div class="container footer-inner"><div class="footer-brand"><img src="assets/logo.png" alt="Varanasi Connect"><span>Varanasi Connect</span></div><div class="footer-links"><a href="about.html">About</a><a href="events.html">Events</a><a href="rules.html">Community rules</a><a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a><a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a id="footerEmail" href="mailto:community.varanasi@gmail.com">community.varanasi@gmail.com</a></div><div class="mail">© 2026 Varanasi Connect</div></div></footer>
 
   <div class="modal" id="modal" aria-hidden="true"><div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-top"><div><div class="modal-kicker" id="modalKicker"></div><h2 class="modal-title" id="modalTitle"></h2></div><button class="modal-close" id="modalClose" aria-label="Close">×</button></div><div class="modal-body" id="modalBody"></div></div></div>
   <div class="account-modal" id="accountModal" aria-hidden="true"><section class="account-panel" role="dialog" aria-modal="true" aria-labelledby="accountPanelTitle"><div class="account-panel-head"><h3 id="accountPanelTitle">Your account</h3><button class="account-panel-close" id="accountPanelClose" type="button" aria-label="Close">×</button></div><div class="account-panel-body" id="accountPanelBody"></div></section></div>
@@ -442,17 +465,10 @@
         }
       }
 
-      const themeToggle=$('#themeToggle');
-      const applyTheme=(dark)=>{
-        document.body.classList.toggle('dark',dark);
-        if(themeToggle)themeToggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');
-        document.querySelectorAll('[data-light-logo][data-dark-logo]').forEach(img=>{img.src=dark?img.dataset.darkLogo:img.dataset.lightLogo;});
-        const meta=document.querySelector('meta[name="theme-color"]'); if(meta)meta.content=dark?'#111015':'#fbf8f1';
-      };
-      let savedTheme='';
-      try{savedTheme=localStorage.getItem('vc-theme')||'';}catch(e){}
-      applyTheme(savedTheme==='dark');
-      themeToggle?.addEventListener('click',()=>{const dark=!document.body.classList.contains('dark');applyTheme(dark);try{localStorage.setItem('vc-theme',dark?'dark':'light');}catch(e){}});
+      document.addEventListener('click',e=>{const a=e.target.closest('[data-detail-album]');if(a){e.preventDefault();showAlbum(a.dataset.detailAlbum);}});
+      fetch('content.json').then(r=>r.ok?r.json():{}).then(c=>{content=c||{};renderAlbums();}).catch(()=>renderAlbums());
+
+      document.body.classList.remove('dark');try{localStorage.setItem('vc-theme','light')}catch(e){};const themeMeta=document.querySelector('meta[name="theme-color"]');if(themeMeta)themeMeta.content='#fbf8f1';
 
 
       // Supabase Discord authentication and account menu
@@ -540,8 +556,14 @@
         accountModal?.classList.remove('open');
         accountModal?.setAttribute('aria-hidden','true');
       };
-      const showRegisteredEvents=()=>{
-        openAccountPanel('Registered events', '<div class="account-empty"><strong>No registered events yet</strong>Your Varanasi Connect event registrations will appear here when event registration is connected to your account.</div>');
+      const escapeHtml=(value)=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+      const showRegisteredEvents=async()=>{
+        openAccountPanel('Registered events', '<div class="loading"><span class="spinner"></span>Loading your registrations…</div>');
+        if(!supabaseClient||!activeAuthUser){accountPanelBody.innerHTML='<div class="account-empty"><strong>Log in to view registrations</strong>Sign in with Discord to see the events you have joined.</div>';return;}
+        const {data,error}=await supabaseClient.from('event_registrations').select('registered_at,events(id,title,summary,starts_at,location,status)').order('registered_at',{ascending:false});
+        if(error){accountPanelBody.innerHTML='<div class="account-empty"><strong>Could not load registrations</strong>Please try again in a moment.</div>';console.error(error);return;}
+        if(!data?.length){accountPanelBody.innerHTML='<div class="account-empty"><strong>No registered events yet</strong>Explore the Events page and register for something coming up.</div><p><a class="btn btn-dark" href="events.html">Explore events</a></p>';return;}
+        accountPanelBody.innerHTML='<div class="registered-event-list">'+data.map(row=>{const ev=row.events||{};const date=ev.starts_at?new Date(ev.starts_at).toLocaleString(undefined,{dateStyle:'medium',timeStyle:'short'}):'Date to be announced';return '<article class="registered-event-item"><strong>'+escapeHtml(ev.title||'Community event')+'</strong><span>'+escapeHtml(date)+' · '+escapeHtml(ev.location||'Varanasi')+'</span></article>';}).join('')+'</div>';
       };
       const showAccountSettings=()=>{
         openAccountPanel('Settings', '<div class="notification-setting"><div><strong>Community notifications</strong><small>Receive updates about upcoming events and community announcements.</small></div><label class="switch" aria-label="Community notifications"><input id="notificationToggle" type="checkbox" '+(notificationPreference?'checked':'')+'><span class="switch-track"></span></label></div><p class="settings-save-note" id="settingsSaveNote">Your preference is saved to your account.</p>');
@@ -618,23 +640,11 @@
         console.error('Supabase configuration or client library is missing.');
       }
 
-      document.addEventListener('click',e=>{
-        const d=e.target.closest('[data-detail]'); if(d){e.preventDefault();showDetail(d.dataset.detail);return;}
-        const a=e.target.closest('[data-detail-album]'); if(a){e.preventDefault();showAlbum(a.dataset.detailAlbum);}
-      });
-      $('#detailBack').addEventListener('click',()=>{closeDetail();history.replaceState(null,'','#gallery');$('#gallery').scrollIntoView({behavior:'smooth'});});
-      window.addEventListener('hashchange',()=>{
-        const h=location.hash;
-        if(h.startsWith('#detail/')) showDetail(h.split('/')[1]);
-        else if(h.startsWith('#album/')) showAlbum(h.split('/')[1]);
-        else closeDetail();
-      });
-      fetch('content.json').then(r=>r.ok?r.json():{}).then(c=>{content=c||{};renderAlbums();}).catch(()=>renderAlbums());
+      
       ['navDiscord','heroDiscord','joinDiscord','footerDiscord'].forEach(id=>{const el=$('#'+id);if(el)el.href=cfg.discordUrl||'https://discord.gg/bSjWdp8fzX'});
       ['joinEmail','footerEmail'].forEach(id=>{const el=$('#'+id);if(el)el.href='mailto:'+(cfg.email||'community.varanasi@gmail.com')});
       ['navInstagram','joinInstagram','footerInstagram'].forEach(id=>{const el=$('#'+id);if(el)el.href=cfg.instagramUrl||'https://www.instagram.com/varanasi.connect/'});
-      if(location.hash.startsWith('#detail/')) showDetail(location.hash.split('/')[1]);
-      if(location.hash.startsWith('#album/')) showAlbum(location.hash.split('/')[1]);
+
     })();
   </script>
 </body>
