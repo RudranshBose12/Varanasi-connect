@@ -330,12 +330,16 @@ body.dark{background:#fbf8f1!important;color:#211e26!important}
  .footer-brand img{height:38px!important;max-width:140px!important}
 }
 
+
+/* Shared bottom join panel */
+.join{padding:72px 0 82px}.join-box{border-radius:38px;background:linear-gradient(110deg,#ff78a8 0%,#c45acb 56%,#7435ff 100%);padding:60px;display:grid;grid-template-columns:minmax(0,1fr) 348px;align-items:center;gap:40px;color:#fff;position:relative;overflow:hidden}.join-box:after{content:"";position:absolute;width:480px;height:480px;right:-170px;top:-260px;border:1px solid rgba(255,255,255,.22);border-radius:50%;box-shadow:-45px 35px 0 rgba(255,255,255,.09),-90px 70px 0 rgba(255,255,255,.06);pointer-events:none}.join-box h2{font-size:clamp(42px,5vw,65px);line-height:1.08;position:relative;z-index:1;margin:20px 0}.join-box p{color:rgba(255,255,255,.9);max-width:650px;margin:18px 0 0;position:relative;z-index:1;font-size:18px;line-height:1.7}.join-actions{position:relative;z-index:2;display:flex;flex-direction:column;gap:10px;min-width:0}.join-actions .btn{width:100%;min-height:63px;border-radius:999px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;text-decoration:none;padding:14px 20px}.join-actions .discord-cta{background:#5865f2!important;border:1px solid #5865f2!important;color:#fff!important}.join-actions .instagram-cta{background:#e1306c!important;border:1px solid #e1306c!important;color:#fff!important}.join-actions .whatsapp-cta{background:#25b981!important;border:1px solid #25b981!important;color:#173f39!important}.join-actions .whatsapp-cta.is-unavailable{opacity:.82;cursor:not-allowed}.join-actions .btn-outline{border:1px solid rgba(255,255,255,.45)!important;color:#fff!important;background:rgba(255,255,255,.08)!important}
+@media(max-width:760px){.join{padding:48px 0 58px}.join-box{grid-template-columns:1fr;padding:34px 24px;border-radius:28px;gap:28px}.join-box h2{font-size:clamp(38px,10vw,52px)}.join-box p{font-size:16px}.join-actions{width:100%}.join-actions .btn{min-height:56px}}
 </style>
 </head>
 <body>
   <nav class="nav"><div class="nav-inner">
     <a class="brand" href="index.html" aria-label="Varanasi Connect home"><img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect"></a>
-    <div class="navlinks"><a href="about.html">About</a><a href="what-we-do.html">What we do</a><a href="events.html">Events</a><a id="navRules" href="rules.html">Rules</a></div>
+    <div class="navlinks"><a href="about.html">About</a><a href="events.html">Events</a><a id="navRules" href="rules.html">Rules</a></div>
 
     <div class="profile-wrap" id="profileWrap">
       <button class="auth-cta" id="authButton" type="button" aria-label="Log in" title="Log in with Discord" aria-haspopup="menu" aria-expanded="false">
