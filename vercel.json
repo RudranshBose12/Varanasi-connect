@@ -1,0 +1,91 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/about.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.varanasiconnect.in"
+        }
+      ],
+      "destination": "https://about.varanasiconnect.in/",
+      "permanent": true
+    },
+    {
+      "source": "/events.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.varanasiconnect.in"
+        }
+      ],
+      "destination": "https://events.varanasiconnect.in/",
+      "permanent": true
+    },
+    {
+      "source": "/rules.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.varanasiconnect.in"
+        }
+      ],
+      "destination": "https://rules.varanasiconnect.in/",
+      "permanent": true
+    },
+    {
+      "source": "/reviews.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.varanasiconnect.in"
+        }
+      ],
+      "destination": "https://reviews.varanasiconnect.in/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "about.varanasiconnect.in"
+        }
+      ],
+      "destination": "/about.html"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "events.varanasiconnect.in"
+        }
+      ],
+      "destination": "/events.html"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "rules.varanasiconnect.in"
+        }
+      ],
+      "destination": "/rules.html"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "reviews.varanasiconnect.in"
+        }
+      ],
+      "destination": "/reviews.html"
+    }
+  ]
+}

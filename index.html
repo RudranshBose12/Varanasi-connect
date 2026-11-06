@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://www.varanasiconnect.in/">
   <meta name="theme-color" content="#fbf8f1" />
   <meta name="description" content="Varanasi Connect — a community for people who live, love, create and connect in Varanasi." />
   <title>Varanasi Connect — The city, connected.</title>
@@ -504,8 +505,8 @@ footer .mail{
 </head>
 <body>
   <nav class="nav"><div class="nav-inner">
-    <a class="brand" href="index.html" aria-label="Varanasi Connect home"><img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect"></a>
-    <div class="navlinks"><a href="about.html">About</a><a href="events.html">Events</a><a id="navRules" href="rules.html">Rules</a><a href="reviews.html">Reviews</a></div>
+    <a class="brand" href="https://www.varanasiconnect.in/" aria-label="Varanasi Connect home"><img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect"></a>
+    <div class="navlinks"><a href="https://about.varanasiconnect.in/">About</a><a href="https://events.varanasiconnect.in/">Events</a><a id="navRules" href="https://rules.varanasiconnect.in/">Rules</a><a href="https://reviews.varanasiconnect.in/">Reviews</a></div>
 
     <div class="profile-wrap" id="profileWrap">
       <button class="auth-cta" id="authButton" type="button" aria-label="Log in" title="Log in with Discord" aria-haspopup="menu" aria-expanded="false">
@@ -528,7 +529,7 @@ footer .mail{
   <main id="top">
     <section class="hero"><div class="container hero-grid">
       <div class="reveal"><div class="eyebrow"><span></span> A community from Varanasi</div><h1>The city,<br><span class="gradient-text">connected.</span></h1><p>Varanasi Connect is a community built around the people, creativity, culture and everyday experiences that make Varanasi feel like home.</p><div class="actions"><a class="btn btn-dark" id="heroDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join the community</a><a class="btn btn-light" href="#about">Explore Varanasi Connect</a></div></div>
-      <a class="ongoing-preview" href="events.html"><span class="ongoing-label"><i></i> Ongoing events</span><img src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=900&q=85" alt="Varanasi ghats along the Ganga"><span class="ongoing-preview-copy"><small>HAPPENING IN VARANASI</small><strong>See what's going on<br>right now.</strong><span>Explore events and register <b>→</b></span></span></a>
+      <a class="ongoing-preview" href="https://events.varanasiconnect.in/"><span class="ongoing-label"><i></i> Ongoing events</span><img src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=900&q=85" alt="Varanasi ghats along the Ganga"><span class="ongoing-preview-copy"><small>HAPPENING IN VARANASI</small><strong>See what's going on<br>right now.</strong><span>Explore events and register <b>→</b></span></span></a>
     </div></section>
 
     <section class="events" id="events"><div class="container"><div class="section-head"><div><div class="kicker">01 — Events</div><h2>Always something<br><span class="gradient-text">coming up.</span></h2></div><p class="section-intro">A look at the community activities we are hosting, from movie nights and meetups to creative events and competitions.</p></div>
@@ -546,14 +547,14 @@ footer .mail{
   
     <footer class="site-footer">
   <div class="container footer-inner">
-    <a class="footer-brand" href="index.html" aria-label="Varanasi Connect home">
+    <a class="footer-brand" href="https://www.varanasiconnect.in/" aria-label="Varanasi Connect home">
       <img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect">
     </a>
     <nav class="footer-links" aria-label="Footer navigation">
-      <a href="about.html">About</a>
-      <a href="events.html">Events</a>
-      <a href="rules.html">Community rules</a>
-      <a href="reviews.html">Reviews</a>
+      <a href="https://about.varanasiconnect.in/">About</a>
+      <a href="https://events.varanasiconnect.in/">Events</a>
+      <a href="https://rules.varanasiconnect.in/">Community rules</a>
+      <a href="https://reviews.varanasiconnect.in/">Reviews</a>
       <a class="footer-support" href="mailto:community.varanasi@gmail.com?subject=Varanasi%20Connect%20Support">Support</a>
       <a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a>
       <a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a>
@@ -764,7 +765,7 @@ footer .mail{
         if(!supabaseClient||!activeAuthUser){accountPanelBody.innerHTML='<div class="account-empty"><strong>Log in to view registrations</strong>Sign in with Discord to see the events you have joined.</div>';return;}
         const {data,error}=await supabaseClient.from('event_registrations').select('registered_at,events(id,title,summary,starts_at,location,status)').order('registered_at',{ascending:false});
         if(error){accountPanelBody.innerHTML='<div class="account-empty"><strong>Could not load registrations</strong>Please try again in a moment.</div>';console.error(error);return;}
-        if(!data?.length){accountPanelBody.innerHTML='<div class="account-empty"><strong>No registered events yet</strong>Explore the Events page and register for something coming up.</div><p><a class="btn btn-dark" href="events.html">Explore events</a></p>';return;}
+        if(!data?.length){accountPanelBody.innerHTML='<div class="account-empty"><strong>No registered events yet</strong>Explore the Events page and register for something coming up.</div><p><a class="btn btn-dark" href="https://events.varanasiconnect.in/">Explore events</a></p>';return;}
         accountPanelBody.innerHTML='<div class="registered-event-list">'+data.map(row=>{const ev=row.events||{};const date=ev.starts_at?new Date(ev.starts_at).toLocaleString(undefined,{dateStyle:'medium',timeStyle:'short'}):'Date to be announced';return '<article class="registered-event-item"><strong>'+escapeHtml(ev.title||'Community event')+'</strong><span>'+escapeHtml(date)+' · '+escapeHtml(ev.location||'Varanasi')+'</span></article>';}).join('')+'</div>';
       };
       const showAccountSettings=()=>{
