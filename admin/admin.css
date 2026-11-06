@@ -13,3 +13,5 @@
 .website-upload-button input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;pointer-events:auto}
 .website-media-copy .text-btn{justify-self:start}
 @media(max-width:620px){.website-media-grid{grid-template-columns:1fr}.website-media-preview{height:180px}}
+
+.media-ratio-guide{display:flex;flex-wrap:wrap;gap:8px 18px;padding:13px 15px;margin:0 0 16px;border:1px solid var(--line);border-radius:12px;background:var(--soft);font-size:12px}.media-ratio-guide strong{width:100%;font-size:13px}.media-ratio-guide span{font-weight:600}.media-ratio-guide small{width:100%;color:var(--muted);line-height:1.5}
