@@ -405,6 +405,8 @@ body.vc-detail-open{overflow:hidden!important}
         <button type="button" role="menuitem" data-account-action="events">Registered events</button>
         <button type="button" role="menuitem" data-account-action="settings">Settings</button>
         <a class="profile-menu-link" role="menuitem" href="mailto:community.varanasi@gmail.com?subject=Varanasi%20Connect%20Support">Support</a>
+        <a class="profile-menu-link" role="menuitem" id="websiteControlPanelLink" href="https://admin.varanasiconnect.in/" target="_blank" rel="noopener" hidden>Website Control Panel</a><a class="profile-menu-link" role="menuitem" id="discordBotDashboardLink" href="https://VnscBot.varanasiconnect.in/" target="_blank" rel="noopener" hidden>Discord Bot Dashboard</a>
+        
         <div class="profile-menu-divider"></div>
         <button type="button" role="menuitem" class="profile-logout" data-account-action="logout">Log out</button>
       </div>
@@ -449,7 +451,27 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const date=s=>s?new Date(s).toLocaleString('en-IN',{dateStyle:'medium',timeStyle:'short',timeZone:'Asia/Kolkata'}):'To be announced';
 const duration=e=>{if(!e.starts_at||!e.ends_at)return 'To be confirmed';const mins=Math.max(0,Math.round((new Date(e.ends_at)-new Date(e.starts_at))/60000));if(mins>=1440){const d=Math.round(mins/1440);return d+' day'+(d===1?'':'s')}if(mins>=60)return Math.floor(mins/60)+' hr'+(mins%60?' '+mins%60+' min':'');return mins+' min'};
 const isPhoto=e=>/photography-competition|photography competition/i.test((e.slug||'')+' '+(e.title||''));
-function renderAuth(){const btn=$('authButton'),label=$('authLabel'),avatar=$('profileAvatar'),fallback=$('profileFallback');if(!btn)return;if(user){const meta=user.user_metadata||{},name=meta.global_name||meta.full_name||meta.name||meta.preferred_username||user.email||'Your account',url=meta.avatar_url||meta.picture||'';label.textContent='';btn.classList.add('is-signed-in');btn.title='Open account menu';btn.setAttribute('aria-label','Open account menu for '+name);if(url){avatar.src=url;avatar.hidden=false;fallback.hidden=true}else{avatar.hidden=true;fallback.hidden=false}$('profileMenuName').textContent=name;$('profileMenuEmail').textContent=user.email||'Signed in with Discord'}else{label.textContent='Log in';btn.classList.remove('is-signed-in');btn.title='Log in with Discord';btn.setAttribute('aria-label','Log in');avatar.hidden=true;avatar.removeAttribute('src');fallback.hidden=true;$('profileMenu').hidden=true}}
+const refreshDashboardLinks=async(user)=>{
+  const websiteLink=document.getElementById('websiteControlPanelLink');
+  const botLink=document.getElementById('discordBotDashboardLink');
+  if(!websiteLink||!botLink)return;
+  websiteLink.hidden=true;botLink.hidden=true;
+  if(!user||!client)return;
+  try{
+    const [adminResult,accessResult]=await Promise.all([
+      client.from('vc_admins').select('role').eq('user_id',user.id).maybeSingle(),
+      client.from('vc_dashboard_access').select('can_view_website_panel,can_view_bot_dashboard').eq('user_id',user.id).maybeSingle()
+    ]);
+    if(adminResult.error)throw adminResult.error;
+    if(accessResult.error)throw accessResult.error;
+    const isAdmin=!!adminResult.data&&['owner','admin'].includes(adminResult.data.role);
+    websiteLink.hidden=!(isAdmin||accessResult.data?.can_view_website_panel===true);
+    botLink.hidden=!(isAdmin||accessResult.data?.can_view_bot_dashboard===true);
+    const divider=document.querySelector('#profileMenu .profile-menu-divider');
+    if(divider)divider.hidden=websiteLink.hidden&&botLink.hidden;
+  }catch(error){console.error('Could not load dashboard permissions:',error);}
+};
+function renderAuth(){const btn=$('authButton'),label=$('authLabel'),avatar=$('profileAvatar'),fallback=$('profileFallback');if(!btn)return;if(user){const meta=user.user_metadata||{},name=meta.global_name||meta.full_name||meta.name||meta.preferred_username||user.email||'Your account',url=meta.avatar_url||meta.picture||'';label.textContent='';btn.classList.add('is-signed-in');btn.title='Open account menu';btn.setAttribute('aria-label','Open account menu for '+name);if(url){avatar.src=url;avatar.hidden=false;fallback.hidden=true}else{avatar.hidden=true;fallback.hidden=false}$('profileMenuName').textContent=name;$('profileMenuEmail').textContent=user.email||'Signed in with Discord';refreshDashboardLinks(user)}else{refreshDashboardLinks(null);label.textContent='Log in';btn.classList.remove('is-signed-in');btn.title='Log in with Discord';btn.setAttribute('aria-label','Log in');avatar.hidden=true;avatar.removeAttribute('src');fallback.hidden=true;$('profileMenu').hidden=true}}
 function authUI(){renderAuth();$('authNotice').textContent=user?'You are signed in. Your registrations are saved to your Discord-linked account.':'You can browse events without signing in. Log in with Discord when you are ready to register.'}
 const eventKind=e=>{const raw=String(e.event_type||e.type||e.category||'').toLowerCase();if(/competition|contest/.test(raw)||isPhoto(e))return 'competition';if(/online|virtual/.test(raw)||/online|virtual/.test(String(e.mode||'')))return 'online';return 'offline'};
 const eventAction=e=>e.participation_url||e.registration_url||e.ticket_url||e.external_url||'';
