@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="canonical" href="https://reviews.varanasiconnect.in/"><meta name="theme-color" content="#fbf8f1">
+  <link rel="canonical" href="https://www.varanasiconnect.in/reviews"><meta name="theme-color" content="#fbf8f1">
 <title>Reviews — Varanasi Connect</title><meta name="description" content="Share your experience with Varanasi Connect events and read community reviews.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@ main{padding-top:118px}.hero{padding:55px 0 50px}.eyebrow{display:inline-flex;pa
 </style></head><body>
 <nav class="nav"><div class="nav-inner">
 <a class="brand" href="https://www.varanasiconnect.in/" aria-label="Varanasi Connect home"><img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect"></a>
-<div class="navlinks"><a href="https://about.varanasiconnect.in/">About</a><a href="https://events.varanasiconnect.in/">Events</a><a href="https://rules.varanasiconnect.in/">Rules</a><a href="https://reviews.varanasiconnect.in/" aria-current="page">Reviews</a></div>
+<div class="navlinks"><a href="https://www.varanasiconnect.in/about">About</a><a href="https://www.varanasiconnect.in/events">Events</a><a href="https://www.varanasiconnect.in/rules">Rules</a><a href="https://www.varanasiconnect.in/reviews" aria-current="page">Reviews</a></div>
 <div class="profile-wrap" id="profileWrap"><button class="auth-cta" id="authButton" type="button" aria-label="Log in" title="Log in with Discord" aria-haspopup="menu" aria-expanded="false"><span id="authLabel">Log in</span><img class="profile-avatar" id="profileAvatar" alt="" hidden><svg class="profile-fallback" id="profileFallback" viewBox="0 0 24 24" aria-hidden="true" hidden><circle cx="12" cy="8" r="3.5"></circle><path d="M4.5 20c.7-4 3.2-6 7.5-6s6.8 2 7.5 6"></path></svg></button>
 <div class="profile-menu" id="profileMenu" role="menu" aria-label="Account menu" hidden><div class="profile-menu-heading"><strong id="profileMenuName">Your account</strong><span id="profileMenuEmail"></span></div><button type="button" role="menuitem" data-account-action="events">Registered events</button><button type="button" role="menuitem" data-account-action="settings">Settings</button><a class="profile-menu-link" role="menuitem" href="mailto:community.varanasi@gmail.com?subject=Varanasi%20Connect%20Support">Support</a><div class="profile-menu-divider"></div><button type="button" role="menuitem" class="profile-logout" data-account-action="logout">Log out</button></div></div>
 </div></nav>
@@ -36,7 +36,7 @@ main{padding-top:118px}.hero{padding:55px 0 50px}.eyebrow{display:inline-flex;pa
 </section>
 <section class="panel" id="communityPanel" aria-labelledby="communityReviews"><div class="review-head"><div><h2 id="communityReviews">Community reviews</h2><div class="muted" id="reviewCount" style="font-size:12px">Loading reviews…</div></div><div class="review-toolbar"><div class="average" id="averageRating">— <span>★★★★★</span></div><button class="btn" id="editReviewTop" type="button" hidden>Edit your review</button></div></div><div class="review-list" id="reviewList"><div class="empty">Loading community reviews…</div></div></section>
 </div></main>
-<footer class="footer"><div class="container footer-inner"><span>© 2026 Varanasi Connect</span><nav class="footer-links"><a href="https://about.varanasiconnect.in/">About</a><a href="https://events.varanasiconnect.in/">Events</a><a href="https://rules.varanasiconnect.in/">Community rules</a><a href="https://reviews.varanasiconnect.in/">Reviews</a><a href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a href="https://discord.gg/2SWcuADRuD" target="_blank" rel="noopener">Discord</a></nav></div></footer>
+<footer class="footer"><div class="container footer-inner"><span>© 2026 Varanasi Connect</span><nav class="footer-links"><a href="https://www.varanasiconnect.in/about">About</a><a href="https://www.varanasiconnect.in/events">Events</a><a href="https://www.varanasiconnect.in/rules">Community rules</a><a href="https://www.varanasiconnect.in/reviews">Reviews</a><a href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a><a href="https://discord.gg/2SWcuADRuD" target="_blank" rel="noopener">Discord</a></nav></div></footer>
 <script src="site-config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 (function(){
@@ -60,9 +60,9 @@ if(!window.supabase||!cfg.supabaseUrl||!cfg.supabasePublishableKey){list.innerHT
 client=window.supabase.createClient(cfg.supabaseUrl,cfg.supabasePublishableKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
 client.auth.onAuthStateChange((_event,session)=>{renderAuth(session?.user||null);loadReviews()});
 client.auth.getSession().then(({data,error})=>{if(error)console.error(error);renderAuth(data?.session?.user||null);loadReviews()}).catch(error=>{console.error(error);list.innerHTML='<div class="empty">Could not connect to the review service.</div>'});
-button.addEventListener('click',async()=>{if(activeUser){setMenu(menu.hidden);return}button.disabled=true;label.textContent='Opening Discord…';try{const {error}=await client.auth.signInWithOAuth({provider:'discord',options:{redirectTo:location.origin+location.pathname}});if(error)throw error}catch(error){console.error(error);label.textContent='Log in';alert('Discord sign-in failed. '+(error.message||''))}finally{button.disabled=false}});
+button.addEventListener('click',async()=>{if(activeUser){setMenu(menu.hidden);return}button.disabled=true;label.textContent='Opening Discord…';try{const {error}=await client.auth.signInWithOAuth({provider:'discord',options:{redirectTo:'https://www.varanasiconnect.in/reviews'}});if(error)throw error}catch(error){console.error(error);label.textContent='Log in';alert('Discord sign-in failed. '+(error.message||''))}finally{button.disabled=false}});
 document.getElementById('reviewSignIn').addEventListener('click',()=>button.click());
-menu.addEventListener('click',async e=>{const action=e.target.closest('[data-account-action]')?.dataset.accountAction;if(action==='logout'){const {error}=await client.auth.signOut();if(error)alert('Could not log out.');else renderAuth(null)}else if(action==='events')location.href='https://events.varanasiconnect.in/';else if(action==='settings')alert('Account settings are available from the homepage profile menu.')});
+menu.addEventListener('click',async e=>{const action=e.target.closest('[data-account-action]')?.dataset.accountAction;if(action==='logout'){const {error}=await client.auth.signOut();if(error)alert('Could not log out.');else renderAuth(null)}else if(action==='events')location.href='https://www.varanasiconnect.in/events';else if(action==='settings')alert('Account settings are available from the homepage profile menu.')});
 document.addEventListener('click',e=>{if(!e.target.closest('#profileWrap'))setMenu(false)});document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
 })();
 </script></body></html>
