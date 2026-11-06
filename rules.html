@@ -701,7 +701,7 @@ footer .mail{
     if(activeUser){setMenu(menu?.hidden!==false);return}
     button.disabled=true;label.textContent='Opening Discord…';
     try{
-      const redirectTo='https://www.varanasiconnect.in/rules';
+      const redirectTo=window.location.origin+'/rules';
       const {error}=await client.auth.signInWithOAuth({provider:'discord',options:{redirectTo}});
       if(error)throw error;
     }catch(error){console.error('Discord sign-in failed:',error);label.textContent='Log in';alert('Discord sign-in could not be completed. '+(error?.message||''))}
