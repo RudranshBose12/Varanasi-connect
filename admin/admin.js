@@ -3,7 +3,13 @@
 var cfg=window.VC_ADMIN_CONFIG||{},client=null,user=null,admin=null,events=[],reviews=[],registrations=[],images=[],websiteMedia=[],editingId=null;
 var mediaDefinitions=[
 {key:'homepage_ongoing_poster',title:'Homepage — Ongoing events poster',description:'The large image beside the homepage introduction.',fallback:'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=900&q=85'},
-{key:'home_photography',title:'Photography competition',description:'Featured image in Always Something Coming Up.',fallback:''},\n{key:'home_movie_nights',title:'Movie nights',description:'Movie nights card image.',fallback:''},\n{key:'home_meetups',title:'Meetups',description:'Meetups card image.',fallback:''},\n{key:'home_new_projects',title:'New projects',description:'New projects card image.',fallback:''},\n{key:'rules_main',title:'Rules — Main image',description:'Large image beside “Make space for everyone”.',fallback:'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1000&q=85'},\n{key:'rules_community',title:'Rules — Community image',description:'Smaller overlapping community photo.',fallback:'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=85'}\n];
+{key:'home_photography',title:'Photography competition',description:'Featured image in Always Something Coming Up.',fallback:''},
+{key:'home_movie_nights',title:'Movie nights',description:'Movie nights card image.',fallback:''},
+{key:'home_meetups',title:'Meetups',description:'Meetups card image.',fallback:''},
+{key:'home_new_projects',title:'New projects',description:'New projects card image.',fallback:''},
+{key:'rules_main',title:'Rules — Main image',description:'Large image beside “Make space for everyone”.',fallback:'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1000&q=85'},
+{key:'rules_community',title:'Rules — Community image',description:'Smaller overlapping community photo.',fallback:'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=85'}
+];
 var $=function(id){return document.getElementById(id);};
 var login=$('login'),app=$('app'),content=$('content'),modal=$('modal'),form=$('eventForm'),fields=$('fields'),notice=$('notice'),page='overview';
 function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
