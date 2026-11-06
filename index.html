@@ -807,7 +807,7 @@ footer .mail{
           authButton.disabled=true;
           authLabel.textContent='Opening Discord…';
           try{
-            const redirectTo='https://www.varanasiconnect.in/';
+            const redirectTo=window.location.origin+'/';
             const {error}=await supabaseClient.auth.signInWithOAuth({provider:'discord',options:{redirectTo}});
             if(error)throw error;
           }catch(error){
