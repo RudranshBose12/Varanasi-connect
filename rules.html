@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="https://rules.varanasiconnect.in/">
+  <link rel="canonical" href="https://www.varanasiconnect.in/rules">
   <meta name="theme-color" content="#fbf8f1" />
   <meta name="description" content="Varanasi Connect — Keep the homepage focused on the introduction and route visitors to the dedicated pages." />
   
@@ -670,7 +670,7 @@ footer .mail{
 <body>
 <nav class="nav"><div class="nav-inner">
     <a class="brand" href="https://www.varanasiconnect.in/" aria-label="Varanasi Connect home"><img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect"></a>
-    <div class="navlinks"><a href="https://about.varanasiconnect.in/">About</a><a href="https://events.varanasiconnect.in/">Events</a><a id="navRules" href="https://rules.varanasiconnect.in/" aria-current="page">Rules</a><a href="https://reviews.varanasiconnect.in/">Reviews</a></div>
+    <div class="navlinks"><a href="https://www.varanasiconnect.in/about">About</a><a href="https://www.varanasiconnect.in/events">Events</a><a id="navRules" href="https://www.varanasiconnect.in/rules" aria-current="page">Rules</a><a href="https://www.varanasiconnect.in/reviews">Reviews</a></div>
 
     <div class="profile-wrap" id="profileWrap">
       <button class="auth-cta" id="authButton" type="button" aria-label="Log in" title="Log in with Discord" aria-haspopup="menu" aria-expanded="false">
@@ -703,10 +703,10 @@ footer .mail{
       <img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect">
     </a>
     <nav class="footer-links" aria-label="Footer navigation">
-      <a href="https://about.varanasiconnect.in/">About</a>
-      <a href="https://events.varanasiconnect.in/">Events</a>
-      <a href="https://rules.varanasiconnect.in/">Community rules</a>
-      <a href="https://reviews.varanasiconnect.in/">Reviews</a>
+      <a href="https://www.varanasiconnect.in/about">About</a>
+      <a href="https://www.varanasiconnect.in/events">Events</a>
+      <a href="https://www.varanasiconnect.in/rules">Community rules</a>
+      <a href="https://www.varanasiconnect.in/reviews">Reviews</a>
       <a class="footer-support" href="mailto:community.varanasi@gmail.com?subject=Varanasi%20Connect%20Support">Support</a>
       <a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a>
       <a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a>
@@ -784,7 +784,7 @@ footer .mail{
     if(action==='logout'){
       try{const {error}=await client.auth.signOut();if(error)throw error;render(null)}
       catch(error){console.error('Sign out failed:',error);alert('Could not log out. Please try again.')}
-    }else if(action==='events'){location.href='https://events.varanasiconnect.in/'}
+    }else if(action==='events'){location.href='https://www.varanasiconnect.in/events'}
     else if(action==='settings'){alert('Account settings are available from the homepage profile menu.')}
   });
   document.addEventListener('click',event=>{if(!event.target.closest('#profileWrap'))setMenu(false)});
