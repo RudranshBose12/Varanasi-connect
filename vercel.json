@@ -2,26 +2,6 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
-      "source": "/about.html",
-      "destination": "https://www.varanasiconnect.in/about",
-      "permanent": true
-    },
-    {
-      "source": "/events.html",
-      "destination": "https://www.varanasiconnect.in/events",
-      "permanent": true
-    },
-    {
-      "source": "/rules.html",
-      "destination": "https://www.varanasiconnect.in/rules",
-      "permanent": true
-    },
-    {
-      "source": "/reviews.html",
-      "destination": "https://www.varanasiconnect.in/reviews",
-      "permanent": true
-    },
-    {
       "source": "/:path*",
       "has": [
         {
