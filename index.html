@@ -519,6 +519,8 @@ footer .mail{
         <button type="button" role="menuitem" data-account-action="events">Registered events</button>
         <button type="button" role="menuitem" data-account-action="settings">Settings</button>
         <a class="profile-menu-link" role="menuitem" href="mailto:community.varanasi@gmail.com?subject=Varanasi%20Connect%20Support">Support</a>
+        <a class="profile-menu-link" role="menuitem" id="websiteControlPanelLink" href="https://admin.varanasiconnect.in/" target="_blank" rel="noopener" hidden>Website Control Panel</a><a class="profile-menu-link" role="menuitem" id="discordBotDashboardLink" href="https://VnscBot.varanasiconnect.in/" target="_blank" rel="noopener" hidden>Discord Bot Dashboard</a>
+        
         <div class="profile-menu-divider"></div>
         <button type="button" role="menuitem" class="profile-logout" data-account-action="logout">Log out</button>
       </div>
@@ -707,6 +709,26 @@ footer .mail{
         profileMenu.hidden=!open;
         authButton.setAttribute('aria-expanded',String(open));
       };
+      const refreshDashboardLinks=async(user)=>{
+        const websiteLink=document.getElementById('websiteControlPanelLink');
+        const botLink=document.getElementById('discordBotDashboardLink');
+        if(!websiteLink||!botLink)return;
+        websiteLink.hidden=true;botLink.hidden=true;
+        if(!user||!supabaseClient)return;
+        try{
+          const [adminResult,accessResult]=await Promise.all([
+            supabaseClient.from('vc_admins').select('role').eq('user_id',user.id).maybeSingle(),
+            supabaseClient.from('vc_dashboard_access').select('can_view_website_panel,can_view_bot_dashboard').eq('user_id',user.id).maybeSingle()
+          ]);
+          if(adminResult.error)throw adminResult.error;
+          if(accessResult.error)throw accessResult.error;
+          const isAdmin=!!adminResult.data&&['owner','admin'].includes(adminResult.data.role);
+          websiteLink.hidden=!(isAdmin||accessResult.data?.can_view_website_panel===true);
+          botLink.hidden=!(isAdmin||accessResult.data?.can_view_bot_dashboard===true);
+          const divider=document.querySelector('#profileMenu .profile-menu-divider');
+          if(divider)divider.hidden=websiteLink.hidden&&botLink.hidden;
+        }catch(error){console.error('Could not load dashboard permissions:',error);}
+      };
       const renderAuth=(user)=>{
         activeAuthUser=user||null;
         if(!authButton||!authLabel)return;
@@ -736,7 +758,9 @@ footer .mail{
           const menuName=$('#profileMenuName'),menuEmail=$('#profileMenuEmail');
           if(menuName)menuName.textContent=name;
           if(menuEmail)menuEmail.textContent=user.email||'Signed in with Discord';
+          refreshDashboardLinks(user);
         }else{
+          refreshDashboardLinks(null);
           notificationPreference=false;
           authLabel.textContent='Log in';
           authButton.classList.remove('is-signed-in');
