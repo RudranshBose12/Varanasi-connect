@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="canonical" href="https://events.varanasiconnect.in/"><meta name="theme-color" content="#fbf8f1">
+  <link rel="canonical" href="https://www.varanasiconnect.in/events"><meta name="theme-color" content="#fbf8f1">
 <title>Events — Varanasi Connect</title><meta name="description" content="Discover community events in Varanasi and register with your Discord account.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -392,7 +392,7 @@ body.vc-detail-open{overflow:hidden!important}
 <body>
 <nav class="nav"><div class="nav-inner">
     <a class="brand" href="https://www.varanasiconnect.in/" aria-label="Varanasi Connect home"><img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect"></a>
-    <div class="navlinks"><a href="https://about.varanasiconnect.in/">About</a><a href="https://events.varanasiconnect.in/" aria-current="page">Events</a><a id="navRules" href="https://rules.varanasiconnect.in/">Rules</a><a href="https://reviews.varanasiconnect.in/">Reviews</a></div>
+    <div class="navlinks"><a href="https://www.varanasiconnect.in/about">About</a><a href="https://www.varanasiconnect.in/events" aria-current="page">Events</a><a id="navRules" href="https://www.varanasiconnect.in/rules">Rules</a><a href="https://www.varanasiconnect.in/reviews">Reviews</a></div>
 
     <div class="profile-wrap" id="profileWrap">
       <button class="auth-cta" id="authButton" type="button" aria-label="Log in" title="Log in with Discord" aria-haspopup="menu" aria-expanded="false">
@@ -428,10 +428,10 @@ body.vc-detail-open{overflow:hidden!important}
       <img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect">
     </a>
     <nav class="footer-links" aria-label="Footer navigation">
-      <a href="https://about.varanasiconnect.in/">About</a>
-      <a href="https://events.varanasiconnect.in/">Events</a>
-      <a href="https://rules.varanasiconnect.in/">Community rules</a>
-      <a href="https://reviews.varanasiconnect.in/">Reviews</a>
+      <a href="https://www.varanasiconnect.in/about">About</a>
+      <a href="https://www.varanasiconnect.in/events">Events</a>
+      <a href="https://www.varanasiconnect.in/rules">Community rules</a>
+      <a href="https://www.varanasiconnect.in/reviews">Reviews</a>
       <a class="footer-support" href="mailto:community.varanasi@gmail.com?subject=Varanasi%20Connect%20Support">Support</a>
       <a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a>
       <a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a>
@@ -462,7 +462,7 @@ function showDetails(e){activeEvent=e;const kind=eventKind(e),actionLabel=e.prim
 function closeDetails(){$('eventDetailModal').classList.remove('open');$('eventDetailModal').setAttribute('aria-hidden','true');document.body.classList.remove('vc-detail-open')}
 async function register(id){if(!user){toast('Log in with Discord before registering.');await signIn();return}const e=events.find(x=>x.id===id);if(!e)return;const {error}=await client.from('event_registrations').insert({event_id:id,user_id:user.id});if(error&&error.code!=='23505'){toast(error.message||'Registration failed. Please try again.');return}registered.add(id);toast(error?'You are already registered.':'You are registered!');await loadEvents();const latest=events.find(x=>x.id===id);if(latest)showDetails(latest)}
 async function showMine(){if(!user){toast('Log in with Discord to view your registrations.');return}const {data,error}=await client.from('event_registrations').select('registered_at,events(title,starts_at,location)').order('registered_at',{ascending:false});$('registeredList').innerHTML=error?'<div class="empty">Could not load registrations.</div>':data?.length?data.map(r=>'<div class="registered-item"><strong>'+esc(r.events?.title||'Event')+'</strong><small>'+esc(date(r.events?.starts_at))+' · '+esc(r.events?.location||'Varanasi')+'</small></div>').join(''):'<div class="empty">You have not registered for any events yet.</div>';$('registeredModal').classList.add('open');$('profileMenu').hidden=true}
-async function signIn(){const {error}=await client.auth.signInWithOAuth({provider:'discord',options:{redirectTo:location.href}});if(error)toast(error.message)}
+async function signIn(){const {error}=await client.auth.signInWithOAuth({provider:'discord',options:{redirectTo:'https://www.varanasiconnect.in/events'}});if(error)toast(error.message)}
 $('eventGrid').addEventListener('click',async e=>{const b=e.target.closest('[data-register],[data-details]');if(!b)return;if(b.dataset.register){const ev=events.find(x=>x.id===b.dataset.register);await register(b.dataset.register)}else{const ev=events.find(x=>x.id===b.dataset.details);if(ev)showDetails(ev)}});$('eventFilters').addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;currentFilter=b.dataset.filter;$('eventFilters').querySelectorAll('.filter-chip').forEach(x=>x.classList.toggle('active',x===b));renderEvents()});
 $('eventDetailContent').addEventListener('click',async e=>{const b=e.target.closest('[data-modal-register]');if(b)await register(b.dataset.modalRegister)});
 $('eventDetailModal').addEventListener('click',e=>{if(e.target.closest('[data-close-details]'))closeDetails()});document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeDetails();$('registeredModal').classList.remove('open')}});
