@@ -3,88 +3,95 @@
   "redirects": [
     {
       "source": "/about.html",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.varanasiconnect.in"
-        }
-      ],
-      "destination": "https://about.varanasiconnect.in/",
+      "destination": "https://www.varanasiconnect.in/about",
       "permanent": true
     },
     {
       "source": "/events.html",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.varanasiconnect.in"
-        }
-      ],
-      "destination": "https://events.varanasiconnect.in/",
+      "destination": "https://www.varanasiconnect.in/events",
       "permanent": true
     },
     {
       "source": "/rules.html",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.varanasiconnect.in"
-        }
-      ],
-      "destination": "https://rules.varanasiconnect.in/",
+      "destination": "https://www.varanasiconnect.in/rules",
       "permanent": true
     },
     {
       "source": "/reviews.html",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.varanasiconnect.in"
-        }
-      ],
-      "destination": "https://reviews.varanasiconnect.in/",
+      "destination": "https://www.varanasiconnect.in/reviews",
       "permanent": true
-    }
-  ],
-  "rewrites": [
+    },
     {
-      "source": "/",
+      "source": "/:path*",
       "has": [
         {
           "type": "host",
           "value": "about.varanasiconnect.in"
         }
       ],
-      "destination": "/about.html"
+      "destination": "https://www.varanasiconnect.in/about",
+      "permanent": true
     },
     {
-      "source": "/",
+      "source": "/:path*",
       "has": [
         {
           "type": "host",
           "value": "events.varanasiconnect.in"
         }
       ],
-      "destination": "/events.html"
+      "destination": "https://www.varanasiconnect.in/events",
+      "permanent": true
     },
     {
-      "source": "/",
+      "source": "/:path*",
       "has": [
         {
           "type": "host",
           "value": "rules.varanasiconnect.in"
         }
       ],
-      "destination": "/rules.html"
+      "destination": "https://www.varanasiconnect.in/rules",
+      "permanent": true
     },
     {
-      "source": "/",
+      "source": "/:path*",
       "has": [
         {
           "type": "host",
           "value": "reviews.varanasiconnect.in"
         }
       ],
+      "destination": "https://www.varanasiconnect.in/reviews",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "varanasiconnect.in"
+        }
+      ],
+      "destination": "https://www.varanasiconnect.in/:path*",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/events",
+      "destination": "/events.html"
+    },
+    {
+      "source": "/rules",
+      "destination": "/rules.html"
+    },
+    {
+      "source": "/reviews",
       "destination": "/reviews.html"
     }
   ]
