@@ -503,6 +503,7 @@ footer .mail{
 </style>
 <link rel="stylesheet" href="assets/shared-nav.css?v=1">
 <style>#websiteControlPanelLink[hidden],#discordBotDashboardLink[hidden]{display:none!important}</style>
+<style>.event-feature[data-website-media],.event-small[data-website-media]{visibility:hidden}.ongoing-preview img{visibility:hidden}</style>
 </head>
 <body>
   <nav class="nav"><div class="nav-inner">
@@ -537,8 +538,8 @@ footer .mail{
 
     <section class="events" id="events"><div class="container"><div class="section-head"><div><div class="kicker">01 — Events</div><h2>Always something<br><span class="gradient-text">coming up.</span></h2></div><p class="section-intro">A look at the community activities we are hosting, from movie nights and meetups to creative events and competitions.</p></div>
       <div class="event-grid">
-        <a class="event-feature" data-website-media="home_photography" href="https://www.varanasiconnect.in/events?event=photography-competition#event-details"><div class="event-content"><span class="event-tag">Featured event</span><h3>Photography Competition</h3><p>Extended deadline · 15 November 2026 · Free entry</p><p style="margin-top:10px">Submit up to 3 original photographs of Varanasi. Win from a ₹1,000 prize pool.</p></div></a>
-        <div class="side-events"><a class="event-small" data-website-media="home_movie_nights" href="https://www.varanasiconnect.in/events#movie"><span class="event-tag">Community</span><h3>Movie nights</h3></a><a class="event-small" data-website-media="home_meetups" href="https://www.varanasiconnect.in/events#meetups"><span class="event-tag">Community</span><h3>Meetups</h3></a><a class="event-small" data-website-media="home_new_projects" href="https://www.varanasiconnect.in/events#projects"><span class="event-tag">More soon</span><h3>New projects</h3></a></div>
+        <a class="event-feature" data-website-media="home_photography" href="https://www.varanasiconnect.in/events?event=photography-competition#event-details"><div class="event-content"><span class="event-tag">Featured event</span><h3>Photography Competition</h3><p>Free entry · ₹1,000 prize pool</p></div></a>
+        <div class="side-events"><a class="event-small" data-website-media="home_movie_nights" href="https://www.varanasiconnect.in/events#movie"><span class="event-tag">Community</span><h3>Movie nights</h3></a><a class="event-small" data-website-media="home_meetups" href="https://www.varanasiconnect.in/events#meetups"><span class="event-tag">Community</span><h3>Meetups</h3></a></div>
       </div>
     </div></section>
 
@@ -878,20 +879,23 @@ footer .mail{
 
 <script>
 (function(){
-  var cfg=window.VC_CONFIG||{};
-  if(!window.supabase||!cfg.supabaseUrl||!cfg.supabasePublishableKey)return;
+  var cfg=window.VC_CONFIG||{},root=document.documentElement;
+  if(!window.supabase||!cfg.supabaseUrl||!cfg.supabasePublishableKey){root.classList.add('website-media-ready');return;}
   var client=window.supabase.createClient(cfg.supabaseUrl,cfg.supabasePublishableKey,{auth:{persistSession:false,autoRefreshToken:false}});
   client.from('website_media').select('media_key,image_url').then(function(r){
     if(r.error){console.warn('Website media could not be loaded:',r.error.message);return;}
     var media={};(r.data||[]).forEach(function(x){media[x.media_key]=x.image_url;});
-    var poster=media.homepage_ongoing_poster;
-    var posterEl=document.querySelector('.ongoing-preview img');
-    if(poster&&posterEl)posterEl.src=poster;
-    ['home_photography','home_movie_nights','home_meetups','home_new_projects'].forEach(function(key){
-      var el=document.querySelector('[data-website-media="'+key+'"]');
-      if(media[key]&&el){el.style.backgroundImage='linear-gradient(135deg,rgba(25,20,35,.24),rgba(25,20,35,.68)),url("'+media[key].replace(/"/g,'%22')+'")';el.style.backgroundSize='cover';el.style.backgroundPosition='center';}
+    var tasks=[];
+    function preload(url,apply){if(!url)return;tasks.push(new Promise(function(resolve){var img=new Image();img.onload=function(){apply();resolve();};img.onerror=resolve;img.src=url;}));}
+    var poster=media.homepage_ongoing_poster,posterEl=document.querySelector('.ongoing-preview img');
+    if(poster&&posterEl)preload(poster,function(){posterEl.src=poster;});
+    ['home_photography','home_movie_nights','home_meetups'].forEach(function(key){
+      var el=document.querySelector('[data-website-media="'+key+'"]'),url=media[key];
+      if(url&&el)preload(url,function(){el.style.backgroundImage='linear-gradient(135deg,rgba(25,20,35,.24),rgba(25,20,35,.68)),url("'+url.replace(/"/g,'%22')+'")';el.style.backgroundSize='cover';el.style.backgroundPosition='center';});
     });
-  });
+    Promise.all(tasks).then(function(){root.classList.add('website-media-ready');});
+  }).catch(function(){root.classList.add('website-media-ready');});
+  setTimeout(function(){root.classList.add('website-media-ready');},3500);
 })();
 </script>
 
