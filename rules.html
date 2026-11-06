@@ -943,4 +943,20 @@ footer .mail{
   document.addEventListener('keydown',event=>{if(event.key==='Escape')setMenu(false)});
 })();
 </script>
+
+<script>
+(function(){
+  var cfg=window.VC_CONFIG||{};
+  if(!window.supabase||!cfg.supabaseUrl||!cfg.supabasePublishableKey)return;
+  var client=window.supabase.createClient(cfg.supabaseUrl,cfg.supabasePublishableKey,{auth:{persistSession:false,autoRefreshToken:false}});
+  client.from('website_media').select('media_key,image_url').in('media_key',['rules_main','rules_community']).then(function(r){
+    if(r.error){console.warn('Rules media could not be loaded:',r.error.message);return;}
+    var media={};(r.data||[]).forEach(function(x){media[x.media_key]=x.image_url;});
+    var main=document.querySelector('.rules-photo-main img'),community=document.querySelector('.rules-photo-small img');
+    if(media.rules_main&&main)main.src=media.rules_main;
+    if(media.rules_community&&community)community.src=media.rules_community;
+  });
+})();
+</script>
+
 </body></html>
