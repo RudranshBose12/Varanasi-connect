@@ -20,7 +20,8 @@ function loadAll(){return Promise.all([
  client.from('events').select('*').order('sort_order').order('starts_at',{ascending:false}),
  client.from('reviews').select('*').order('created_at',{ascending:false}),
  client.from('event_registrations').select('id,event_id,user_id,registered_at,events(title)').order('registered_at',{ascending:false}),
- client.from('event_images').select('*').order('sort_order')
+ client.from('event_images').select('*').order('sort_order'),
+ client.from('website_media').select('*').order('media_key')
 ]).then(async function(q){
  events=q[0].data||[];reviews=q[1].data||[];registrations=q[2].data||[];images=q[3].data||[];websiteMedia=q[4].data||[];
  q.forEach(function(x){if(x.error)console.error(x.error);});
