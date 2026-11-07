@@ -59,6 +59,18 @@
   ],
   "rewrites": [
     {
+      "source": "/blogs",
+      "destination": "/blogs.html"
+    },
+    {
+      "source": "/blog-sitemap.xml",
+      "destination": "/api/blog-sitemap"
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/api/blog/:slug"
+    },
+    {
       "source": "/about",
       "destination": "/about.html"
     },

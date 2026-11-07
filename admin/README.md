@@ -19,5 +19,5 @@ The panel uses only the existing public publishable key. Never put a service-rol
 - Review moderation (delete)
 - Registration list
 - Event image URL records
-
-Binary image uploads are not enabled because the existing project has no configured Storage bucket.
+- Event poster and gallery photo uploads through the existing `vc-event-posters` Storage bucket
+- Event pinning, date-based ordering and configurable action buttons

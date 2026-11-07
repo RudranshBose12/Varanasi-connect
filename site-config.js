@@ -15,6 +15,8 @@ window.VC_CONFIG = {
   discordUrl: "https://discord.gg/bSjWdp8fzX",
   instagramUrl: "https://www.instagram.com/varanasi.connect/",
   email: "community.varanasi@gmail.com",
+  // Public VAPID key used by browsers to subscribe to event push notifications.
+  pushApplicationServerKey: "BL-bPaonX1QEsy6uGVyw3gjHQ5ioUaNw7Cs2LasvZU3DQA0hwYT7EG9Z700275T2qxx7zlHDkcTasNcqOGzxhso",
   // Public Supabase client settings. Never put a service-role/secret key here.
   supabaseUrl: "https://dtckvnyuwysulevilfse.supabase.co",
   supabasePublishableKey: "sb_publishable_LiuULCT4WLxAdL3qq3zuZg_KNgfrnCa"

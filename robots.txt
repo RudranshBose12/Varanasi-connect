@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.varanasiconnect.in/sitemap.xml
+Sitemap: https://www.varanasiconnect.in/blog-sitemap.xml

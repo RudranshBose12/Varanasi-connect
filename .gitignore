@@ -1,0 +1,5 @@
+supabase/.push-secrets.local
+
+supabase/.temp/
+
+supabase/.vapid-deploy.env

@@ -13,3 +13,76 @@
 .website-upload-button input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;pointer-events:auto}
 .website-media-copy .text-btn{justify-self:start}
 @media(max-width:620px){.website-media-grid{grid-template-columns:1fr}.website-media-preview{height:180px}}
+
+/* Event editor */
+.modal-card{width:min(920px,100%);max-height:min(92vh,980px);padding:24px;background:#f8f5ee;border:1px solid #25232912;box-shadow:0 26px 90px #17141c35}
+.modal-head{position:sticky;top:-24px;z-index:4;margin:-24px -24px 18px;padding:20px 24px 16px;background:#f8f5ee;border-bottom:1px solid var(--line)}
+.modal-head h3{font-size:25px}
+.fields{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+.event-editor-section{min-width:0;padding:19px;border:1px solid #25232912;border-radius:18px;background:#fffdf9;box-shadow:0 4px 14px #25232908}
+.event-editor-section-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:17px}
+.event-editor-section-head>span,.event-button-config-head>span{flex:0 0 31px;width:31px;height:31px;border-radius:10px;display:grid;place-items:center;background:#f4eaf0;color:#8c4568;font-size:11px;font-weight:800}
+.event-editor-section-head h4{margin:1px 0 4px;font:700 16px 'Space Grotesk';color:var(--ink)}
+.event-editor-section-head p,.event-button-config-head p{margin:0;color:var(--muted);font-size:11px;line-height:1.5}
+.event-section-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.field{min-width:0;align-content:start;gap:6px}
+.field label{font-size:12px;color:#39363d}
+.field input,.field textarea,.field select{min-height:42px;border:1px solid #25232920;border-radius:11px;background:#fff;color:var(--ink);transition:border-color .15s,box-shadow .15s}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:#b27691;box-shadow:0 0 0 3px #b276911c}
+.field textarea{min-height:98px;resize:vertical;line-height:1.55}
+.field-help{color:var(--muted);font-size:10px;line-height:1.45}
+.field-counter{justify-self:end;color:#928d94;font-size:10px}
+.field-counter.near-limit{color:#a14d39;font-weight:700}
+.check{width:fit-content;padding:8px 10px;border:1px solid #25232912;border-radius:10px;background:#fff;font-size:11px!important}
+.check input{accent-color:#714b85}
+.event-poster-control{display:grid;grid-template-columns:180px minmax(0,1fr);align-items:center;gap:15px;padding:12px;border:1px solid #25232912;border-radius:14px;background:#faf8f3}
+.event-poster-preview{height:116px;overflow:hidden;border-radius:10px;background:#eee9e2;display:grid;place-items:center;color:#8c8790;font-size:11px;font-weight:700}
+.event-poster-preview img{width:100%;height:100%;object-fit:cover}
+.event-gallery-preview{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.event-gallery-preview img{width:64px;height:50px;border-radius:8px;object-fit:cover;border:1px solid #25232918}
+.event-gallery-more{font-size:11px;font-weight:700;color:var(--muted)}
+.event-editor-preview{display:grid;grid-template-columns:180px minmax(0,1fr);overflow:hidden;border:1px solid #25232914;border-radius:13px;background:#fff;max-width:620px}
+.event-editor-preview-image{height:130px;background:#eee9e2;display:grid;place-items:center;color:#8c8790;font-size:11px;font-weight:700}
+.event-editor-preview-image img{width:100%;height:100%;object-fit:cover}
+.event-editor-preview>div:last-child{padding:13px;min-width:0}
+.event-editor-preview>div:last-child>span{display:inline-block;padding:4px 8px;border-radius:99px;background:#f3eee5;color:#706a73;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.event-editor-preview h5{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;min-height:2.4em;margin:9px 0 5px;font:700 16px/1.2 'Space Grotesk';overflow-wrap:anywhere}
+.event-editor-preview p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;min-height:3em;margin:0;color:var(--muted);font-size:11px;line-height:1.5;overflow-wrap:anywhere}
+.event-button-config{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:15px;border:1px solid #25232912;border-radius:14px;background:#faf8f3}
+.event-button-config-head{grid-column:1/-1;display:flex;align-items:flex-start;gap:10px}
+.event-button-config-head h5{margin:1px 0 3px;font:700 13px 'Space Grotesk'}
+.event-button-config>.field.full,.event-button-config>.check{grid-column:1/-1}
+.event-checkbox-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.modal-actions{position:sticky;bottom:-24px;z-index:4;margin:18px -24px -24px;padding:14px 24px 20px;background:#f8f5ee;border-top:1px solid var(--line)}
+@media(max-width:620px){.modal{padding:8px;align-items:end}.modal-card{width:100%;max-height:94dvh;border-radius:19px;padding:15px}.modal-head{top:-15px;margin:-15px -15px 14px;padding:14px 15px 12px}.modal-head h3{font-size:20px}.event-editor-section{padding:14px;border-radius:14px}.event-section-grid,.event-button-config,.event-checkbox-list{grid-template-columns:minmax(0,1fr)}.event-button-config{padding:12px}.event-poster-control{grid-template-columns:100px minmax(0,1fr);gap:10px;padding:9px}.event-poster-preview{height:90px}.event-editor-preview{grid-template-columns:100px minmax(0,1fr)}.event-editor-preview-image{height:112px}.event-editor-preview>div:last-child{padding:10px}.event-editor-preview h5{font-size:14px}.event-button-config-head,.event-button-config>.field.full,.event-button-config>.check{grid-column:1}.modal-actions{bottom:-15px;margin:14px -15px -15px;padding:11px 15px 15px}.modal-actions button{flex:1}}
+.blog-toggle{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid var(--line);border-radius:99px;background:#f8f5ee;font-size:12px;font-weight:700;color:var(--ink);cursor:pointer}.blog-toggle input{accent-color:#7040c7;width:16px;height:16px}
+.blog-admin-unavailable{border-color:#e6d9bd;background:#fffaf0}
+.blog-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.blog-form-grid .field.full{grid-column:1/-1}
+.blog-form-grid .field textarea{min-height:88px}
+.blog-form-grid .field:nth-child(7) textarea{min-height:280px}
+.blog-form-grid .field-help{color:var(--muted);font-size:11px}
+.blog-form-actions{position:sticky;bottom:0;display:flex;justify-content:flex-end;gap:10px;padding:14px 0 2px;background:#fffdf9;border-top:1px solid var(--line);margin-top:17px}
+.blog-editor{scroll-margin-top:22px}
+.blog-editor[hidden]{display:none!important}
+@media(max-width:620px){.blog-form-grid{grid-template-columns:minmax(0,1fr)}.blog-form-grid .field.full{grid-column:1}.blog-form-grid .field:nth-child(7) textarea{min-height:220px}.blog-form-actions button{flex:1}}
+
+/* Website media sections and event gallery controls */
+.website-media-section{padding-top:16px;margin-top:18px;border-top:1px solid var(--line)}
+.website-media-section>h3{font:700 18px 'Space Grotesk';margin:0 0 13px}
+.media-ratio{display:inline-flex;width:max-content;border-radius:99px;background:#f1ece4;padding:6px 9px;font-size:11px;font-weight:700;color:#514c55}
+.event-gallery-item{position:relative;display:inline-flex}
+.event-gallery-item button{position:absolute;top:-6px;right:-6px;width:20px;height:20px;border:1px solid white;border-radius:50%;background:#252329;color:#fff;font-size:14px;line-height:1}
+
+/* Admin overview activity and reminders */
+.overview-stats .stat small{display:block;margin-top:5px;color:var(--muted);font-size:10px}
+.overview-analytics-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.overview-analytics-grid .panel{min-width:0}
+.overview-activity-list,.overview-reminder-list{list-style:none;padding:0;margin:0}
+.overview-activity-list li,.overview-reminder-list li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 2px;border-top:1px solid var(--line)}
+.overview-activity-list li:first-child,.overview-reminder-list li:first-child{border-top:0}
+.overview-activity-list li span,.overview-reminder-list li span{min-width:0;display:grid;gap:4px}
+.overview-activity-list b,.overview-reminder-list b{font-size:12px;overflow-wrap:anywhere}
+.overview-activity-list small,.overview-reminder-list small,.overview-activity-list time{color:var(--muted);font-size:10px}
+.overview-activity-list time{text-align:right;flex:0 0 auto}
+@media(max-width:760px){.overview-analytics-grid{grid-template-columns:1fr}}
