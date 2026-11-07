@@ -125,7 +125,7 @@
         window.alert('Could not log out. Please try again.');
       }
     } else if (action === 'events') {
-      location.href = './events.html';
+      location.href = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? './events.html' : '/events';
     }
   });
   document.addEventListener('click', function (event) { if (!event.target.closest('#profileWrap')) setMenu(false); });

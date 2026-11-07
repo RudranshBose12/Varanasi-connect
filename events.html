@@ -408,11 +408,11 @@ body.dark .profile-menu .profile-menu-group>summary:hover,body.dark .profile-men
 .event-detail-hero{height:clamp(190px,28vw,300px)!important}
 .event-detail-richtext p{margin:0 0 12px}.event-detail-richtext h4{margin:16px 0 8px;font-size:15px}.event-detail-richtext ul{margin:6px 0 14px;padding-left:20px}
 @media(max-width:600px){.event-top{min-height:94px!important;display:flex!important;flex-direction:column-reverse!important;align-items:stretch!important;gap:4px!important}.event-content h3{width:100%!important}.event-detail-hero{height:190px!important}}
-</style></head>
+</style><script src="/assets/local-route-fallback.js" defer></script></head>
 <body>
 <nav class="nav"><div class="nav-inner">
-    <a class="brand" href="./index.html" aria-label="Varanasi Connect home"><img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect"></a>
-    <div class="navlinks"><a href="./about.html">About</a><a href="./events.html" aria-current="page">Events</a><a id="navRules" href="./rules.html">Rules</a><a href="./reviews.html">Reviews</a></div>
+    <a class="brand" href="/" aria-label="Varanasi Connect home"><img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect"></a>
+    <div class="navlinks"><a href="/about">About</a><a href="/events" aria-current="page">Events</a><a id="navRules" href="/rules">Rules</a><a href="/reviews">Reviews</a></div>
 
     <div class="profile-wrap" id="profileWrap">
       <button class="auth-cta" id="authButton" type="button" aria-label="Log in" title="Log in with Discord" aria-haspopup="menu" aria-expanded="false">
@@ -423,7 +423,7 @@ body.dark .profile-menu .profile-menu-group>summary:hover,body.dark .profile-men
       <div class="profile-menu" id="profileMenu" role="menu" aria-label="Account menu" hidden>
         <div class="profile-menu-heading"><strong id="profileMenuName">Your account</strong><span id="profileMenuEmail"></span></div>
         <button type="button" role="menuitem" data-account-action="events">Registered events</button>
-        <details class="profile-menu-group"><summary role="menuitem">Settings</summary><div class="profile-submenu"><a class="profile-menu-link" href="./index.html?open=notifications">Notifications</a></div></details>
+        <details class="profile-menu-group"><summary role="menuitem">Settings</summary><div class="profile-submenu"><a class="profile-menu-link" href="/?open=notifications">Notifications</a></div></details>
         <details class="profile-menu-group"><summary role="menuitem">Support</summary><div class="profile-submenu"><a class="profile-menu-link" href="mailto:community.varanasi@gmail.com?subject=Varanasi%20Connect%20Support">Email</a><a class="profile-menu-link" href="tel:+918004394207" data-support-phone="+91 800 439 4207">Call +91 800 439 4207</a></div></details>
         <a class="profile-menu-link" role="menuitem" id="websiteControlPanelLink" href="https://admin.varanasiconnect.in/" target="_blank" rel="noopener" hidden>Website Control Panel</a><a class="profile-menu-link" role="menuitem" id="discordBotDashboardLink" href="https://VnscBot.varanasiconnect.in/" target="_blank" rel="noopener" hidden>Discord Bot Dashboard</a>
         
@@ -446,14 +446,14 @@ body.dark .profile-menu .profile-menu-group>summary:hover,body.dark .profile-men
 </section></main>
 <section class="join"><div class="container"><div class="join-box"><div><div class="kicker" style="color:rgba(255,255,255,.7)">04 — Join us</div><h2>There is a place<br>for you here.</h2><p>Join the Discord community, meet people from Varanasi and see what we're building next.</p></div><div class="join-actions"><a class="btn discord-cta" id="joinDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join Discord</a><a class="btn instagram-cta" id="joinInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Follow Instagram</a><a class="btn whatsapp-cta is-unavailable" id="joinWhatsApp" aria-disabled="true" title="WhatsApp invite link will be added soon">Join WhatsApp · link coming soon</a><a class="btn btn-outline" id="joinEmail" href="mailto:community.varanasi@gmail.com">Email us</a></div></div></div></section><footer class="site-footer">
   <div class="container footer-inner">
-    <a class="footer-brand" href="./index.html" aria-label="Varanasi Connect home">
+    <a class="footer-brand" href="/" aria-label="Varanasi Connect home">
       <img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect">
     </a>
     <nav class="footer-links" aria-label="Footer navigation">
-      <a href="./about.html">About</a>
-      <a href="./events.html">Events</a>
-      <a href="./rules.html">Community rules</a>
-      <a href="./reviews.html">Reviews</a>
+      <a href="/about">About</a>
+      <a href="/events">Events</a>
+      <a href="/rules">Community rules</a>
+      <a href="/reviews">Reviews</a>
       <a class="footer-support" href="mailto:community.varanasi@gmail.com?subject=Varanasi%20Connect%20Support">Support</a>
       <a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a>
       <a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a>

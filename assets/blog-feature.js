@@ -82,7 +82,7 @@
       if (!link) {
         link = document.createElement('a');
         link.dataset.blogNav = 'true';
-        link.href = './blogs.html';
+        link.href = '/blogs';
         link.textContent = 'Blogs';
         nav.appendChild(link);
       }

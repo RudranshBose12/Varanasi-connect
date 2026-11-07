@@ -1,6 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
   "redirects": [
+    {
+      "source": "/index",
+      "destination": "/",
+      "permanent": true
+    },
     {
       "source": "/:path*",
       "has": [
@@ -59,32 +65,12 @@
   ],
   "rewrites": [
     {
-      "source": "/blogs",
-      "destination": "/blogs.html"
-    },
-    {
       "source": "/blog-sitemap.xml",
       "destination": "/api/blog-sitemap"
     },
     {
       "source": "/blog/:slug",
       "destination": "/api/blog/:slug"
-    },
-    {
-      "source": "/about",
-      "destination": "/about.html"
-    },
-    {
-      "source": "/events",
-      "destination": "/events.html"
-    },
-    {
-      "source": "/rules",
-      "destination": "/rules.html"
-    },
-    {
-      "source": "/reviews",
-      "destination": "/reviews.html"
     }
   ]
 }

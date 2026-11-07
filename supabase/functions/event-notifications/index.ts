@@ -129,7 +129,7 @@ async function dispatchNotifications(origin: string | null) {
       const body = notificationType === "new_event"
         ? `${event.title} has been added. Tap to see the details.`
         : `${event.title} is coming up within 24 hours.`;
-      const target = `https://www.varanasiconnect.in/events.html?event=${encodeURIComponent(event.slug || event.id)}#event-details`;
+      const target = `https://www.varanasiconnect.in/events?event=${encodeURIComponent(event.slug || event.id)}#event-details`;
       try {
         await webpush.sendNotification({
           endpoint: subscription.endpoint,

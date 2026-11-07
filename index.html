@@ -514,11 +514,11 @@ footer .mail{
 .profile-menu .profile-submenu .profile-menu-link{display:block;width:100%;padding:8px 12px;border-radius:9px;color:inherit;text-decoration:none;font-size:13px}
 .profile-menu .profile-submenu .profile-menu-link:hover{background:#f3eee5}
 body.dark .profile-menu .profile-menu-group>summary:hover,body.dark .profile-menu .profile-menu-group[open]>summary,body.dark .profile-menu .profile-submenu .profile-menu-link:hover{background:#302c36}
-</style></head>
+</style><script src="/assets/local-route-fallback.js" defer></script></head>
 <body>
   <nav class="nav"><div class="nav-inner">
-    <a class="brand" href="./index.html" aria-label="Varanasi Connect home"><img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect"></a>
-    <div class="navlinks"><a href="./about.html">About</a><a href="./events.html">Events</a><a id="navRules" href="./rules.html">Rules</a><a href="./reviews.html">Reviews</a></div>
+    <a class="brand" href="/" aria-label="Varanasi Connect home"><img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect"></a>
+    <div class="navlinks"><a href="/about">About</a><a href="/events">Events</a><a id="navRules" href="/rules">Rules</a><a href="/reviews">Reviews</a></div>
 
     <div class="profile-wrap" id="profileWrap">
       <button class="auth-cta" id="authButton" type="button" aria-label="Log in" title="Log in with Discord" aria-haspopup="menu" aria-expanded="false">
@@ -529,7 +529,7 @@ body.dark .profile-menu .profile-menu-group>summary:hover,body.dark .profile-men
       <div class="profile-menu" id="profileMenu" role="menu" aria-label="Account menu" hidden>
         <div class="profile-menu-heading"><strong id="profileMenuName">Your account</strong><span id="profileMenuEmail"></span></div>
         <button type="button" role="menuitem" data-account-action="events">Registered events</button>
-        <details class="profile-menu-group"><summary role="menuitem">Settings</summary><div class="profile-submenu"><a class="profile-menu-link" href="./index.html?open=notifications">Notifications</a></div></details>
+        <details class="profile-menu-group"><summary role="menuitem">Settings</summary><div class="profile-submenu"><a class="profile-menu-link" href="/?open=notifications">Notifications</a></div></details>
         <details class="profile-menu-group"><summary role="menuitem">Support</summary><div class="profile-submenu"><a class="profile-menu-link" href="mailto:community.varanasi@gmail.com?subject=Varanasi%20Connect%20Support">Email</a><a class="profile-menu-link" href="tel:+918004394207" data-support-phone="+91 800 439 4207">Call +91 800 439 4207</a></div></details>
         <a class="profile-menu-link" role="menuitem" id="websiteControlPanelLink" href="https://admin.varanasiconnect.in/" target="_blank" rel="noopener" hidden>Website Control Panel</a><a class="profile-menu-link" role="menuitem" id="discordBotDashboardLink" href="https://VnscBot.varanasiconnect.in/" target="_blank" rel="noopener" hidden>Discord Bot Dashboard</a>
         
@@ -543,13 +543,13 @@ body.dark .profile-menu .profile-menu-group>summary:hover,body.dark .profile-men
   <main id="top">
     <section class="hero"><div class="container hero-grid">
       <div class="reveal"><div class="eyebrow"><span></span> A community from Varanasi</div><h1>The city,<br><span class="gradient-text">connected.</span></h1><p>Varanasi Connect is a community built around the people, creativity, culture and everyday experiences that make Varanasi feel like home.</p><div class="actions"><a class="btn btn-dark" id="heroDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Join the community</a><a class="btn btn-light" href="#about">Explore Varanasi Connect</a></div></div>
-      <a class="ongoing-preview" href="./events.html"><span class="ongoing-label"><i></i> Ongoing events</span><img data-fallback-src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=900&q=85" alt="Varanasi ghats along the Ganga"><span class="ongoing-preview-copy"><small>HAPPENING IN VARANASI</small><strong>See what's going on<br>right now.</strong><span>Explore events and register <b>→</b></span></span></a>
+      <a class="ongoing-preview" href="/events"><span class="ongoing-label"><i></i> Ongoing events</span><img data-fallback-src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=900&q=85" alt="Varanasi ghats along the Ganga"><span class="ongoing-preview-copy"><small>HAPPENING IN VARANASI</small><strong>See what's going on<br>right now.</strong><span>Explore events and register <b>→</b></span></span></a>
     </div></section>
 
     <section class="events" id="events"><div class="container"><div class="section-head"><div><div class="kicker">01 — Events</div><h2>Always something<br><span class="gradient-text">coming up.</span></h2></div><p class="section-intro">A look at the community activities we are hosting, from movie nights and meetups to creative events and competitions.</p></div>
       <div class="event-grid">
-        <a class="event-feature" data-website-media="home_photography" href="./events.html?event=photography-competition#event-details"><div class="event-content"><span class="event-tag">Featured event</span><h3>Photography Competition</h3><p>Free entry · ₹1,000 prize pool</p></div></a>
-        <div class="side-events"><a class="event-small" data-website-media="home_movie_nights" href="./events.html#movie"><span class="event-tag">Community</span><h3>Movie nights</h3></a><a class="event-small" data-website-media="home_meetups" href="./events.html#meetups"><span class="event-tag">Community</span><h3>Meetups</h3></a></div>
+        <a class="event-feature" data-website-media="home_photography" href="/events?event=photography-competition#event-details"><div class="event-content"><span class="event-tag">Featured event</span><h3>Photography Competition</h3><p>Free entry · ₹1,000 prize pool</p></div></a>
+        <div class="side-events"><a class="event-small" data-website-media="home_movie_nights" href="/events#movie"><span class="event-tag">Community</span><h3>Movie nights</h3></a><a class="event-small" data-website-media="home_meetups" href="/events#meetups"><span class="event-tag">Community</span><h3>Meetups</h3></a></div>
       </div>
     </div></section>
 
@@ -561,14 +561,14 @@ body.dark .profile-menu .profile-menu-group>summary:hover,body.dark .profile-men
   
     <footer class="site-footer">
   <div class="container footer-inner">
-    <a class="footer-brand" href="./index.html" aria-label="Varanasi Connect home">
+    <a class="footer-brand" href="/" aria-label="Varanasi Connect home">
       <img src="assets/varanasi-connect-dark-logo.png" alt="Varanasi Connect">
     </a>
     <nav class="footer-links" aria-label="Footer navigation">
-      <a href="./about.html">About</a>
-      <a href="./events.html">Events</a>
-      <a href="./rules.html">Community rules</a>
-      <a href="./reviews.html">Reviews</a>
+      <a href="/about">About</a>
+      <a href="/events">Events</a>
+      <a href="/rules">Community rules</a>
+      <a href="/reviews">Reviews</a>
       <a class="footer-support" href="mailto:community.varanasi@gmail.com?subject=Varanasi%20Connect%20Support">Support</a>
       <a id="footerDiscord" href="https://discord.gg/bSjWdp8fzX" target="_blank" rel="noopener">Discord</a>
       <a id="footerInstagram" href="https://www.instagram.com/varanasi.connect/" target="_blank" rel="noopener">Instagram</a>
@@ -801,7 +801,7 @@ body.dark .profile-menu .profile-menu-group>summary:hover,body.dark .profile-men
         if(!supabaseClient||!activeAuthUser){accountPanelBody.innerHTML='<div class="account-empty"><strong>Log in to view registrations</strong>Sign in with Discord to see the events you have joined.</div>';return;}
         const {data,error}=await supabaseClient.from('event_registrations').select('registered_at,events(id,title,summary,starts_at,location,status)').order('registered_at',{ascending:false});
         if(error){accountPanelBody.innerHTML='<div class="account-empty"><strong>Could not load registrations</strong>Please try again in a moment.</div>';console.error(error);return;}
-        if(!data?.length){accountPanelBody.innerHTML='<div class="account-empty"><strong>No registered events yet</strong>Explore the Events page and register for something coming up.</div><p><a class="btn btn-dark" href="./events.html">Explore events</a></p>';return;}
+        if(!data?.length){accountPanelBody.innerHTML='<div class="account-empty"><strong>No registered events yet</strong>Explore the Events page and register for something coming up.</div><p><a class="btn btn-dark" href="/events">Explore events</a></p>';return;}
         accountPanelBody.innerHTML='<div class="registered-event-list">'+data.map(row=>{const ev=row.events||{};const date=ev.starts_at?new Date(ev.starts_at).toLocaleString(undefined,{dateStyle:'medium',timeStyle:'short'}):'Date to be announced';return '<article class="registered-event-item"><strong>'+escapeHtml(ev.title||'Community event')+'</strong><span>'+escapeHtml(date)+' · '+escapeHtml(ev.location||'Varanasi')+'</span></article>';}).join('')+'</div>';
       };
       const showAccountSettings=()=>{
